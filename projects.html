@@ -4,67 +4,140 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Proyectos | Sara Alcaraz</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Selección de proyectos de UX/UI y diseño de producto de Sara Alcaraz." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#f7f4ef",
+            paper: "#fbf9f5",
+            surface: "#f2ede6",
+            ink: "#111111",
+            softink: "#4d4742",
+            muted: "#7a736c",
+            matcha: "#8d9784"
+          },
+          fontFamily: {
+            serif: ["Cormorant Garamond", "serif"],
+            sans: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">Sara Alcaraz</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        <span></span><span></span>
+
+<body class="bg-cream font-sans text-ink antialiased">
+  <header class="sticky top-0 z-50 border-b border-black/5 bg-cream/95 backdrop-blur-sm">
+    <div class="mx-auto flex min-h-[84px] w-[min(1160px,calc(100%-3rem))] items-center justify-between relative">
+      <a href="index.html" class="font-serif text-[2rem] font-semibold tracking-[0.02em]">
+        Sara Alcaraz
+      </a>
+
+      <button class="md:hidden" id="menuToggle" aria-label="Abrir menú">
+        <span class="my-1.5 block h-[1.5px] w-[26px] bg-ink"></span>
+        <span class="my-1.5 block h-[1.5px] w-[26px] bg-ink"></span>
       </button>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Inicio</a>
-        <a href="projects.html" class="active">Proyectos</a>
-        <a href="about.html">Sobre mí</a>
-        <a href="contact.html">Contacto</a>
+
+      <nav
+        id="navLinks"
+        class="absolute left-0 right-0 top-[84px] hidden flex-col gap-4 border-t border-black/5 bg-paper px-5 py-5 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
+      >
+        <a href="index.html" class="text-sm font-medium text-softink hover:text-ink">Inicio</a>
+        <a href="projects.html" class="text-sm font-medium text-ink">Proyectos</a>
+        <a href="about.html" class="text-sm font-medium text-softink hover:text-ink">Sobre mí</a>
+        <a href="contact.html" class="text-sm font-medium text-softink hover:text-ink">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="page-top">
-    <section class="section">
-      <div class="container">
-        <div class="page-intro reveal">
-          <p class="eyebrow">Work</p>
-          <h1 class="page-title">Proyectos</h1>
-          <p class="page-text">
+  <main class="pt-5">
+    <section class="py-24 md:py-28">
+      <div class="mx-auto w-[min(1160px,calc(100%-3rem))]">
+        <div class="mb-10 max-w-[760px]">
+          <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
+            Work
+          </p>
+          <h1 class="mb-4 font-serif text-[3.2rem] leading-[0.94] tracking-[-0.03em] sm:text-[4.5rem]">
+            Proyectos
+          </h1>
+          <p class="text-base leading-8 text-softink">
             Casos de estudio, exploraciones de interfaz y proyectos centrados en
             organización, claridad visual y diseño digital.
           </p>
         </div>
 
-        <div class="projects-grid big-grid">
-          <article class="project-card reveal">
-            <div class="project-thumb thumb-1 large-thumb"></div>
-            <div class="project-body">
-              <p class="project-type">UX/UI · App móvil</p>
-              <h3>CLARO</h3>
-              <p>App para unir organización personal y finanzas en una experiencia visual y calmada.</p>
-              <a href="project-claro.html" class="text-link">Ver case study</a>
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="overflow-hidden rounded-xl border border-black/10 bg-paper transition hover:-translate-y-1 hover:border-black/15">
+            <div class="relative h-[300px] border-b border-black/10 bg-surface">
+              <div class="absolute inset-6 rounded-lg border border-black/5 bg-white/45"></div>
+              <div class="absolute left-[52px] top-[42px] h-[188px] w-[100px] rounded-[20px] border border-black/10 bg-[#fcfaf7]"></div>
+            </div>
+            <div class="p-6">
+              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
+                UX/UI · App móvil
+              </p>
+              <h3 class="font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+                CLARO
+              </h3>
+              <p class="mt-3 text-base leading-8 text-softink">
+                App para unir organización personal y finanzas en una experiencia visual y calmada.
+              </p>
+              <a href="project-claro.html" class="mt-4 inline-flex items-center gap-1 font-semibold text-ink">
+                Ver case study <span>→</span>
+              </a>
             </div>
           </article>
 
-          <article class="project-card reveal delay-1">
-            <div class="project-thumb thumb-2 large-thumb"></div>
-            <div class="project-body">
-              <p class="project-type">Brand + Web Concept</p>
-              <h3>Portfolio Personal</h3>
-              <p>Exploración estética de marca personal, estructura editorial y narrativa profesional.</p>
-              <a href="#" class="text-link">Próximamente</a>
+          <article class="overflow-hidden rounded-xl border border-black/10 bg-paper transition hover:-translate-y-1 hover:border-black/15">
+            <div class="relative h-[300px] border-b border-black/10 bg-surface">
+              <div class="absolute inset-6 rounded-lg border border-black/5 bg-white/45"></div>
+              <div class="absolute inset-x-10 bottom-11 top-11 rounded-lg border border-black/5 bg-[#fcfaf7]"></div>
+            </div>
+            <div class="p-6">
+              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
+                Brand + Web Concept
+              </p>
+              <h3 class="font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+                Portfolio Personal
+              </h3>
+              <p class="mt-3 text-base leading-8 text-softink">
+                Exploración estética de marca personal, estructura editorial y narrativa profesional.
+              </p>
+              <a href="#" class="mt-4 inline-flex items-center gap-1 font-semibold text-ink">
+                Próximamente <span>→</span>
+              </a>
             </div>
           </article>
 
-          <article class="project-card reveal delay-2">
-            <div class="project-thumb thumb-3 large-thumb"></div>
-            <div class="project-body">
-              <p class="project-type">Dashboard Concept</p>
-              <h3>Panel de Gestión</h3>
-              <p>Concepto de dashboard limpio con foco en jerarquía, datos y facilidad de lectura.</p>
-              <a href="#" class="text-link">Próximamente</a>
+          <article class="overflow-hidden rounded-xl border border-black/10 bg-paper transition hover:-translate-y-1 hover:border-black/15">
+            <div class="relative h-[300px] border-b border-black/10 bg-surface">
+              <div class="absolute inset-6 rounded-lg border border-black/5 bg-white/45"></div>
+              <div class="absolute inset-9 rounded-lg border border-black/5 bg-[#fcfaf7]"></div>
+            </div>
+            <div class="p-6">
+              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
+                Dashboard Concept
+              </p>
+              <h3 class="font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+                Panel de Gestión
+              </h3>
+              <p class="mt-3 text-base leading-8 text-softink">
+                Concepto de dashboard limpio con foco en jerarquía, datos y facilidad de lectura.
+              </p>
+              <a href="#" class="mt-4 inline-flex items-center gap-1 font-semibold text-ink">
+                Próximamente <span>→</span>
+              </a>
             </div>
           </article>
         </div>
@@ -72,13 +145,23 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
+  <footer class="pb-8 pt-6">
+    <div class="mx-auto flex w-[min(1160px,calc(100%-3rem))] flex-col gap-4 border-t border-black/10 pt-5 text-[0.94rem] text-muted md:flex-row md:items-center md:justify-between">
       <p>© 2026 Sara Alcaraz</p>
       <a href="contact.html">Contacto</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("hidden");
+        navLinks.classList.toggle("flex");
+      });
+    }
+  </script>
 </body>
 </html>

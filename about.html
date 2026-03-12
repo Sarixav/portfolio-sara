@@ -4,65 +4,120 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre mí | Sara Alcaraz</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Sobre Sara Alcaraz, diseñadora UX/UI enfocada en producto digital, claridad visual y experiencia de usuario." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#f7f4ef",
+            paper: "#fbf9f5",
+            surface: "#f2ede6",
+            ink: "#111111",
+            softink: "#4d4742",
+            muted: "#7a736c",
+            matcha: "#8d9784"
+          },
+          fontFamily: {
+            serif: ["Cormorant Garamond", "serif"],
+            sans: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">Sara Alcaraz</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        <span></span><span></span>
+
+<body class="bg-cream text-ink antialiased font-sans">
+  <header class="sticky top-0 z-50 border-b border-black/5 bg-cream/95 backdrop-blur-sm">
+    <div class="mx-auto flex min-h-[84px] w-[min(1160px,calc(100%-3rem))] items-center justify-between relative">
+      <a href="index.html" class="font-serif text-[2rem] font-semibold tracking-[0.02em]">
+        Sara Alcaraz
+      </a>
+
+      <button class="md:hidden" id="menuToggle" aria-label="Abrir menú">
+        <span class="my-1.5 block h-[1.5px] w-[26px] bg-ink"></span>
+        <span class="my-1.5 block h-[1.5px] w-[26px] bg-ink"></span>
       </button>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Inicio</a>
-        <a href="projects.html">Proyectos</a>
-        <a href="about.html" class="active">Sobre mí</a>
-        <a href="contact.html">Contacto</a>
+
+      <nav
+        id="navLinks"
+        class="absolute left-0 right-0 top-[84px] hidden flex-col gap-4 border-t border-black/5 bg-paper px-5 py-5 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
+      >
+        <a href="index.html" class="text-sm font-medium text-softink hover:text-ink">Inicio</a>
+        <a href="projects.html" class="text-sm font-medium text-softink hover:text-ink">Proyectos</a>
+        <a href="about.html" class="text-sm font-medium text-ink">Sobre mí</a>
+        <a href="contact.html" class="text-sm font-medium text-softink hover:text-ink">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="page-top">
-    <section class="section">
-      <div class="container about-layout">
-        <div class="about-photo reveal"></div>
+  <main class="pt-5">
+    <section class="py-24 md:py-28">
+      <div class="mx-auto grid w-[min(1160px,calc(100%-3rem))] items-center gap-12 md:grid-cols-[1.2fr_0.8fr]">
+        <div class="relative min-h-[390px] overflow-hidden rounded-2xl bg-surface md:min-h-[620px]">
+          <div class="absolute inset-x-[18%] bottom-[12%] top-[16%] rounded-xl border border-white/20 bg-white/10"></div>
+        </div>
 
-        <div class="about-content reveal delay-1">
-          <p class="eyebrow">Sobre mí</p>
-          <h1 class="page-title">Diseño con claridad, sensibilidad y visión de producto.</h1>
-          <p class="page-text">
+        <div>
+          <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
+            Sobre mí
+          </p>
+
+          <h1 class="mb-4 font-serif text-[3rem] leading-[0.94] tracking-[-0.03em] sm:text-[4.8rem]">
+            Diseño con claridad, sensibilidad y visión de producto.
+          </h1>
+
+          <p class="text-base leading-8 text-softink">
             Soy Sara Alcaraz, diseñadora UX/UI enfocada en crear productos
             digitales útiles, claros y visualmente cuidados.
           </p>
-          <p class="page-text">
+
+          <p class="mt-4 text-base leading-8 text-softink">
             Me interesa especialmente diseñar experiencias que hagan la vida diaria
             más comprensible: organización personal, finanzas, bienestar y herramientas
             digitales que reduzcan fricción.
           </p>
 
-          <div class="tag-row skill-tags">
-            <span>UX Research</span>
-            <span>UI Design</span>
-            <span>Wireframing</span>
-            <span>Prototyping</span>
-            <span>Design Systems</span>
-            <span>Product Thinking</span>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span class="rounded-full border border-black/10 px-4 py-2 text-[0.82rem] text-softink">UX Research</span>
+            <span class="rounded-full border border-black/10 px-4 py-2 text-[0.82rem] text-softink">UI Design</span>
+            <span class="rounded-full border border-black/10 px-4 py-2 text-[0.82rem] text-softink">Wireframing</span>
+            <span class="rounded-full border border-black/10 px-4 py-2 text-[0.82rem] text-softink">Prototyping</span>
+            <span class="rounded-full border border-black/10 px-4 py-2 text-[0.82rem] text-softink">Design Systems</span>
+            <span class="rounded-full border border-black/10 px-4 py-2 text-[0.82rem] text-softink">Product Thinking</span>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
+  <footer class="pb-8 pt-6">
+    <div class="mx-auto flex w-[min(1160px,calc(100%-3rem))] flex-col gap-4 border-t border-black/10 pt-5 text-[0.94rem] text-muted md:flex-row md:items-center md:justify-between">
       <p>© 2026 Sara Alcaraz</p>
       <a href="contact.html">Contacto</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("hidden");
+        navLinks.classList.toggle("flex");
+      });
+    }
+  </script>
 </body>
 </html>

@@ -4,133 +4,513 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CLARO | Sara Alcaraz</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta
+    name="description"
+    content="Case study del proyecto CLARO, app conceptual de organización de tiempo y dinero."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#f7f4ef",
+            paper: "#fbf9f5",
+            surface: "#f2ede6",
+            ink: "#111111",
+            softink: "#4d4742",
+            muted: "#7a736c",
+            matcha: "#8d9784"
+          },
+          fontFamily: {
+            serif: ["Cormorant Garamond", "serif"],
+            sans: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
 </head>
-<body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">Sara Alcaraz</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        <span></span><span></span>
+
+<body class="bg-cream font-sans text-ink antialiased">
+  <header class="sticky top-0 z-50 border-b border-black/5 bg-cream/95 backdrop-blur-sm">
+    <div class="mx-auto flex min-h-[84px] w-[min(1160px,calc(100%-3rem))] items-center justify-between relative">
+      <a href="index.html" class="font-serif text-[2rem] font-semibold tracking-[0.02em]">
+        Sara Alcaraz
+      </a>
+
+      <button class="md:hidden" id="menuToggle" aria-label="Abrir menú">
+        <span class="my-1.5 block h-[1.5px] w-[26px] bg-ink"></span>
+        <span class="my-1.5 block h-[1.5px] w-[26px] bg-ink"></span>
       </button>
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Inicio</a>
-        <a href="projects.html" class="active">Proyectos</a>
-        <a href="about.html">Sobre mí</a>
-        <a href="contact.html">Contacto</a>
+
+      <nav
+        id="navLinks"
+        class="absolute left-0 right-0 top-[84px] hidden flex-col gap-4 border-t border-black/5 bg-paper px-5 py-5 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
+      >
+        <a href="index.html" class="text-sm font-medium text-softink hover:text-ink">Inicio</a>
+        <a href="projects.html" class="text-sm font-medium text-ink">Proyectos</a>
+        <a href="about.html" class="text-sm font-medium text-softink hover:text-ink">Sobre mí</a>
+        <a href="contact.html" class="text-sm font-medium text-softink hover:text-ink">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="page-top">
-    <section class="section">
-      <div class="container case-study-page">
-        <div class="page-intro reveal">
-          <p class="eyebrow">Case Study</p>
-          <h1 class="page-title">CLARO</h1>
-          <p class="page-text">
-            App conceptual para organizar dinero y tareas de forma clara,
-            visual y menos estresante.
+  <main class="pt-5">
+    <section class="py-20 md:py-28">
+      <div class="mx-auto w-[min(1160px,calc(100%-3rem))]">
+        <div class="grid items-center gap-12 lg:grid-cols-[0.95fr_1.25fr]">
+          <div>
+            <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
+              UX/UI Case Study
+            </p>
+            <h1 class="font-serif text-[3rem] leading-[0.95] tracking-[-0.03em] sm:text-[5.5rem]">
+              CLARO
+            </h1>
+            <p class="mt-4 max-w-[560px] text-[1.3rem] leading-[1.6] text-softink">
+              Organiza tu tiempo y tu dinero en un solo lugar
+            </p>
+            <p class="mt-4 max-w-[560px] text-sm leading-7 text-softink">
+              Aplicación móvil diseñada para ayudar a las personas a comprender y gestionar
+              su tiempo y su dinero en un mismo lugar, a través de una interfaz clara,
+              visual y fácil de usar.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="rounded-full border border-black/10 px-4 py-2 text-[0.84rem] text-softink">
+                UX/UI Design
+              </span>
+              <span class="rounded-full border border-black/10 px-4 py-2 text-[0.84rem] text-softink">
+                App móvil
+              </span>
+              <span class="rounded-full border border-black/10 px-4 py-2 text-[0.84rem] text-softink">
+                Proyecto académico
+              </span>
+              <span class="rounded-full border border-black/10 px-4 py-2 text-[0.84rem] text-softink">
+                2026
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <img
+              src="images/claro-hero.png"
+              alt="Hero del proyecto CLARO con pantallas de la app"
+              class="block h-auto w-full"
+            />
+          </div>
+        </div>
+
+        <div class="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-lg border border-black/10 bg-paper p-5">
+            <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">
+              Rol
+            </span>
+            <p class="font-semibold text-ink">UX/UI Designer</p>
+          </div>
+
+          <div class="rounded-lg border border-black/10 bg-paper p-5">
+            <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">
+              Duración
+            </span>
+            <p class="font-semibold text-ink">14 semanas</p>
+          </div>
+
+          <div class="rounded-lg border border-black/10 bg-paper p-5">
+            <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">
+              Herramientas
+            </span>
+            <p class="font-semibold text-ink">Figma, Canva</p>
+          </div>
+
+          <div class="rounded-lg border border-black/10 bg-paper p-5">
+            <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">
+              Tipo
+            </span>
+            <p class="font-semibold text-ink">App móvil conceptual</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="mx-auto grid w-[min(1160px,calc(100%-3rem))] gap-5">
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <h2 class="mb-3 font-serif text-[2rem] leading-none tracking-[-0.03em]">
+            Contexto
+          </h2>
+          <p class="text-base leading-8 text-softink">
+            Muchas aplicaciones actuales se centran exclusivamente en la gestión de tareas
+            o en el control de gastos, pero pocas integran ambas áreas. Sin embargo, el
+            tiempo y el dinero están estrechamente relacionados en la vida diaria de las
+            personas. CLARO surge como una propuesta que busca unificar estas dos dimensiones,
+            permitiendo al usuario visualizar de forma sencilla cómo organiza su tiempo y cómo
+            distribuye su dinero.
           </p>
-        </div>
+        </section>
 
-        <div class="case-hero reveal">
-          <div class="case-hero-visual"></div>
-        </div>
-
-        <div class="meta-grid reveal delay-1">
-          <div class="meta-card">
-            <span>Rol</span>
-            <p>UX/UI Designer</p>
-          </div>
-          <div class="meta-card">
-            <span>Duración</span>
-            <p>Proyecto académico</p>
-            <p>14 semanas</p>
-          </div>
-          <div class="meta-card">
-            <span>Herramientas</span>
-            <p>Figma, prototipado, research</p>
-          </div>
-          <div class="meta-card">
-            <span>Tipo</span>
-            <p>App móvil</p>
-          </div>
-        </div>
-
-        <div class="case-layout">
-          <section class="case-section reveal">
-            <h2>El problema</h2>
-            <p>
-              Muchas personas sienten que gestionar su dinero o sus tareas diarias
-              implica demasiado esfuerzo mental, sobre todo cuando las apps son
-              complejas, frías o poco intuitivas.
+        <div class="grid gap-5 lg:grid-cols-2">
+          <section class="rounded-xl border border-black/10 bg-paper p-7">
+            <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+              Problema
+            </h2>
+            <p class="text-base leading-8 text-softink">
+              Para muchas personas, controlar los gastos diarios o mantener una organización
+              clara de las tareas puede resultar complicado si las aplicaciones son demasiado
+              complejas o requieren demasiados pasos para registrar información.
             </p>
           </section>
 
-          <section class="case-section reveal">
-            <h2>La oportunidad</h2>
-            <p>
-              Diseñar una experiencia que una dos áreas clave de la vida cotidiana:
-              la organización del tiempo y la organización del dinero, dentro de
-              una misma lógica visual y simple.
-            </p>
-          </section>
-
-          <section class="case-section reveal">
-            <h2>Mi enfoque</h2>
-            <p>
-              Trabajé la arquitectura de información, la priorización de acciones,
-              la jerarquía de contenido, el diseño de cards y una UI orientada
-              a transmitir calma, claridad y control.
-            </p>
-          </section>
-
-          <section class="case-section reveal">
-            <h2>Decisiones de diseño</h2>
-            <ul class="case-list">
-              <li>Uso de cards visuales para resumir información clave.</li>
-              <li>Navegación clara entre secciones principales: vida y dinero.</li>
-              <li>Interfaz limpia con pocas distracciones visuales.</li>
-              <li>Paleta suave y acogedora para reducir sensación de saturación.</li>
-            </ul>
-          </section>
-
-          <section class="case-section reveal">
-            <h2>Resultado</h2>
-            <p>
-              CLARO se plantea como una app que ayuda a visualizar mejor la vida
-              diaria, favoreciendo una relación más clara con las tareas y con el
-              presupuesto personal.
-            </p>
-          </section>
-
-          <section class="case-section reveal">
-            <h2>Aprendizajes</h2>
-            <p>
-              Este proyecto me permitió profundizar en diseño nativo, sistemas de
-              componentes, estructura UX, narrativa de caso de estudio y coherencia visual.
+          <section class="rounded-xl border border-black/10 bg-paper p-7">
+            <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+              Oportunidad
+            </h2>
+            <p class="text-base leading-8 text-softink">
+              Diseñar una experiencia que una dos áreas clave de la vida cotidiana: la
+              organización del tiempo y la organización del dinero, dentro de una misma
+              lógica visual, clara y sencilla.
             </p>
           </section>
         </div>
 
-        <div class="back-link reveal">
-          <a href="projects.html" class="text-link">Volver a proyectos</a>
+        <div class="grid gap-5 lg:grid-cols-2">
+          <section class="rounded-xl border border-black/10 bg-paper p-7">
+            <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+              Objetivo
+            </h2>
+            <p class="text-base leading-8 text-softink">
+              Diseñar una aplicación que permita registrar gastos de forma rápida, visualizar
+              el dinero disponible de manera clara y organizar tareas del día a día, integrando
+              la gestión del tiempo y el dinero en una misma interfaz.
+            </p>
+          </section>
+
+          <section class="rounded-xl border border-black/10 bg-paper p-7">
+            <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+              Solución
+            </h2>
+            <p class="text-base leading-8 text-softink">
+              CLARO propone una interfaz basada en tarjetas de información que permiten
+              visualizar rápidamente el estado del dinero y de las tareas. La aplicación
+              integra dos secciones principales: gestión de gastos y gestión del tiempo.
+            </p>
+          </section>
+        </div>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+                Arquitectura de la información
+              </h2>
+              <p class="text-base leading-8 text-softink">
+                La estructura principal de la aplicación se organiza en cinco secciones
+                accesibles mediante navegación inferior, lo que facilita una comprensión
+                rápida del producto y permite acceder a las funciones clave sin fricción.
+              </p>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium">Inicio</div>
+              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium">Dinero</div>
+              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium">Tareas</div>
+              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium">Configuración</div>
+              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium">Perfil</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+            <div>
+              <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+                Flujo principal
+              </h2>
+              <p class="text-base leading-8 text-softink">
+                Uno de los flujos principales de la aplicación es el registro de un gasto.
+                Este flujo se diseñó para reducir el número de pasos necesarios y facilitar
+                una interacción rápida.
+              </p>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-5">
+              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center text-sm font-medium">Inicio</div>
+              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center text-sm font-medium">Dinero</div>
+              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center text-sm font-medium">Añadir gasto</div>
+              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center text-sm font-medium">Completar datos</div>
+              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center text-sm font-medium">Confirmación</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+                Wireframes
+              </h2>
+              <p class="text-base leading-8 text-softink">
+                El proceso de diseño comenzó con bocetos de baja fidelidad realizados a mano,
+                que permitieron explorar la estructura de las pantallas principales y la
+                organización de los elementos de la interfaz. Posteriormente se desarrollaron
+                wireframes digitales para definir con mayor precisión la jerarquía visual y
+                los componentes.
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-3">
+              <img src="images/claro-sketch-1.jpg" alt="Boceto a mano de CLARO" class="rounded-lg border border-black/10 object-cover" />
+              <img src="images/claro-wireframe-1.jpg" alt="Wireframe digital de CLARO" class="rounded-lg border border-black/10 object-cover" />
+              <img src="images/claro-midfi-1.jpg" alt="Pantalla media fidelidad de CLARO" class="rounded-lg border border-black/10 object-cover" />
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+            <div>
+              <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+                Sistema de diseño
+              </h2>
+              <p class="text-base leading-8 text-softink">
+                Para el prototipo de fidelidad media se utilizaron componentes basados en las
+                guías de Material Design, lo que permite mantener una interfaz consistente,
+                clara y fácil de usar en dispositivos Android.
+              </p>
+              <p class="mt-4 text-base leading-8 text-softink">
+                En el diseño se priorizó el contenido sobre el contenedor, utilizando patrones
+                de navegación como pestañas reutilizables y componentes estándar como tarjetas
+                de información, lo que facilita la interacción y reduce la complejidad y el
+                número de pasos necesarios para completar una acción.
+              </p>
+              <p class="mt-4 text-base leading-8 text-softink">
+                Además, la interfaz se estructuró mediante componentes reutilizables siguiendo
+                una lógica similar al Atomic Design, combinando elementos simples como botones,
+                inputs e iconos para construir componentes más complejos como formularios o tarjetas.
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-lg border border-black/10 bg-cream p-5">
+                <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">Grid</span>
+                <p class="text-softink">4 columnas · márgenes de 16px · gutter de 8px</p>
+              </div>
+              <div class="rounded-lg border border-black/10 bg-cream p-5">
+                <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">Patrones</span>
+                <p class="text-softink">Bottom Navigation · Tabs · Cards · Bottom Sheet · Snackbar</p>
+              </div>
+              <div class="rounded-lg border border-black/10 bg-cream p-5">
+                <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">Tipografía</span>
+                <p class="text-softink">Jerarquía clara entre títulos, datos principales y texto secundario</p>
+              </div>
+              <div class="rounded-lg border border-black/10 bg-cream p-5">
+                <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">Espaciado</span>
+                <p class="text-softink">Sistema basado en múltiplos de 8 para mantener consistencia visual</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+            Componentes principales
+          </h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div class="rounded-lg border border-black/10 bg-cream p-5">
+              <h3 class="font-semibold text-ink">Cards de resumen</h3>
+              <p class="mt-2 text-sm leading-7 text-softink">
+                Utilizadas para mostrar de forma rápida el dinero disponible, el estado del día
+                y el resumen de tareas.
+              </p>
+            </div>
+            <div class="rounded-lg border border-black/10 bg-cream p-5">
+              <h3 class="font-semibold text-ink">Tabs</h3>
+              <p class="mt-2 text-sm leading-7 text-softink">
+                Permiten organizar subsecciones como gastos fijos, imprevistos y ahorros, o la
+                vista por días en tareas.
+              </p>
+            </div>
+            <div class="rounded-lg border border-black/10 bg-cream p-5">
+              <h3 class="font-semibold text-ink">Bottom Navigation</h3>
+              <p class="mt-2 text-sm leading-7 text-softink">
+                Facilita el acceso a las principales áreas de la aplicación de forma clara y constante.
+              </p>
+            </div>
+            <div class="rounded-lg border border-black/10 bg-cream p-5">
+              <h3 class="font-semibold text-ink">Bottom Sheet</h3>
+              <p class="mt-2 text-sm leading-7 text-softink">
+                Utilizado para registrar gastos e ingresos sin sacar al usuario del contexto principal.
+              </p>
+            </div>
+            <div class="rounded-lg border border-black/10 bg-cream p-5">
+              <h3 class="font-semibold text-ink">Formularios</h3>
+              <p class="mt-2 text-sm leading-7 text-softink">
+                Diseñados para reducir la fricción y permitir registrar acciones en pocos pasos.
+              </p>
+            </div>
+            <div class="rounded-lg border border-black/10 bg-cream p-5">
+              <h3 class="font-semibold text-ink">Snackbar</h3>
+              <p class="mt-2 text-sm leading-7 text-softink">
+                Proporciona feedback visual de confirmación sin interrumpir la experiencia del usuario.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+                Diseño de interfaz
+              </h2>
+              <p class="text-base leading-8 text-softink">
+                El diseño de la interfaz se centró en simplificar la gestión del dinero y del
+                tiempo mediante una estructura clara y fácil de entender. Las tarjetas de
+                información permiten visualizar rápidamente datos importantes como el dinero
+                disponible o el estado de las tareas del día.
+              </p>
+              <p class="mt-4 text-base leading-8 text-softink">
+                Los formularios simples facilitan el registro de gastos, reduciendo pasos
+                innecesarios en la interacción y manteniendo un lenguaje visual consistente en
+                todas las secciones de la app.
+              </p>
+            </div>
+
+           <div class="grid grid-cols-4 gap-10 justify-items-center">
+  <img src="images/inicio.png" alt="Pantalla de inicio de CLARO" class="w-[200px]" />
+  <img src="images/mi_dinero.png" alt="Pantalla de dinero de CLARO" class="w-[200px]" />
+  <img src="images/tareas.png" alt="Pantalla de tareas de CLARO" class="w-[200px]" />
+  <img src="images/añadir_gasto.png" alt="Pantalla de añadir gasto en CLARO" class="w-[200px]" />
+           </div>
+          </div>
+        </section>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+            Interacciones
+          </h2>
+          <p class="text-base leading-8 text-softink">
+            Se desarrolló un prototipo funcional en Figma que permite simular el flujo principal
+            de la aplicación, incluyendo navegación entre secciones, registro de gastos, edición
+            y eliminación de movimientos y mensajes de confirmación mediante Snackbar.
+          </p>
+        </section>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+            Evaluación heurística
+          </h2>
+          <p class="text-base leading-8 text-softink">
+            El diseño fue evaluado utilizando los principios heurísticos de Nielsen, analizando
+            aspectos como la visibilidad del estado del sistema, la consistencia de la interfaz,
+            la prevención de errores y la ayuda al usuario. Este análisis permitió comprobar que
+            la interfaz mantiene una estructura clara, utiliza patrones reconocibles y proporciona
+            feedback visual adecuado para las acciones principales.
+          </p>
+        </section>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+            Futuras mejoras
+          </h2>
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="rounded-lg border border-black/10 bg-cream p-5">
+              <h3 class="font-semibold text-ink">Pruebas con usuarios</h3>
+              <p class="mt-2 text-sm leading-7 text-softink">
+                Realizar test de usabilidad con usuarios reales para detectar posibles mejoras
+                en la navegación y comprensión de la interfaz.
+              </p>
+            </div>
+            <div class="rounded-lg border border-black/10 bg-cream p-5">
+              <h3 class="font-semibold text-ink">Relación tiempo-dinero</h3>
+              <p class="mt-2 text-sm leading-7 text-softink">
+                Explorar nuevas formas de visualizar la relación entre el tiempo disponible y
+                los gastos del usuario.
+              </p>
+            </div>
+            <div class="rounded-lg border border-black/10 bg-cream p-5">
+              <h3 class="font-semibold text-ink">Recordatorios inteligentes</h3>
+              <p class="mt-2 text-sm leading-7 text-softink">
+                Incorporar un sistema de notificaciones para tareas importantes y control del gasto diario.
+              </p>
+            </div>
+            <div class="rounded-lg border border-black/10 bg-cream p-5">
+              <h3 class="font-semibold text-ink">Estadísticas</h3>
+              <p class="mt-2 text-sm leading-7 text-softink">
+                Añadir gráficos que permitan analizar hábitos de tiempo y dinero a lo largo del tiempo.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+            Conclusión
+          </h2>
+          <p class="text-base leading-8 text-softink">
+            CLARO demuestra cómo una interfaz clara y simplificada puede ayudar a los usuarios a
+            comprender mejor la relación entre su tiempo y su dinero. A través de un sistema de
+            tarjetas informativas y una navegación sencilla, la aplicación facilita el registro
+            de gastos y la organización de tareas en un mismo entorno.
+          </p>
+        </section>
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7">
+          <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p class="mb-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">
+                Prototipo interactivo
+              </p>
+              <h2 class="font-serif text-[2rem] leading-none tracking-[-0.03em]">
+                Ver prototipo en Figma
+              </h2>
+            </div>
+
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full border border-ink px-6 py-3 text-sm font-semibold text-ink transition hover:bg-ink hover:text-cream"
+            >
+              Abrir prototipo
+            </a>
+          </div>
+        </section>
+
+        <div class="mt-8">
+          <a href="projects.html" class="inline-flex items-center gap-1 font-semibold text-ink">
+            Volver a proyectos <span>→</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
+  <footer class="pb-8 pt-6">
+    <div class="mx-auto flex w-[min(1160px,calc(100%-3rem))] flex-col gap-4 border-t border-black/10 pt-5 text-[0.94rem] text-muted md:flex-row md:items-center md:justify-between">
       <p>© 2026 Sara Alcaraz</p>
       <a href="contact.html">Contacto</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("hidden");
+        navLinks.classList.toggle("flex");
+      });
+    }
+  </script>
 </body>
 </html>
