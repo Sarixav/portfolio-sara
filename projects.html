@@ -4,12 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Proyectos | Sara Alcaraz</title>
-  <meta name="description" content="Selección de proyectos de UX/UI y diseño de producto de Sara Alcaraz." />
+  <meta
+    name="description"
+    content="Selección de proyectos de UX/UI y diseño de producto de Sara Alcaraz."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
     rel="stylesheet"
   />
 
@@ -19,17 +22,24 @@
       theme: {
         extend: {
           colors: {
-            cream: "#f7f4ef",
-            paper: "#fbf9f5",
-            surface: "#f2ede6",
-            ink: "#111111",
-            softink: "#4d4742",
-            muted: "#7a736c",
-            matcha: "#8d9784"
+            base: "#0b0b0c",
+            panel: "#111214",
+            softpanel: "#17181b",
+            line: "rgba(255,255,255,0.08)",
+            text: "#f5f5f3",
+            muted: "#a1a1aa",
+            dim: "#71717a",
+            accent: "#22D3C5"
           },
           fontFamily: {
-            serif: ["Cormorant Garamond", "serif"],
-            sans: ["Inter", "sans-serif"]
+            sans: ["Manrope", "sans-serif"],
+            serif: ["Instrument Serif", "serif"]
+          },
+          boxShadow: {
+            glow: "0 0 0 1px rgba(255,255,255,0.05), 0 30px 80px rgba(0,0,0,0.45)"
+          },
+          letterSpacing: {
+            tightest: "-0.05em"
           }
         }
       }
@@ -37,126 +47,381 @@
   </script>
 </head>
 
-<body class="bg-cream font-sans text-ink antialiased">
-  <header class="sticky top-0 z-50 border-b border-black/5 bg-cream/95 backdrop-blur-sm">
-    <div class="mx-auto flex min-h-[84px] w-[min(1160px,calc(100%-3rem))] items-center justify-between relative">
-      <a href="index.html" class="font-serif text-[2rem] font-semibold tracking-[0.02em]">
-        Sara Alcaraz
-      </a>
+<body class="bg-base font-sans text-text antialiased selection:bg-accent selection:text-black">
+  <div class="relative min-h-screen overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:56px_56px]"></div>
+<div class="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(circle_at_top,rgba(34,211,197,0.22),transparent_45%)]"></div>
 
-      <button class="md:hidden" id="menuToggle" aria-label="Abrir menú">
-        <span class="my-1.5 block h-[1.5px] w-[26px] bg-ink"></span>
-        <span class="my-1.5 block h-[1.5px] w-[26px] bg-ink"></span>
-      </button>
+    <header class="sticky top-0 z-50 border-b border-white/5 bg-base/80 backdrop-blur-xl">
+      <div class="mx-auto flex min-h-[82px] w-[min(1280px,calc(100%-2rem))] items-center justify-between">
+        <a href="index.html" class="text-[1rem] font-semibold tracking-[-0.03em] text-text sm:text-[1.05rem]">
+          Sara Alcaraz
+        </a>
 
-      <nav
-        id="navLinks"
-        class="absolute left-0 right-0 top-[84px] hidden flex-col gap-4 border-t border-black/5 bg-paper px-5 py-5 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
-      >
-        <a href="index.html" class="text-sm font-medium text-softink hover:text-ink">Inicio</a>
-        <a href="projects.html" class="text-sm font-medium text-ink">Proyectos</a>
-        <a href="about.html" class="text-sm font-medium text-softink hover:text-ink">Sobre mí</a>
-        <a href="contact.html" class="text-sm font-medium text-softink hover:text-ink">Contacto</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="pt-5">
-    <section class="py-24 md:py-28">
-      <div class="mx-auto w-[min(1160px,calc(100%-3rem))]">
-        <div class="mb-10 max-w-[760px]">
-          <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
-            Work
-          </p>
-          <h1 class="mb-4 font-serif text-[3.2rem] leading-[0.94] tracking-[-0.03em] sm:text-[4.5rem]">
-            Proyectos
-          </h1>
-          <p class="text-base leading-8 text-softink">
-            Casos de estudio, exploraciones de interfaz y proyectos centrados en
-            organización, claridad visual y diseño digital.
-          </p>
-        </div>
-
-        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          <article class="overflow-hidden rounded-xl border border-black/10  transition hover:-translate-y-1 hover:border-black/15">
-            <div class="relative bg-transparent h-[300px] ">
-              <div>
-            <img
-              src="images/claro-hero.png"
-              alt="Hero del proyecto CLARO con pantallas de la app"
-              class="block h-auto w-full"
-            />
+        <button
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] md:hidden"
+          id="menuToggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <div class="flex flex-col gap-[5px]">
+            <span class="block h-[1.5px] w-5 bg-white"></span>
+            <span class="block h-[1.5px] w-5 bg-white"></span>
           </div>
-            </div>
-            <div class="p-6 ">
-                
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
-                UX/UI · App móvil
-              </p>
-              <h3 class="font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
-                CLARO
-              </h3>
-              <p class="mt-3 text-base leading-8 text-softink">
-                App para unir organización personal y finanzas en una experiencia visual y calmada.
-              </p>
-              <a href="project-claro.html" class="mt-4 inline-flex items-center gap-1 font-semibold text-ink">
-                Ver case study <span>→</span>
-              </a>
-            </div>
-          </article>
+        </button>
 
-          <article class="overflow-hidden rounded-xl border border-black/10 bg-paper transition hover:-translate-y-1 hover:border-black/15">
-            <div class="relative h-[300px] border-b border-black/10 bg-surface">
-              <div class="absolute inset-6 rounded-lg border border-black/5 bg-white/45"></div>
-              <div class="absolute inset-x-10 bottom-11 top-11 rounded-lg border border-black/5 bg-[#fcfaf7]"></div>
-            </div>
-            <div class="p-6">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
-                Brand + Web Concept
-              </p>
-              <h3 class="font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
-                Portfolio Personal
-              </h3>
-              <p class="mt-3 text-base leading-8 text-softink">
-                Exploración estética de marca personal, estructura editorial y narrativa profesional.
-              </p>
-              <a href="#" class="mt-4 inline-flex items-center gap-1 font-semibold text-ink">
-                Próximamente <span>→</span>
-              </a>
-            </div>
-          </article>
+        <nav
+          id="navLinks"
+          class="absolute left-0 right-0 top-[82px] hidden flex-col gap-5 border-t border-white/5 bg-[#0e0e10] px-6 py-6 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
+        >
+          <a href="index.html" class="text-[0.95rem] font-medium text-muted transition hover:text-white">Inicio</a>
+          <a href="projects.html" class="text-[0.95rem] font-medium text-white">Proyectos</a>
+          <a href="about.html" class="text-[0.95rem] font-medium text-muted transition hover:text-white">Sobre mí</a>
+          <a href="contact.html" class="text-[0.95rem] font-medium text-muted transition hover:text-white">Contacto</a>
+        </nav>
+      </div>
+    </header>
 
-          <article class="overflow-hidden rounded-xl border border-black/10 bg-paper transition hover:-translate-y-1 hover:border-black/15">
-            <div class="relative h-[300px] border-b border-black/10 bg-surface">
-              <div class="absolute inset-6 rounded-lg border border-black/5 bg-white/45"></div>
-              <div class="absolute inset-9 rounded-lg border border-black/5 bg-[#fcfaf7]"></div>
-            </div>
-            <div class="p-6">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
-                Dashboard Concept
+    <main>
+      <!-- HERO -->
+      <section class="relative">
+        <div class="mx-auto w-[min(1280px,calc(100%-2rem))] py-10 sm:py-14 lg:py-20">
+          <div class="grid gap-10 lg:grid-cols-12 lg:gap-8">
+            <div class="lg:col-span-7">
+              <div class="mb-8 flex flex-wrap items-center gap-3">
+                <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-muted">
+                  <span class="h-2 w-2 rounded-full bg-accent"></span>
+                  Selected Work
+                </span>
+                <span class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
+                  UX/UI · Producto digital · Visual design
+                </span>
+              </div>
+
+              <h1 class="max-w-[980px] text-[3.5rem] font-semibold leading-[0.9] tracking-tightest text-white sm:text-[5rem] lg:text-[7rem]">
+                Proyectos
+                <span class="font-serif font-normal italic text-white/92">seleccionados</span>
+                con foco en claridad, estructura y producto digital
+              </h1>
+
+              <p class="mt-8 max-w-[760px] text-[1.05rem] leading-8 text-muted sm:text-[1.12rem]">
+                Casos de estudio, exploraciones de interfaz y proyectos pensados para mostrar proceso,
+                criterio visual y capacidad para construir experiencias digitales actuales, comprensibles
+                y bien resueltas.
               </p>
-              <h3 class="font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
-                Panel de Gestión
-              </h3>
-              <p class="mt-3 text-base leading-8 text-softink">
-                Concepto de dashboard limpio con foco en jerarquía, datos y facilidad de lectura.
-              </p>
-              <a href="#" class="mt-4 inline-flex items-center gap-1 font-semibold text-ink">
-                Próximamente <span>→</span>
-              </a>
             </div>
-          </article>
+
+            <div class="lg:col-span-5 lg:pt-2">
+              <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+                <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5">
+                  <p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">Enfoque</p>
+                  <p class="mt-3 text-[0.98rem] leading-7 text-white/88">
+                    UX/UI, producto digital y sistemas visuales claros.
+                  </p>
+                </div>
+
+                <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5">
+                  <p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">Objetivo</p>
+                  <p class="mt-3 text-[0.98rem] leading-7 text-white/88">
+                    Presentar proyectos con nivel visual y narrativa profesional.
+                  </p>
+                </div>
+
+                <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5">
+                  <p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">Estado</p>
+                  <p class="mt-3 text-[0.98rem] leading-7 text-white/88">
+                    Portfolio en construcción con piezas seleccionadas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-14 border-t border-white/8 pt-8">
+            <div class="grid gap-6 lg:grid-cols-12 lg:items-end">
+              <div class="lg:col-span-4">
+                <p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
+                  Proyecto destacado
+                </p>
+                <h2 class="mt-4 text-[2.3rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
+                  CLARO
+                </h2>
+                <p class="mt-4 max-w-[420px] text-[1rem] leading-8 text-muted">
+                  Una app conceptual para organizar dinero y vida diaria desde una experiencia
+                  más visual, calmada y comprensible.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+                  <span class="rounded-full border border-white/10 px-3 py-1.5 text-[0.76rem] text-muted">UX/UI Design</span>
+                  <span class="rounded-full border border-white/10 px-3 py-1.5 text-[0.76rem] text-muted">Mobile App</span>
+                  <span class="rounded-full border border-white/10 px-3 py-1.5 text-[0.76rem] text-muted">Case Study</span>
+                </div>
+
+                <a
+                  href="project-claro.html"
+                  class="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-semibold text-white transition hover:text-accent"
+                >
+                  Explorar proyecto
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+
+              <div class="lg:col-span-8">
+                <article class="overflow-hidden rounded-[34px] border border-white/10 bg-panel shadow-glow">
+                  <div class="flex items-center justify-between border-b border-white/8 px-5 py-4 sm:px-6">
+                    <div class="flex items-center gap-2">
+                      <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
+                      <span class="h-2.5 w-2.5 rounded-full bg-white/12"></span>
+                      <span class="h-2.5 w-2.5 rounded-full bg-accent"></span>
+                    </div>
+                    <span class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
+                      Featured work
+                    </span>
+                  </div>
+
+                  <div class="bg-[linear-gradient(180deg,#151619_0%,#0f1012_100%)] p-4 sm:p-6">
+                    <div class="overflow-hidden rounded-[24px] border border-white/8 bg-[#0c0d0f]">
+                      <img
+                        src="images/claro-hero.png"
+                        alt="Hero del proyecto CLARO con pantallas de la app"
+                        class="block h-auto w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS GRID -->
+      <section class="py-8 sm:py-10 lg:py-14">
+        <div class="mx-auto w-[min(1280px,calc(100%-2rem))]">
+          <div class="mb-10 grid gap-6 border-t border-white/8 pt-8 lg:grid-cols-12 lg:items-end">
+            <div class="lg:col-span-5">
+              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
+                Work archive
+              </p>
+              <h2 class="max-w-[640px] text-[2.6rem] font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-[4.1rem]">
+                Una colección breve,
+                fuerte y coherente
+              </h2>
+            </div>
+
+            <div class="lg:col-span-7 lg:pl-10">
+              <p class="max-w-[680px] text-[1rem] leading-8 text-muted">
+                Cada proyecto está planteado para reforzar una parte distinta de mi perfil:
+                case study principal, construcción de marca personal y exploración visual orientada a producto.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid gap-5 lg:grid-cols-12">
+            <!-- CLARO -->
+            <article class="group overflow-hidden rounded-[30px] border border-white/10 bg-panel transition hover:border-white/15 lg:col-span-8">
+              <div class="border-b border-white/8 px-5 py-4 sm:px-6">
+                <div class="flex items-center justify-between gap-4">
+                  <p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
+                    UX/UI · App móvil · Proyecto principal
+                  </p>
+                  <span class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">01</span>
+                </div>
+              </div>
+
+              <div class="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
+                <div class="bg-[linear-gradient(180deg,#141519_0%,#0f1012_100%)] p-4 sm:p-6">
+                  <div class="overflow-hidden rounded-[24px] border border-white/8 bg-black">
+                    <img
+                      src="images/claro-hero.png"
+                      alt="Hero del proyecto CLARO con pantallas de la app"
+                      class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                </div>
+
+                <div class="flex flex-col justify-between p-6 sm:p-7">
+                  <div>
+                    <h3 class="text-[2rem] font-semibold tracking-[-0.04em] text-white sm:text-[2.35rem]">
+                      CLARO
+                    </h3>
+                    <p class="mt-4 text-[1rem] leading-8 text-muted">
+                      App para unir organización personal y finanzas en una experiencia visual,
+                      calmada y fácil de entender.
+                    </p>
+                  </div>
+
+                  <a
+                    href="project-claro.html"
+                    class="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-semibold text-white transition hover:text-accent"
+                  >
+                    Ver case study
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- PORTFOLIO PERSONAL -->
+            <article class="group overflow-hidden rounded-[30px] border border-white/10 bg-panel transition hover:border-white/15 lg:col-span-4">
+              <div class="border-b border-white/8 px-5 py-4 sm:px-6">
+                <div class="flex items-center justify-between gap-4">
+                  <p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
+                    Brand + Web Concept
+                  </p>
+                  <span class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">02</span>
+                </div>
+              </div>
+
+              <div class="flex min-h-[100%] flex-col">
+                <div class="relative min-h-[300px] bg-[linear-gradient(180deg,#151619_0%,#101114_100%)] p-5">
+                  <div class="absolute inset-5 rounded-[24px] border border-white/8 bg-[#0f1013]"></div>
+                  <div class="absolute inset-x-10 top-12 bottom-16 rounded-[18px] border border-white/10 bg-[#17191d]"></div>
+                  <div class="absolute inset-x-16 top-20 bottom-24 rounded-[14px] border border-accent/20 bg-[#0b0b0c]"></div>
+                </div>
+
+                <div class="flex flex-1 flex-col justify-between p-6 sm:p-7">
+                  <div>
+                    <h3 class="text-[1.8rem] font-semibold tracking-[-0.04em] text-white">
+                      Portfolio Personal
+                    </h3>
+                    <p class="mt-4 text-[1rem] leading-8 text-muted">
+                      Exploración estética de marca personal, estructura editorial y narrativa profesional.
+                    </p>
+                  </div>
+
+                  <span class="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-semibold text-dim">
+                    Próximamente
+                    <span aria-hidden="true">·</span>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- DASHBOARD -->
+            <article class="group overflow-hidden rounded-[30px] border border-white/10 bg-panel transition hover:border-white/15 lg:col-span-5">
+              <div class="border-b border-white/8 px-5 py-4 sm:px-6">
+                <div class="flex items-center justify-between gap-4">
+                  <p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
+                    Dashboard Concept
+                  </p>
+                  <span class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">03</span>
+                </div>
+              </div>
+
+              <div class="flex min-h-[100%] flex-col">
+                <div class="relative min-h-[300px] bg-[linear-gradient(180deg,#141519_0%,#101114_100%)] p-5">
+                  <div class="absolute inset-5 rounded-[24px] border border-white/8 bg-[#111317]"></div>
+                  <div class="absolute inset-8 rounded-[20px] border border-white/8 bg-[#0c0d10]"></div>
+                  <div class="absolute left-10 right-10 top-12 h-10 rounded-full border border-accent/20 bg-white/[0.02]"></div>
+                  <div class="absolute bottom-10 left-10 right-10 top-28 rounded-[18px] border border-white/8 bg-[#17191d]"></div>
+                </div>
+
+                <div class="flex flex-1 flex-col justify-between p-6 sm:p-7">
+                  <div>
+                    <h3 class="text-[1.8rem] font-semibold tracking-[-0.04em] text-white">
+                      Panel de Gestión
+                    </h3>
+                    <p class="mt-4 text-[1rem] leading-8 text-muted">
+                      Concepto de dashboard limpio con foco en jerarquía, datos y facilidad de lectura.
+                    </p>
+                  </div>
+
+                  <span class="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-semibold text-dim">
+                    Próximamente
+                    <span aria-hidden="true">·</span>
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <!-- EXTRA BLOCK -->
+            <article class="group overflow-hidden rounded-[30px] border border-white/10 bg-panel transition hover:border-white/15 lg:col-span-7">
+              <div class="border-b border-white/8 px-5 py-4 sm:px-6">
+                <div class="flex items-center justify-between gap-4">
+                  <p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
+                    Portfolio direction
+                  </p>
+                  <span class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">04</span>
+                </div>
+              </div>
+
+              <div class="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
+                <div class="relative min-h-[300px] bg-[linear-gradient(180deg,#151619_0%,#101114_100%)] p-5">
+                  <div class="absolute inset-5 rounded-[24px] border border-white/8 bg-[#0f1013]"></div>
+                  <div class="absolute left-8 top-10 h-[68%] w-[38%] rounded-[18px] border border-white/10 bg-[#191b20]"></div>
+                  <div class="absolute right-8 top-14 h-[56%] w-[42%] rounded-[18px] border border-accent/15 bg-[#0b0b0c]"></div>
+                </div>
+
+                <div class="flex flex-col justify-between p-6 sm:p-7">
+                  <div>
+                    <h3 class="text-[1.95rem] font-semibold tracking-[-0.04em] text-white">
+                      En construcción
+                    </h3>
+                    <p class="mt-4 max-w-[42rem] text-[1rem] leading-8 text-muted">
+                      Esta selección irá creciendo con nuevos case studies y piezas visuales que refuercen mi perfil como diseñadora de producto y UX/UI.
+                    </p>
+                  </div>
+
+                  <a
+                    href="contact.html"
+                    class="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-semibold text-white transition hover:text-accent"
+                  >
+                    Contactar
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="pb-16 pt-2 sm:pb-20 lg:pb-24">
+        <div class="mx-auto w-[min(1280px,calc(100%-2rem))]">
+          <div class="overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(135deg,#141519_0%,#0d0e10_100%)] p-8 sm:p-10 lg:p-12">
+            <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+              <div>
+                <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
+                  Looking for new opportunities
+                </p>
+                <h2 class="max-w-[780px] text-[2.6rem] font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-[4.2rem]">
+                  Busco mi primera oportunidad en producto digital y UX/UI
+                </h2>
+                <p class="mt-5 max-w-[760px] text-[1rem] leading-8 text-muted">
+                  Estoy interesada en formar parte de un equipo donde pueda seguir creciendo,
+                  aportar sensibilidad visual y participar en la construcción de productos más claros,
+                  útiles y bien diseñados.
+                </p>
+              </div>
+
+              <div>
+                <a
+                  href="contact.html"
+                  class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-[0.92rem] font-semibold text-black transition hover:bg-white"
+                >
+                  Hablemos
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pb-8 pt-4">
+      <div class="mx-auto flex w-[min(1280px,calc(100%-2rem))] flex-col gap-4 border-t border-white/8 pt-5 text-[0.92rem] text-dim md:flex-row md:items-center md:justify-between">
+        <p>© 2026 Sara Alcaraz</p>
+        <div class="flex items-center gap-5">
+          <a href="projects.html" class="transition hover:text-white">Proyectos</a>
+          <a href="about.html" class="transition hover:text-white">Sobre mí</a>
+          <a href="contact.html" class="transition hover:text-white">Contacto</a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="pb-8 pt-6">
-    <div class="mx-auto flex w-[min(1160px,calc(100%-3rem))] flex-col gap-4 border-t border-black/10 pt-5 text-[0.94rem] text-muted md:flex-row md:items-center md:justify-between">
-      <p>© 2026 Sara Alcaraz</p>
-      <a href="contact.html">Contacto</a>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
     const menuToggle = document.getElementById("menuToggle");
@@ -166,6 +431,9 @@
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("hidden");
         navLinks.classList.toggle("flex");
+
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
       });
     }
   </script>
