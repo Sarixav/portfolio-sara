@@ -205,74 +205,198 @@
           </section>
         </div>
 
-        <section class="rounded-xl border border-black/10 bg-paper p-7">
-          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
-                Arquitectura de la información
-              </h2>
-              <p class="text-base leading-8 text-softink">
-                La estructura principal de la aplicación se organiza en cinco secciones
-                accesibles mediante navegación inferior, lo que facilita una comprensión
-                rápida del producto y permite acceder a las funciones clave sin fricción.
-              </p>
-            </div>
+    <section class="rounded-xl border border-black/10 bg-paper p-7">
+  <div class="max-w-[760px]">
+    <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+      Arquitectura de la información
+    </h2>
 
-            <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium">Inicio</div>
-              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium">Dinero</div>
-              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium">Tareas</div>
-              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium">Configuración</div>
-              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium">Perfil</div>
-            </div>
+    <p class="text-base leading-8 text-softink">
+      La aplicación se organiza en cinco secciones principales accesibles desde la
+      navegación inferior. Esta estructura permite comprender rápidamente el producto
+      y acceder de forma clara a las funciones más importantes.
+    </p>
+  </div>
+
+  <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+    <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium text-ink">
+      Inicio
+    </div>
+    <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium text-ink">
+      Dinero
+    </div>
+    <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium text-ink">
+      Tareas
+    </div>
+    <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium text-ink">
+      Configuración
+    </div>
+    <div class="rounded-lg border border-black/10 bg-cream p-4 text-center font-medium text-ink">
+      Perfil
+    </div>
+  </div>
+</section>
+
+
+        <section class="rounded-xl border border-black/10 bg-paper p-7 md:p-8">
+  <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <div class="max-w-[560px]">
+      <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+        Flujo principal
+      </h2>
+
+      <p class="text-base leading-8 text-softink">
+        Uno de los flujos principales de CLARO es el registro de un gasto. Este recorrido
+        se diseñó para reducir la fricción y permitir que el usuario complete la acción
+        en pocos pasos, de forma clara, rápida y comprensible.
+      </p>
+
+      <p class="mt-4 text-sm leading-7 text-muted">
+        El objetivo es que registrar un gasto no interrumpa la experiencia, sino que se
+        integre de manera natural dentro de la sección de dinero.
+      </p>
+    </div>
+
+    <div class="rounded-2xl border border-black/10 bg-cream p-5 md:p-6">
+      <p class="mb-5 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">
+        Happy path
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <div class="min-w-[120px] rounded-xl border border-black/10 bg-paper px-4 py-5 text-center">
+          <span class="mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted">Paso 1</span>
+          <p class="text-sm font-medium text-ink">Inicio</p>
+        </div>
+
+        <span class="text-muted">→</span>
+
+        <div class="min-w-[120px] rounded-xl border border-black/10 bg-paper px-4 py-5 text-center">
+          <span class="mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted">Paso 2</span>
+          <p class="text-sm font-medium text-ink">Mi dinero</p>
+        </div>
+
+        <span class="text-muted">→</span>
+
+        <div class="min-w-[120px] rounded-xl border border-black/10 bg-paper px-4 py-5 text-center">
+          <span class="mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted">Paso 3</span>
+          <p class="text-sm font-medium text-ink">Añadir gasto</p>
+        </div>
+
+        <span class="text-muted">→</span>
+
+        <div class="min-w-[120px] rounded-xl border border-black/10 bg-paper px-4 py-5 text-center">
+          <span class="mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted">Paso 4</span>
+          <p class="text-sm font-medium text-ink">Completar datos</p>
+        </div>
+
+        <span class="text-muted">→</span>
+
+        <div class="min-w-[120px] rounded-xl border border-black/10 bg-paper px-4 py-5 text-center">
+          <span class="mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted">Paso 5</span>
+          <p class="text-sm font-medium text-ink">Confirmación</p>
+        </div>
+      </div>
+
+      <div class="mt-5 rounded-xl border border-black/10 bg-paper px-4 py-4">
+        <p class="text-sm leading-7 text-softink">
+          El resultado final permite registrar un gasto rápidamente y entender de forma inmediata
+          cómo afecta al dinero disponible del mes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rounded-xl border border-black/10 bg-paper p-7 md:p-8">
+  <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <div class="max-w-[560px]">
+      <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
+        Evolución de wireframes
+      </h2>
+
+      <p class="text-base leading-8 text-softink">
+        El proceso de diseño comenzó con bocetos de baja fidelidad realizados a mano,
+        que permitieron explorar rápidamente la estructura de las pantallas principales
+        y la organización general de la interfaz.
+      </p>
+
+      <p class="mt-4 text-base leading-8 text-softink">
+        A partir de esas primeras exploraciones, se desarrollaron wireframes digitales
+        para definir con mayor precisión la jerarquía visual, la disposición de los
+        componentes y la lógica de navegación. Finalmente, este proceso dio lugar a un
+        prototipo de fidelidad media, donde la estructura comenzó a sentirse más cercana
+        a la experiencia final de la aplicación.
+      </p>
+
+      <p class="mt-4 text-sm leading-7 text-muted">
+        Este recorrido permitió iterar la interfaz de forma progresiva, validando primero
+        la estructura y después el comportamiento visual de las pantallas.
+      </p>
+    </div>
+
+    <div class="rounded-2xl border border-black/10 bg-cream p-5 md:p-6">
+      <p class="mb-5 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">
+        Proceso visual
+      </p>
+
+      <div class="flex flex-wrap items-start justify-center gap-4 md:gap-5">
+        <div class="flex flex-col items-center text-center">
+          <div class="flex min-h-[290px] items-center justify-center">
+            <img
+              src="images/boceto_inicio.png"
+              alt="Boceto a mano de la pantalla de inicio de CLARO"
+              class="w-[120px]"
+            />
           </div>
-        </section>
+          <span class="mt-3 block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted">
+            Fase 1
+          </span>
+          <p class="mt-1 text-sm font-medium text-ink">Boceto a mano</p>
+        </div>
 
-        <section class="rounded-xl border border-black/10 bg-paper p-7">
-          <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-            <div>
-              <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
-                Flujo principal
-              </h2>
-              <p class="text-base leading-8 text-softink">
-                Uno de los flujos principales de la aplicación es el registro de un gasto.
-                Este flujo se diseñó para reducir el número de pasos necesarios y facilitar
-                una interacción rápida.
-              </p>
-            </div>
+        <span class="mt-[130px] hidden text-muted md:block">→</span>
 
-            <div class="grid gap-3 sm:grid-cols-5">
-              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center text-sm font-medium">Inicio</div>
-              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center text-sm font-medium">Dinero</div>
-              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center text-sm font-medium">Añadir gasto</div>
-              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center text-sm font-medium">Completar datos</div>
-              <div class="rounded-lg border border-black/10 bg-cream p-4 text-center text-sm font-medium">Confirmación</div>
-            </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="flex min-h-[290px] items-center justify-center">
+            <img
+              src="images/wireframe_inicio.png"
+              alt="Wireframe digital de la pantalla de inicio de CLARO"
+              class="w-[120px]"
+            />
           </div>
-        </section>
+          <span class="mt-3 block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted">
+            Fase 2
+          </span>
+          <p class="mt-1 text-sm font-medium text-ink">Wireframe digital</p>
+        </div>
 
-        <section class="rounded-xl border border-black/10 bg-paper p-7">
-          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <h2 class="mb-3 font-serif text-[1.9rem] leading-none tracking-[-0.03em]">
-                Wireframes
-              </h2>
-              <p class="text-base leading-8 text-softink">
-                El proceso de diseño comenzó con bocetos de baja fidelidad realizados a mano,
-                que permitieron explorar la estructura de las pantallas principales y la
-                organización de los elementos de la interfaz. Posteriormente se desarrollaron
-                wireframes digitales para definir con mayor precisión la jerarquía visual y
-                los componentes.
-              </p>
-            </div>
+        <span class="mt-[130px] hidden text-muted md:block">→</span>
 
-            <div class="grid gap-4 sm:grid-cols-3">
-              <img src="images/claro-sketch-1.jpg" alt="Boceto a mano de CLARO" class="rounded-lg border border-black/10 object-cover" />
-              <img src="images/claro-wireframe-1.jpg" alt="Wireframe digital de CLARO" class="rounded-lg border border-black/10 object-cover" />
-              <img src="images/claro-midfi-1.jpg" alt="Pantalla media fidelidad de CLARO" class="rounded-lg border border-black/10 object-cover" />
-            </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="flex min-h-[290px] items-center justify-center">
+            <img
+              src="images/inicio.png"
+              alt="Pantalla de inicio en media fidelidad de CLARO"
+              class="w-[120px]"
+            />
           </div>
-        </section>
+          <span class="mt-3 block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted">
+            Fase 3
+          </span>
+          <p class="mt-1 text-sm font-medium text-ink">Media fidelidad</p>
+        </div>
+      </div>
+
+      <div class="mt-6 rounded-xl border border-black/10 bg-paper px-4 py-4">
+        <p class="text-sm leading-7 text-softink">
+          La transición de baja fidelidad a media fidelidad permitió refinar la estructura,
+          mejorar la jerarquía visual y acercar la propuesta a una interfaz funcional y
+          coherente con el sistema de diseño de la app.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
         <section class="rounded-xl border border-black/10 bg-paper p-7">
           <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
@@ -463,27 +587,27 @@
           </p>
         </section>
 
-        <section class="rounded-xl border border-black/10 bg-paper p-7">
-          <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p class="mb-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">
-                Prototipo interactivo
-              </p>
-              <h2 class="font-serif text-[2rem] leading-none tracking-[-0.03em]">
-                Ver prototipo en Figma
-              </h2>
-            </div>
+       <section class="rounded-xl border border-black/10 bg-paper p-7">
+  <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+    <div>
+      <p class="mb-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-muted">
+        Prototipo interactivo
+      </p>
+      <h2 class="font-serif text-[2rem] leading-none tracking-[-0.03em]">
+        Ver prototipo en Figma
+      </h2>
+    </div>
 
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center rounded-full border border-ink px-6 py-3 text-sm font-semibold text-ink transition hover:bg-ink hover:text-cream"
-            >
-              Abrir prototipo
-            </a>
-          </div>
-        </section>
+    <a
+      href="https://www.figma.com/proto/dQrP956PnxR0erdeM4OIwh/CLAR%C3%93?page-id=0%3A1&node-id=1786-954&viewport=4905%2C985%2C0.46&t=V2tJDfkeXtXcYqGg-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1786%3A954&show-proto-sidebar=1"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center justify-center rounded-full border border-ink px-6 py-3 text-sm font-semibold text-ink transition hover:bg-ink hover:text-cream"
+    >
+      Abrir prototipo
+    </a>
+  </div>
+</section>
 
         <div class="mt-8">
           <a href="projects.html" class="inline-flex items-center gap-1 font-semibold text-ink">
