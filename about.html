@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Sobre mí | Sara Alcaraz</title>
   <meta
     name="description"
-    content="Sobre Sara Alcaraz, diseñadora UX/UI enfocada en producto digital, claridad visual y experiencia de usuario."
+    content="Sobre Sara Alcaraz, Product & UX/UI Designer enfocada en claridad visual, producto digital y experiencia de usuario."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,24 +23,25 @@
       theme: {
         extend: {
           colors: {
-            base: "#0b0b0c",
-            panel: "#111214",
-            softpanel: "#17181b",
-            line: "rgba(255,255,255,0.08)",
-            text: "#f5f5f3",
-            muted: "#a1a1aa",
-            dim: "#71717a",
-            accent: "#22D3C5"
+            ink: "#101828",
+            muted: "#667085",
+            soft: "#F7FCFB",
+            cream: "#FAFAF8",
+            line: "#E2EFEC",
+            accent: "#2F8F83",
+            accentDark: "#25766C",
+            accentSoft: "#E8F3F2",
+            blush: "#F4E7E4",
+            card: "#FFFFFF"
           },
           fontFamily: {
             sans: ["Manrope", "sans-serif"],
             serif: ["Instrument Serif", "serif"]
           },
           boxShadow: {
-            glow: "0 0 0 1px rgba(255,255,255,0.05), 0 30px 80px rgba(0,0,0,0.45)"
-          },
-          letterSpacing: {
-            tightest: "-0.05em"
+            soft: "0 24px 70px rgba(17, 24, 39, 0.08)",
+            luxe: "0 40px 120px rgba(17, 24, 39, 0.12)",
+            glow: "0 36px 100px rgba(47,143,131,0.22)"
           }
         }
       }
@@ -47,331 +49,317 @@
   </script>
 </head>
 
-<body class="bg-base font-sans text-text antialiased selection:bg-accent selection:text-black">
-  <div class="relative min-h-screen overflow-hidden">
-    <div class="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:56px_56px]"></div>
-<div class="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(circle_at_top,rgba(34,211,197,0.22),transparent_45%)]"></div>
-    <header class="sticky top-0 z-50 border-b border-white/5 bg-base/80 backdrop-blur-xl">
-      <div class="mx-auto flex min-h-[82px] w-[min(1280px,calc(100%-2rem))] items-center justify-between">
-        <a href="index.html" class="text-[1rem] font-semibold tracking-[-0.03em] text-text sm:text-[1.05rem]">
-          Sara Alcaraz
-        </a>
+<body id="top" class="bg-soft font-sans text-ink antialiased selection:bg-accent selection:text-white">
+  <header class="sticky top-0 z-50 border-b border-line/80 bg-soft/85 backdrop-blur-xl">
+    <div class="mx-auto flex min-h-[78px] w-[min(1440px,calc(100%-2rem))] items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 font-extrabold tracking-[-0.04em]">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-accentSoft text-sm font-extrabold text-accent">
+          SA
+        </span>
+        <span>Sara Alcaraz</span>
+      </a>
 
-        <button
-          class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] md:hidden"
-          id="menuToggle"
-          aria-label="Abrir menú"
-          aria-expanded="false"
-          aria-controls="navLinks"
-        >
-          <div class="flex flex-col gap-[5px]">
-            <span class="block h-[1.5px] w-5 bg-white"></span>
-            <span class="block h-[1.5px] w-5 bg-white"></span>
-          </div>
-        </button>
-
-        <nav
-          id="navLinks"
-          class="absolute left-0 right-0 top-[82px] hidden flex-col gap-5 border-t border-white/5 bg-[#0e0e10] px-6 py-6 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
-        >
-          <a href="index.html" class="text-[0.95rem] font-medium text-muted transition hover:text-white">Inicio</a>
-          <a href="projects.html" class="text-[0.95rem] font-medium text-muted transition hover:text-white">Proyectos</a>
-          <a href="about.html" class="text-[0.95rem] font-medium text-white">Sobre mí</a>
-          <a href="contact.html" class="text-[0.95rem] font-medium text-muted transition hover:text-white">Contacto</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <!-- HERO -->
-    <section class="relative">
-  <div class="mx-auto w-[min(1280px,calc(100%-2rem))] py-10 sm:py-14 lg:py-20">
-    <div class="grid gap-10 lg:grid-cols-12 lg:gap-8 lg:items-start">
-      <div class="lg:col-span-5">
-        <div class="mb-8 flex flex-wrap items-center gap-3">
-          <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-muted">
-            <span class="h-2 w-2 rounded-full bg-accent"></span>
-            About
-          </span>
-          <span class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-            Product & UX/UI Designer
-          </span>
+      <button
+        id="menuToggle"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white md:hidden"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <div class="flex flex-col gap-[5px]">
+          <span class="block h-[1.5px] w-5 bg-ink"></span>
+          <span class="block h-[1.5px] w-5 bg-ink"></span>
         </div>
+      </button>
 
-        <h1 class="max-w-[760px] text-[3.4rem] font-semibold leading-[0.9] tracking-tightest text-white sm:text-[4.8rem] lg:text-[6.6rem]">
-          Diseño con
-          <span class="font-serif font-normal italic text-white/92">claridad</span>,
-          sensibilidad y visión de producto
-        </h1>
+      <nav
+        id="navLinks"
+        class="absolute left-0 right-0 top-[78px] hidden flex-col gap-5 border-b border-line bg-soft px-6 py-6 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
+      >
+        <a href="index.html" class="text-sm font-bold text-muted transition hover:text-ink">Inicio</a>
+        <a href="projects.html" class="text-sm font-bold text-muted transition hover:text-ink">Proyectos</a>
+        <a href="about.html" class="text-sm font-bold text-ink">Sobre mí</a>
+        <a href="contact.html" class="text-sm font-bold text-muted transition hover:text-ink">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-        <p class="mt-8 max-w-[620px] text-[1.05rem] leading-8 text-muted sm:text-[1.12rem]">
-          Soy Sara Alcaraz, diseñadora UX/UI enfocada en crear productos digitales útiles,
-          claros y visualmente cuidados.
-        </p>
+  <main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden border-b border-line/70">
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(47,143,131,0.20),transparent_34%),radial-gradient(circle_at_12%_72%,rgba(244,231,228,0.75),transparent_28%)]"></div>
 
-        <p class="mt-5 max-w-[620px] text-[1rem] leading-8 text-muted">
-          Me interesa especialmente diseñar experiencias que hagan la vida diaria más comprensible:
-          organización personal, finanzas, bienestar y herramientas digitales que reduzcan fricción.
-        </p>
-
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a
-            href="projects.html"
-            class="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-[0.92rem] font-semibold text-black transition hover:bg-accent"
-          >
-            Ver proyectos
-          </a>
-
-          <a
-            href="contact.html"
-            class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-[0.92rem] font-semibold text-white transition hover:bg-white/[0.06]"
-          >
-            Contacto
-          </a>
-        </div>
-      </div>
-
-      <div class="lg:col-span-7">
-        <article class="overflow-hidden rounded-[34px] border border-white/10 bg-panel shadow-glow">
-          <div class="flex items-center justify-between border-b border-white/8 px-5 py-4 sm:px-6">
-            <div class="flex items-center gap-2">
-              <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-white/12"></span>
-              <span class="h-2.5 w-2.5 rounded-full bg-accent"></span>
+      <div class="relative mx-auto w-[min(1440px,calc(100%-2rem))] py-14 sm:py-20 lg:py-24">
+        <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
+          <div class="lg:col-span-7">
+            <div class="mb-8 flex flex-wrap gap-3">
+              <span class="rounded-full border border-line bg-white/90 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-accent shadow-sm">
+                Sobre mí
+              </span>
+              <span class="rounded-full border border-line bg-white/80 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-muted shadow-sm">
+                Product & UX/UI Designer
+              </span>
             </div>
-            <span class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-              Personal Profile
-            </span>
+
+            <h1 class="max-w-5xl text-[4rem] font-extrabold leading-[0.88] tracking-[-0.08em] sm:text-[5.8rem] lg:text-[7rem]">
+              Diseño con claridad,
+              <span class="font-serif italic font-normal text-accent"> sensibilidad</span>
+              y visión de producto.
+            </h1>
+
+            <p class="mt-8 max-w-2xl text-lg leading-8 text-muted">
+              Soy Sara Alcaraz, diseñadora UX/UI en Madrid. Me interesa crear productos digitales claros, útiles y visualmente cuidados, especialmente cuando ayudan a ordenar información compleja y reducir fricción en la vida diaria.
+            </p>
+
+            <div class="mt-9 flex flex-wrap gap-3">
+              <a
+                href="projects.html"
+                class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-extrabold text-white shadow-glow transition hover:bg-accentDark"
+              >
+                Ver proyectos
+              </a>
+
+              <a
+                href="contact.html"
+                class="inline-flex min-h-12 items-center justify-center rounded-full border border-line bg-white px-6 py-3 text-sm font-extrabold text-ink transition hover:border-accent hover:text-accent"
+              >
+                Contacto
+              </a>
+            </div>
           </div>
 
-          <div class="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
-            <!-- BLOQUE FOTO -->
-            <div class="relative min-h-[420px] bg-[linear-gradient(180deg,#151619_0%,#0f1012_100%)] p-5 sm:min-h-[560px] sm:p-6">
-              <div class="absolute inset-5 rounded-[28px] border border-white/8 bg-[#0f1013]"></div>
+          <div class="lg:col-span-5">
+            <div class="relative mx-auto max-w-[520px]">
+              <div class="pointer-events-none absolute inset-0 rounded-full bg-accent opacity-20 blur-[120px]"></div>
 
-              <div class="absolute inset-x-[8%] top-[10%] bottom-[10%] rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_100%)]">
-                <div class="flex h-full flex-col items-center justify-center px-6 py-8 text-center">
+              <div class="relative overflow-hidden rounded-[42px] border border-line bg-white/80 p-5 shadow-luxe">
+                <div class="overflow-hidden rounded-[34px] bg-accentSoft">
                   <img
                     src="images/foto_perfil.png"
                     alt="Foto de perfil de Sara Alcaraz"
-                    class="w-full max-w-[340px] object-contain sm:max-w-[380px]"
+                    class="mx-auto h-[420px] w-auto object-contain sm:h-[520px]"
                   />
+                </div>
 
-                 <h2 class="mt-4 text-center text-[1.05rem] font-semibold tracking-[-0.03em] text-white sm:text-[1.25rem]">
-  Sara <span class="font-serif italic font-normal text-white/90">Alcaraz</span>
-</h2>
-
-                  <p class="mt-2 text-center text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-dim">
-                    Product & UX/UI Designer
+                <div class="mt-5 rounded-[28px] bg-soft p-5">
+                  <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-accent">
+                    Perfil
+                  </p>
+                  <h2 class="mt-3 text-2xl font-extrabold tracking-[-0.05em]">
+                    Diseñadora orientada a producto digital
+                  </h2>
+                  <p class="mt-3 text-sm leading-7 text-muted">
+                    UX/UI, criterio visual y sensibilidad por interfaces claras, humanas y bien estructuradas.
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <!-- BLOQUE TEXTO -->
-            <div class="flex flex-col justify-between p-6 sm:p-8">
-              <div>
-                <p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                  Perfil
-                </p>
-                <h2 class="mt-4 text-[2rem] font-semibold leading-[0.95] tracking-[-0.04em] text-white sm:text-[2.8rem]">
-                  Diseñadora orientada a producto digital
-                </h2>
-                <p class="mt-5 text-[1rem] leading-8 text-muted">
-                  Mi enfoque combina estructura UX, sensibilidad visual y una forma de trabajar
-                  centrada en claridad, utilidad y consistencia. Me interesa construir interfaces
-                  que se sientan actuales, comprensibles y bien pensadas.
-                </p>
-              </div>
+    <!-- APPROACH -->
+    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] py-16 sm:py-20">
+      <div class="grid gap-6 lg:grid-cols-12">
+        <article class="rounded-[40px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:col-span-7 lg:p-12">
+          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
+            Mi enfoque
+          </p>
 
-              <div class="mt-8 grid gap-3 sm:grid-cols-2">
-                <div class="rounded-[20px] border border-white/10 bg-white/[0.03] p-4">
-                  <p class="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-dim">Ubicación</p>
-                  <p class="mt-2 text-[0.98rem] font-medium text-white">Madrid</p>
-                </div>
-                <div class="rounded-[20px] border border-white/10 bg-white/[0.03] p-4">
-                  <p class="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-dim">Interés</p>
-                  <p class="mt-2 text-[0.98rem] font-medium text-white">UX/UI & Product Design</p>
-                </div>
-              </div>
+          <h2 class="mt-5 text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-6xl">
+            Diseño para hacer la información más comprensible.
+          </h2>
+
+          <p class="mt-6 max-w-3xl text-base leading-8 text-muted">
+            Me gusta trabajar desde una base estructural clara: entender el problema, ordenar la información, construir una interfaz coherente y dar forma a una experiencia visualmente sólida.
+          </p>
+
+          <p class="mt-5 max-w-3xl text-base leading-8 text-muted">
+            Para mí, la estética no es solo apariencia. Es una herramienta para guiar, jerarquizar y hacer que una experiencia resulte más fácil de usar.
+          </p>
+        </article>
+
+        <article class="rounded-[40px] bg-ink p-7 text-white shadow-luxe sm:p-10 lg:col-span-5 lg:p-12">
+          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
+            Principios
+          </p>
+
+          <h2 class="mt-5 text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-5xl">
+            Claridad antes que ruido.
+          </h2>
+
+          <div class="mt-8 space-y-3">
+            <div class="rounded-[24px] bg-white/8 p-5">
+              <p class="font-extrabold">Claridad antes que complejidad</p>
+            </div>
+
+            <div class="rounded-[24px] bg-white/8 p-5">
+              <p class="font-extrabold">La estética al servicio de la comprensión</p>
+            </div>
+
+            <div class="rounded-[24px] bg-white/8 p-5">
+              <p class="font-extrabold">Jerarquía visual bien resuelta</p>
+            </div>
+
+            <div class="rounded-[24px] bg-white/8 p-5">
+              <p class="font-extrabold">Experiencias simples, actuales y útiles</p>
             </div>
           </div>
         </article>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-      <!-- SKILLS / APPROACH -->
-      <section class="py-8 sm:py-10 lg:py-14">
-        <div class="mx-auto w-[min(1280px,calc(100%-2rem))]">
-          <div class="mb-10 grid gap-6 border-t border-white/8 pt-8 lg:grid-cols-12 lg:items-end">
-            <div class="lg:col-span-5">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                Skills & Approach
-              </p>
-              <h2 class="max-w-[640px] text-[2.6rem] font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-[4rem]">
-                Una forma de diseñar
-                centrada en claridad,
-                estructura y detalle
-              </h2>
+    <!-- SKILLS -->
+    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] pb-16 sm:pb-20">
+      <div class="rounded-[40px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
+        <div class="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+          <div>
+            <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
+              Skills & tools
+            </p>
+
+            <h2 class="mt-5 text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-6xl">
+              Qué aporto al proceso de diseño.
+            </h2>
+
+            <p class="mt-6 text-base leading-8 text-muted">
+              Combino investigación, estructura UX, diseño visual y prototipado para construir experiencias digitales claras y coherentes.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap gap-3">
+              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">UX Research</span>
+              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">UI Design</span>
+              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Wireframing</span>
+              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Prototyping</span>
+              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Design Systems</span>
+              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Product Thinking</span>
+              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Figma</span>
+              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Canva</span>
+              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">HTML/CSS</span>
+              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Tailwind</span>
             </div>
 
-            <div class="lg:col-span-7 lg:pl-10">
-              <p class="max-w-[700px] text-[1rem] leading-8 text-muted">
-                Me interesa trabajar en productos digitales donde la experiencia, el lenguaje visual
-                y la lógica de uso estén alineados. Busco diseñar interfaces que no solo se vean bien,
-                sino que ayuden a entender mejor la información y reduzcan fricción.
-              </p>
-            </div>
-          </div>
-
-          <div class="grid gap-5 lg:grid-cols-12">
-            <article class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-7 lg:col-span-7">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                Áreas principales
-              </p>
-              <h3 class="text-[2rem] font-semibold tracking-[-0.04em] text-white sm:text-[2.4rem]">
-                Qué aporto al proceso de diseño
-              </h3>
-
-              <div class="mt-8 flex flex-wrap gap-3">
-                <span class="rounded-full border border-white/10 px-4 py-2 text-[0.82rem] text-white/88">UX Research</span>
-                <span class="rounded-full border border-white/10 px-4 py-2 text-[0.82rem] text-white/88">UI Design</span>
-                <span class="rounded-full border border-white/10 px-4 py-2 text-[0.82rem] text-white/88">Wireframing</span>
-                <span class="rounded-full border border-white/10 px-4 py-2 text-[0.82rem] text-white/88">Prototyping</span>
-                <span class="rounded-full border border-white/10 px-4 py-2 text-[0.82rem] text-white/88">Design Systems</span>
-                <span class="rounded-full border border-white/10 px-4 py-2 text-[0.82rem] text-white/88">Product Thinking</span>
-              </div>
-
-              <p class="mt-8 max-w-[760px] text-[1rem] leading-8 text-muted">
-                Me gusta trabajar desde una base estructural clara: entender el problema, ordenar la información,
-                construir una interfaz coherente y dar forma a una experiencia visualmente sólida.
-              </p>
-            </article>
-
-            <article class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-7 lg:col-span-5">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                En qué me fijo
-              </p>
-              <h3 class="text-[2rem] font-semibold tracking-[-0.04em] text-white sm:text-[2.3rem]">
-                Principios que guían mi trabajo
-              </h3>
-
-              <div class="mt-8 space-y-4">
-                <div class="rounded-[22px] border border-white/10 bg-white/[0.03] p-4">
-                  <p class="text-[0.98rem] font-medium text-white">Claridad antes que complejidad</p>
-                </div>
-                <div class="rounded-[22px] border border-white/10 bg-white/[0.03] p-4">
-                  <p class="text-[0.98rem] font-medium text-white">La estética al servicio de la comprensión</p>
-                </div>
-                <div class="rounded-[22px] border border-white/10 bg-white/[0.03] p-4">
-                  <p class="text-[0.98rem] font-medium text-white">Jerarquía visual bien resuelta</p>
-                </div>
-                <div class="rounded-[22px] border border-white/10 bg-white/[0.03] p-4">
-                  <p class="text-[0.98rem] font-medium text-white">Experiencias simples, actuales y útiles</p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- STORY -->
-      <section class="py-8 sm:py-10 lg:py-14">
-        <div class="mx-auto w-[min(1280px,calc(100%-2rem))]">
-          <div class="grid gap-5 lg:grid-cols-12">
-            <article class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8 lg:col-span-8">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                Trayectoria
-              </p>
-              <h2 class="max-w-[820px] text-[2.4rem] font-semibold leading-[0.94] tracking-[-0.05em] text-white sm:text-[3.5rem]">
-                Estoy construyendo mi camino en UX/UI con una mirada muy orientada a producto
-              </h2>
-
-              <p class="mt-6 max-w-[860px] text-[1rem] leading-8 text-muted">
-                Mi interés por el diseño digital parte de una motivación muy concreta: crear productos
-                que hagan la vida más clara, más ligera y más fácil de entender. Me atraen especialmente
-                los proyectos relacionados con organización personal, finanzas, bienestar y herramientas
-                que conviertan información compleja en experiencias más accesibles.
-              </p>
-
-              <p class="mt-5 max-w-[860px] text-[1rem] leading-8 text-muted">
-                Actualmente sigo desarrollando mi portfolio y reforzando mi perfil como diseñadora UX/UI,
-                combinando criterio visual, pensamiento de producto y una sensibilidad especial por las
-                interfaces limpias, serenas y bien estructuradas.
-              </p>
-            </article>
-
-            <article class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8 lg:col-span-4">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                Busco
-              </p>
-              <h2 class="text-[2rem] font-semibold leading-[0.96] tracking-[-0.04em] text-white sm:text-[2.5rem]">
-                Mi siguiente paso
-              </h2>
-
-              <p class="mt-5 text-[1rem] leading-8 text-muted">
-                Busco mi primera oportunidad profesional en producto digital y UX/UI, en un entorno
-                donde pueda seguir creciendo, aprender de un equipo y aportar sensibilidad visual,
-                estructura y atención al detalle.
-              </p>
-
-              <a
-                href="contact.html"
-                class="mt-8 inline-flex items-center gap-2 text-[0.95rem] font-semibold text-white transition hover:text-accent"
-              >
-                Contactar
-                <span aria-hidden="true">↗</span>
-              </a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="pb-16 pt-2 sm:pb-20 lg:pb-24">
-        <div class="mx-auto w-[min(1280px,calc(100%-2rem))]">
-          <div class="overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(135deg,#141519_0%,#0d0e10_100%)] p-8 sm:p-10 lg:p-12">
-            <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div>
-                <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                  Let’s connect
-                </p>
-                <h2 class="max-w-[780px] text-[2.6rem] font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-[4.2rem]">
-                  Si quieres conocer mejor mi trabajo, podemos hablar
-                </h2>
-                <p class="mt-5 max-w-[760px] text-[1rem] leading-8 text-muted">
-                  Estoy abierta a oportunidades junior, colaboraciones y conversaciones relacionadas
-                  con producto digital, UX/UI y diseño de interfaces.
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[28px] bg-soft p-6">
+                <h3 class="font-extrabold">UX</h3>
+                <p class="mt-3 text-sm leading-7 text-muted">
+                  Investigación, entrevistas, user persona, arquitectura de información, flujos y testing.
                 </p>
               </div>
 
-              <div>
-                <a
-                  href="contact.html"
-                  class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-[0.92rem] font-semibold text-black transition hover:bg-white"
-                >
-                  Ir a contacto
-                </a>
+              <div class="rounded-[28px] bg-soft p-6">
+                <h3 class="font-extrabold">UI</h3>
+                <p class="mt-3 text-sm leading-7 text-muted">
+                  Jerarquía visual, sistemas de componentes, prototipos, estilos y consistencia.
+                </p>
+              </div>
+
+              <div class="rounded-[28px] bg-soft p-6">
+                <h3 class="font-extrabold">Producto</h3>
+                <p class="mt-3 text-sm leading-7 text-muted">
+                  Definir problemas, priorizar funcionalidades y diseñar soluciones simples.
+                </p>
+              </div>
+
+              <div class="rounded-[28px] bg-soft p-6">
+                <h3 class="font-extrabold">Frontend</h3>
+                <p class="mt-3 text-sm leading-7 text-muted">
+                  Base en HTML, CSS, Tailwind y comprensión de cómo se construye una interfaz.
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="pb-8 pt-4">
-      <div class="mx-auto flex w-[min(1280px,calc(100%-2rem))] flex-col gap-4 border-t border-white/8 pt-5 text-[0.92rem] text-dim md:flex-row md:items-center md:justify-between">
-        <p>© 2026 Sara Alcaraz</p>
-        <div class="flex items-center gap-5">
-          <a href="projects.html" class="transition hover:text-white">Proyectos</a>
-          <a href="about.html" class="transition hover:text-white">Sobre mí</a>
-          <a href="contact.html" class="transition hover:text-white">Contacto</a>
         </div>
       </div>
-    </footer>
-  </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] pb-16 sm:pb-20">
+      <div class="grid gap-6 lg:grid-cols-12">
+        <article class="rounded-[40px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:col-span-8 lg:p-12">
+          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
+            Trayectoria
+          </p>
+
+          <h2 class="mt-5 max-w-4xl text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-6xl">
+            Estoy construyendo mi camino en UX/UI con una mirada orientada a producto.
+          </h2>
+
+          <p class="mt-6 max-w-4xl text-base leading-8 text-muted">
+            Mi interés por el diseño digital parte de una motivación concreta: crear productos que hagan la vida más clara, más ligera y más fácil de entender. Me atraen especialmente los proyectos relacionados con organización personal, finanzas, bienestar y herramientas que conviertan información compleja en experiencias más accesibles.
+          </p>
+
+          <p class="mt-5 max-w-4xl text-base leading-8 text-muted">
+            Actualmente sigo reforzando mi perfil como diseñadora UX/UI, combinando criterio visual, pensamiento de producto y una sensibilidad especial por las interfaces limpias, serenas y bien estructuradas.
+          </p>
+        </article>
+
+        <article class="rounded-[40px] bg-[linear-gradient(145deg,#E8F3F2,#F4E7E4)] p-7 shadow-soft sm:p-10 lg:col-span-4 lg:p-12">
+          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
+            Busco
+          </p>
+
+          <h2 class="mt-5 text-4xl font-extrabold leading-[0.96] tracking-[-0.06em]">
+            Mi siguiente paso.
+          </h2>
+
+          <p class="mt-6 text-base leading-8 text-muted">
+            Busco mi primera oportunidad profesional en producto digital y UX/UI, en un entorno donde pueda seguir creciendo, aprender de un equipo y aportar sensibilidad visual, estructura y atención al detalle.
+          </p>
+
+          <a
+            href="contact.html"
+            class="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-extrabold text-white shadow-glow transition hover:bg-accentDark"
+          >
+            Contactar
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] pb-20">
+      <div class="overflow-hidden rounded-[40px] bg-ink p-7 text-white shadow-luxe sm:p-10 lg:p-12">
+        <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
+              Let’s connect
+            </p>
+
+            <h2 class="mt-5 max-w-4xl text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-6xl">
+              Si quieres conocer mejor mi trabajo, podemos hablar.
+            </h2>
+
+            <p class="mt-6 max-w-3xl text-base leading-8 text-white/70">
+              Estoy abierta a oportunidades junior, colaboraciones y conversaciones relacionadas con producto digital, UX/UI y diseño de interfaces.
+            </p>
+          </div>
+
+          <a
+            href="contact.html"
+            class="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-extrabold text-ink transition hover:bg-accent hover:text-white"
+          >
+            Ir a contacto
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line py-8">
+    <div class="mx-auto flex w-[min(1440px,calc(100%-2rem))] flex-col gap-4 text-sm text-muted md:flex-row md:items-center md:justify-between">
+      <p>© 2026 Sara Alcaraz</p>
+
+      <div class="flex gap-5">
+        <a href="projects.html" class="transition hover:text-ink">Proyectos</a>
+        <a href="about.html" class="transition hover:text-ink">Sobre mí</a>
+        <a href="contact.html" class="transition hover:text-ink">Contacto</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const menuToggle = document.getElementById("menuToggle");
