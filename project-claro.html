@@ -3,18 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>CLARO | Sara Alcaraz</title>
-  <meta
-    name="description"
-    content="Case study del proyecto CLARO, app conceptual de organización de tiempo y dinero."
-  />
+  <meta name="description" content="Case study UX/UI de CLARO, app mobile para organizar dinero y tiempo en un solo lugar." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -22,24 +17,24 @@
       theme: {
         extend: {
           colors: {
-            base: "#0b0b0c",
-            panel: "#111214",
-            softpanel: "#17181b",
-            line: "rgba(255,255,255,0.08)",
-            text: "#f5f5f3",
-            muted: "#a1a1aa",
-            dim: "#71717a",
-            accent: "#22D3C5"
+            ink: "#101828",
+            muted: "#667085",
+            soft: "#F7FCFB",
+            cream: "#FAFAF8",
+            line: "#E2EFEC",
+            accent: "#21A99B",
+            accentDark: "#168D82",
+            accentSoft: "#EAF6F5",
+            card: "#FFFFFF"
           },
           fontFamily: {
             sans: ["Manrope", "sans-serif"],
             serif: ["Instrument Serif", "serif"]
           },
           boxShadow: {
-            glow: "0 0 0 1px rgba(255,255,255,0.05), 0 30px 80px rgba(0,0,0,0.45)"
-          },
-          letterSpacing: {
-            tightest: "-0.05em"
+            soft: "0 24px 70px rgba(17, 24, 39, 0.08)",
+            luxe: "0 40px 120px rgba(17, 24, 39, 0.12)",
+            glow: "0 40px 100px rgba(33,169,155,0.22)"
           }
         }
       }
@@ -47,681 +42,596 @@
   </script>
 </head>
 
-<body class="bg-base font-sans text-text antialiased selection:bg-accent selection:text-black">
-  <div class="relative min-h-screen overflow-hidden">
-    <div class="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:56px_56px]"></div>
-<div class="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(circle_at_top,rgba(34,211,197,0.22),transparent_45%)]"></div>
+<body id="top" class="bg-soft font-sans text-ink antialiased selection:bg-accent selection:text-white">
 
-    <header class="sticky top-0 z-50 border-b border-white/5 bg-base/80 backdrop-blur-xl">
-      <div class="mx-auto flex min-h-[82px] w-[min(1280px,calc(100%-2rem))] items-center justify-between">
-        <a href="index.html" class="text-[1rem] font-semibold tracking-[-0.03em] text-text sm:text-[1.05rem]">
-          Sara Alcaraz
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 border-b border-line/80 bg-soft/85 backdrop-blur-xl">
+    <div class="mx-auto flex min-h-[78px] w-[min(1180px,calc(100%-2rem))] items-center justify-between">
+      <a href="index.html" class="text-[1rem] font-extrabold tracking-[-0.04em]">
+        Sara Alcaraz
+      </a>
+
+      <button
+        id="menuToggle"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white md:hidden"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <div class="flex flex-col gap-[5px]">
+          <span class="block h-[1.5px] w-5 bg-ink"></span>
+          <span class="block h-[1.5px] w-5 bg-ink"></span>
+        </div>
+      </button>
+
+      <nav
+        id="navLinks"
+        class="absolute left-0 right-0 top-[78px] hidden flex-col gap-5 border-b border-line bg-soft px-6 py-6 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
+      >
+        <a href="index.html" class="text-sm font-semibold text-muted transition hover:text-ink">Inicio</a>
+        <a href="projects.html" class="text-sm font-semibold text-ink">Proyectos</a>
+        <a href="about.html" class="text-sm font-semibold text-muted transition hover:text-ink">Sobre mí</a>
+        <a href="contact.html" class="text-sm font-semibold text-muted transition hover:text-ink">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <!-- HERO -->
+<section class="relative overflow-hidden bg-[#DDF4F1]">
+  <div class="mx-auto w-[min(1400px,calc(100%-2rem))] py-10 lg:py-16">
+
+    <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex flex-wrap gap-3">
+        <span class="rounded-full bg-white/80 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-accent shadow-sm">
+          UX/UI Case Study
+        </span>
+        <span class="rounded-full bg-white/80 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-muted shadow-sm">
+          2026
+        </span>
+      </div>
+
+      <div class="flex gap-3">
+        <a
+          href="https://www.figma.com/proto/dQrP956PnxR0erdeM4OIwh/CLAR%C3%93?page-id=0%3A1&node-id=1786-954&viewport=4905%2C985%2C0.46&t=V2tJDfkeXtXcYqGg-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1786%3A954&show-proto-sidebar=1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-extrabold text-white transition hover:bg-accentDark"
+        >
+          Ver prototipo
         </a>
 
-        <button
-          class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.02] md:hidden"
-          id="menuToggle"
-          aria-label="Abrir menú"
-          aria-expanded="false"
-          aria-controls="navLinks"
+        <a
+          href="projects.html"
+          class="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-extrabold text-ink transition hover:text-accent"
         >
-          <div class="flex flex-col gap-[5px]">
-            <span class="block h-[1.5px] w-5 bg-white"></span>
-            <span class="block h-[1.5px] w-5 bg-white"></span>
-          </div>
-        </button>
-
-        <nav
-          id="navLinks"
-          class="absolute left-0 right-0 top-[82px] hidden flex-col gap-5 border-t border-white/5 bg-[#0e0e10] px-6 py-6 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
-        >
-          <a href="index.html" class="text-[0.95rem] font-medium text-muted transition hover:text-white">Inicio</a>
-          <a href="projects.html" class="text-[0.95rem] font-medium text-white">Proyectos</a>
-          <a href="about.html" class="text-[0.95rem] font-medium text-muted transition hover:text-white">Sobre mí</a>
-          <a href="contact.html" class="text-[0.95rem] font-medium text-muted transition hover:text-white">Contacto</a>
-        </nav>
+          Volver
+        </a>
       </div>
-    </header>
+    </div>
 
-    <main>
-      <!-- HERO -->
-      <section class="relative">
-        <div class="mx-auto w-[min(1280px,calc(100%-2rem))] py-10 sm:py-14 lg:py-20">
-          <div class="grid gap-10 lg:grid-cols-12 lg:gap-8">
-            <div class="lg:col-span-5">
-              <div class="mb-8 flex flex-wrap items-center gap-3">
-                <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-muted">
-                  <span class="h-2 w-2 rounded-full bg-accent"></span>
-                  UX/UI Case Study
-                </span>
-                <span class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                  Proyecto académico · 2026
-                </span>
-              </div>
+    <div class="overflow-hidden rounded-[42px] bg-white/30 shadow-luxe">
+      <img
+        src="images/hero_portfolio.png"
+        alt="CLARO app mobile para organizar dinero y tiempo"
+        class="block w-full object-cover"
+      />
+    </div>
 
-              <h1 class="text-[3.5rem] font-semibold leading-[0.9] tracking-tightest text-white sm:text-[5rem] lg:text-[6.7rem]">
-                CLARO
-              </h1>
-
-              <p class="mt-5 max-w-[520px] text-[1.3rem] leading-[1.45] text-white/88 sm:text-[1.45rem]">
-                Organiza tu tiempo y tu dinero en un solo lugar
-              </p>
-
-              <p class="mt-5 max-w-[560px] text-[1rem] leading-8 text-muted">
-                Aplicación móvil diseñada para ayudar a las personas a comprender y gestionar
-                su tiempo y su dinero en un mismo lugar, a través de una interfaz clara,
-                visual y fácil de usar.
-              </p>
-
-              <div class="mt-7 flex flex-wrap gap-2">
-                <span class="rounded-full border border-white/10 px-3 py-1.5 text-[0.76rem] text-muted">UX/UI Design</span>
-                <span class="rounded-full border border-white/10 px-3 py-1.5 text-[0.76rem] text-muted">App móvil</span>
-                <span class="rounded-full border border-white/10 px-3 py-1.5 text-[0.76rem] text-muted">Proyecto académico</span>
-                <span class="rounded-full border border-white/10 px-3 py-1.5 text-[0.76rem] text-muted">2026</span>
-              </div>
-
-              <div class="mt-9 flex flex-wrap gap-3">
-                <a
-                  href="https://www.figma.com/proto/dQrP956PnxR0erdeM4OIwh/CLAR%C3%93?page-id=0%3A1&node-id=1786-954&viewport=4905%2C985%2C0.46&t=V2tJDfkeXtXcYqGg-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1786%3A954&show-proto-sidebar=1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-[0.92rem] font-semibold text-black transition hover:bg-accent"
-                >
-                  Ver prototipo
-                </a>
-
-                <a
-                  href="projects.html"
-                  class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-[0.92rem] font-semibold text-white transition hover:bg-white/[0.06]"
-                >
-                  Volver a proyectos
-                </a>
-              </div>
-            </div>
-
-            <div class="lg:col-span-7">
-              <article class="overflow-hidden rounded-[34px] border border-white/10 bg-panel shadow-glow">
-                <div class="flex items-center justify-between border-b border-white/8 px-5 py-4 sm:px-6">
-                  <div class="flex items-center gap-2">
-                    <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
-                    <span class="h-2.5 w-2.5 rounded-full bg-white/12"></span>
-                    <span class="h-2.5 w-2.5 rounded-full bg-accent"></span>
-                  </div>
-                  <span class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                    CLARO Preview
-                  </span>
-                </div>
-
-                <div class="bg-[linear-gradient(180deg,#151619_0%,#0f1012_100%)] p-4 sm:p-6">
-                  <div class="overflow-hidden rounded-[24px] border border-white/8 bg-[#0c0d0f]">
-                    <img
-                      src="images/claro-hero.png"
-                      alt="Hero del proyecto CLARO con pantallas de la app"
-                      class="block h-auto w-full object-cover"
-                    />
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <!-- META -->
-          <div class="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5">
-              <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                Rol
-              </span>
-              <p class="text-[1rem] font-semibold text-white">UX/UI Designer</p>
-            </div>
-
-            <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5">
-              <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                Duración
-              </span>
-              <p class="text-[1rem] font-semibold text-white">14 semanas</p>
-            </div>
-
-            <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5">
-              <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                Herramientas
-              </span>
-              <p class="text-[1rem] font-semibold text-white">Figma, Canva</p>
-            </div>
-
-            <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5">
-              <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                Tipo
-              </span>
-              <p class="text-[1rem] font-semibold text-white">App móvil conceptual</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTENT -->
-      <section class="pb-16 sm:pb-20 lg:pb-24">
-        <div class="mx-auto w-[min(1280px,calc(100%-2rem))] space-y-5">
-          <!-- CONTEXTO -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <div class="max-w-[860px]">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">01 · Contexto</p>
-              <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-                El punto de partida
-              </h2>
-              <p class="mt-5 text-[1rem] leading-8 text-muted">
-                Muchas aplicaciones actuales se centran exclusivamente en la gestión de tareas
-                o en el control de gastos, pero pocas integran ambas áreas. Sin embargo, el
-                tiempo y el dinero están estrechamente relacionados en la vida diaria de las
-                personas. CLARO surge como una propuesta que busca unificar estas dos dimensiones,
-                permitiendo al usuario visualizar de forma sencilla cómo organiza su tiempo y cómo
-                distribuye su dinero.
-              </p>
-            </div>
-          </section>
-
-          <!-- PROBLEMA / OPORTUNIDAD -->
-          <div class="grid gap-5 lg:grid-cols-2">
-            <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">02 · Problema</p>
-              <h2 class="text-[2rem] font-semibold tracking-[-0.04em] text-white sm:text-[2.4rem]">
-                Qué estaba fallando
-              </h2>
-              <p class="mt-5 text-[1rem] leading-8 text-muted">
-                Para muchas personas, controlar los gastos diarios o mantener una organización
-                clara de las tareas puede resultar complicado si las aplicaciones son demasiado
-                complejas o requieren demasiados pasos para registrar información.
-              </p>
-            </section>
-
-            <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">03 · Oportunidad</p>
-              <h2 class="text-[2rem] font-semibold tracking-[-0.04em] text-white sm:text-[2.4rem]">
-                Qué podía aportar CLARO
-              </h2>
-              <p class="mt-5 text-[1rem] leading-8 text-muted">
-                Diseñar una experiencia que una dos áreas clave de la vida cotidiana: la
-                organización del tiempo y la organización del dinero, dentro de una misma
-                lógica visual, clara y sencilla.
-              </p>
-            </section>
-          </div>
-
-          <!-- OBJETIVO / SOLUCIÓN -->
-          <div class="grid gap-5 lg:grid-cols-2">
-            <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">04 · Objetivo</p>
-              <h2 class="text-[2rem] font-semibold tracking-[-0.04em] text-white sm:text-[2.4rem]">
-                Qué debía resolver
-              </h2>
-              <p class="mt-5 text-[1rem] leading-8 text-muted">
-                Diseñar una aplicación que permita registrar gastos de forma rápida, visualizar
-                el dinero disponible de manera clara y organizar tareas del día a día, integrando
-                la gestión del tiempo y el dinero en una misma interfaz.
-              </p>
-            </section>
-
-            <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">05 · Solución</p>
-              <h2 class="text-[2rem] font-semibold tracking-[-0.04em] text-white sm:text-[2.4rem]">
-                La propuesta
-              </h2>
-              <p class="mt-5 text-[1rem] leading-8 text-muted">
-                CLARO propone una interfaz basada en tarjetas de información que permiten
-                visualizar rápidamente el estado del dinero y de las tareas. La aplicación
-                integra dos secciones principales: gestión de gastos y gestión del tiempo.
-              </p>
-            </section>
-          </div>
-
-          <!-- ARQUITECTURA -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <div class="max-w-[820px]">
-              <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">06 · Arquitectura</p>
-              <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-                Arquitectura de la información
-              </h2>
-              <p class="mt-5 text-[1rem] leading-8 text-muted">
-                La aplicación se organiza en cinco secciones principales accesibles desde la
-                navegación inferior. Esta estructura permite comprender rápidamente el producto
-                y acceder de forma clara a las funciones más importantes.
-              </p>
-            </div>
-
-            <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5 text-center font-medium text-white">Inicio</div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5 text-center font-medium text-white">Dinero</div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5 text-center font-medium text-white">Tareas</div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5 text-center font-medium text-white">Configuración</div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5 text-center font-medium text-white">Perfil</div>
-            </div>
-          </section>
-
-          <!-- FLUJO -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-              <div class="max-w-[560px]">
-                <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">07 · Flujo principal</p>
-                <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-                  Happy path: registrar un gasto
-                </h2>
-
-                <p class="mt-5 text-[1rem] leading-8 text-muted">
-                  Uno de los flujos principales de CLARO es el registro de un gasto. Este recorrido
-                  se diseñó para reducir la fricción y permitir que el usuario complete la acción
-                  en pocos pasos, de forma clara, rápida y comprensible.
-                </p>
-
-                <p class="mt-4 text-[0.98rem] leading-8 text-dim">
-                  El objetivo es que registrar un gasto no interrumpa la experiencia, sino que se
-                  integre de manera natural dentro de la sección de dinero.
-                </p>
-              </div>
-
-              <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 sm:p-6">
-                <p class="mb-5 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                  Happy path
-                </p>
-
-                <div class="flex flex-wrap items-center justify-center gap-3">
-                  <div class="min-w-[120px] rounded-[20px] border border-white/10 bg-[#0f1013] px-4 py-5 text-center">
-                    <span class="mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-dim">Paso 1</span>
-                    <p class="text-sm font-medium text-white">Inicio</p>
-                  </div>
-
-                  <span class="text-dim">→</span>
-
-                  <div class="min-w-[120px] rounded-[20px] border border-white/10 bg-[#0f1013] px-4 py-5 text-center">
-                    <span class="mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-dim">Paso 2</span>
-                    <p class="text-sm font-medium text-white">Mi dinero</p>
-                  </div>
-
-                  <span class="text-dim">→</span>
-
-                  <div class="min-w-[120px] rounded-[20px] border border-white/10 bg-[#0f1013] px-4 py-5 text-center">
-                    <span class="mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-dim">Paso 3</span>
-                    <p class="text-sm font-medium text-white">Añadir gasto</p>
-                  </div>
-
-                  <span class="text-dim">→</span>
-
-                  <div class="min-w-[120px] rounded-[20px] border border-white/10 bg-[#0f1013] px-4 py-5 text-center">
-                    <span class="mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-dim">Paso 4</span>
-                    <p class="text-sm font-medium text-white">Completar datos</p>
-                  </div>
-
-                  <span class="text-dim">→</span>
-
-                  <div class="min-w-[120px] rounded-[20px] border border-white/10 bg-[#0f1013] px-4 py-5 text-center">
-                    <span class="mb-2 block text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-dim">Paso 5</span>
-                    <p class="text-sm font-medium text-white">Confirmación</p>
-                  </div>
-                </div>
-
-                <div class="mt-5 rounded-[20px] border border-white/10 bg-[#0f1013] px-4 py-4">
-                  <p class="text-sm leading-7 text-muted">
-                    El resultado final permite registrar un gasto rápidamente y entender de forma inmediata
-                    cómo afecta al dinero disponible del mes.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- WIREFRAMES -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-              <div class="max-w-[560px]">
-                <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">08 · Proceso visual</p>
-                <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-                  Evolución de wireframes
-                </h2>
-
-                <p class="mt-5 text-[1rem] leading-8 text-muted">
-                  El proceso de diseño comenzó con bocetos de baja fidelidad realizados a mano,
-                  que permitieron explorar rápidamente la estructura de las pantallas principales
-                  y la organización general de la interfaz.
-                </p>
-
-                <p class="mt-4 text-[1rem] leading-8 text-muted">
-                  A partir de esas primeras exploraciones, se desarrollaron wireframes digitales
-                  para definir con mayor precisión la jerarquía visual, la disposición de los
-                  componentes y la lógica de navegación. Finalmente, este proceso dio lugar a un
-                  prototipo de fidelidad media, donde la estructura comenzó a sentirse más cercana
-                  a la experiencia final de la aplicación.
-                </p>
-
-                <p class="mt-4 text-[0.98rem] leading-8 text-dim">
-                  Este recorrido permitió iterar la interfaz de forma progresiva, validando primero
-                  la estructura y después el comportamiento visual de las pantallas.
-                </p>
-              </div>
-
-              <div class="rounded-[28px] border border-white/10 bg-white/[0.03] p-5 sm:p-6">
-                <p class="mb-5 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                  Proceso visual
-                </p>
-
-                <div class="flex flex-wrap items-start justify-center gap-4 md:gap-5">
-                  <div class="flex flex-col items-center text-center">
-                    <div class="flex min-h-[290px] items-center justify-center rounded-[22px] border border-white/8 bg-[#0f1013] px-4">
-                      <img
-                        src="images/boceto_inicio.png"
-                        alt="Boceto a mano de la pantalla de inicio de CLARO"
-                        class="w-[120px]"
-                      />
-                    </div>
-                    <span class="mt-3 block text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-dim">
-                      Fase 1
-                    </span>
-                    <p class="mt-1 text-sm font-medium text-white">Boceto a mano</p>
-                  </div>
-
-                  <span class="mt-[130px] hidden text-dim md:block">→</span>
-
-                  <div class="flex flex-col items-center text-center">
-                    <div class="flex min-h-[290px] items-center justify-center rounded-[22px] border border-white/8 bg-[#0f1013] px-4">
-                      <img
-                        src="images/wireframe_inicio.png"
-                        alt="Wireframe digital de la pantalla de inicio de CLARO"
-                        class="w-[120px]"
-                      />
-                    </div>
-                    <span class="mt-3 block text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-dim">
-                      Fase 2
-                    </span>
-                    <p class="mt-1 text-sm font-medium text-white">Wireframe digital</p>
-                  </div>
-
-                  <span class="mt-[130px] hidden text-dim md:block">→</span>
-
-                  <div class="flex flex-col items-center text-center">
-                    <div class="flex min-h-[290px] items-center justify-center rounded-[22px] border border-white/8 bg-[#0f1013] px-4">
-                      <img
-                        src="images/inicio.png"
-                        alt="Pantalla de inicio en media fidelidad de CLARO"
-                        class="w-[120px]"
-                      />
-                    </div>
-                    <span class="mt-3 block text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-dim">
-                      Fase 3
-                    </span>
-                    <p class="mt-1 text-sm font-medium text-white">Media fidelidad</p>
-                  </div>
-                </div>
-
-                <div class="mt-6 rounded-[20px] border border-white/10 bg-[#0f1013] px-4 py-4">
-                  <p class="text-sm leading-7 text-muted">
-                    La transición de baja fidelidad a media fidelidad permitió refinar la estructura,
-                    mejorar la jerarquía visual y acercar la propuesta a una interfaz funcional y
-                    coherente con el sistema de diseño de la app.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- SISTEMA DE DISEÑO -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-              <div>
-                <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">09 · Sistema de diseño</p>
-                <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-                  Base visual y consistencia
-                </h2>
-                <p class="mt-5 text-[1rem] leading-8 text-muted">
-                  Para el prototipo de fidelidad media se utilizaron componentes basados en las
-                  guías de Material Design, lo que permite mantener una interfaz consistente,
-                  clara y fácil de usar en dispositivos Android.
-                </p>
-                <p class="mt-4 text-[1rem] leading-8 text-muted">
-                  En el diseño se priorizó el contenido sobre el contenedor, utilizando patrones
-                  de navegación como pestañas reutilizables y componentes estándar como tarjetas
-                  de información, lo que facilita la interacción y reduce la complejidad y el
-                  número de pasos necesarios para completar una acción.
-                </p>
-                <p class="mt-4 text-[1rem] leading-8 text-muted">
-                  Además, la interfaz se estructuró mediante componentes reutilizables siguiendo
-                  una lógica similar al Atomic Design, combinando elementos simples como botones,
-                  inputs e iconos para construir componentes más complejos como formularios o tarjetas.
-                </p>
-              </div>
-
-              <div class="grid gap-4 sm:grid-cols-2">
-                <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                  <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">Grid</span>
-                  <p class="leading-7 text-muted">4 columnas · márgenes de 16px · gutter de 8px</p>
-                </div>
-                <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                  <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">Patrones</span>
-                  <p class="leading-7 text-muted">Bottom Navigation · Tabs · Cards · Bottom Sheet · Snackbar</p>
-                </div>
-                <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                  <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">Tipografía</span>
-                  <p class="leading-7 text-muted">Jerarquía clara entre títulos, datos principales y texto secundario</p>
-                </div>
-                <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                  <span class="mb-2 block text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">Espaciado</span>
-                  <p class="leading-7 text-muted">Sistema basado en múltiplos de 8 para mantener consistencia visual</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- COMPONENTES -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">10 · Componentes</p>
-            <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-              Componentes principales
-            </h2>
-
-            <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <h3 class="text-[1rem] font-semibold text-white">Cards de resumen</h3>
-                <p class="mt-2 text-sm leading-7 text-muted">
-                  Utilizadas para mostrar de forma rápida el dinero disponible, el estado del día
-                  y el resumen de tareas.
-                </p>
-              </div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <h3 class="text-[1rem] font-semibold text-white">Tabs</h3>
-                <p class="mt-2 text-sm leading-7 text-muted">
-                  Permiten organizar subsecciones como gastos fijos, imprevistos y ahorros, o la
-                  vista por días en tareas.
-                </p>
-              </div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <h3 class="text-[1rem] font-semibold text-white">Bottom Navigation</h3>
-                <p class="mt-2 text-sm leading-7 text-muted">
-                  Facilita el acceso a las principales áreas de la aplicación de forma clara y constante.
-                </p>
-              </div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <h3 class="text-[1rem] font-semibold text-white">Bottom Sheet</h3>
-                <p class="mt-2 text-sm leading-7 text-muted">
-                  Utilizado para registrar gastos e ingresos sin sacar al usuario del contexto principal.
-                </p>
-              </div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <h3 class="text-[1rem] font-semibold text-white">Formularios</h3>
-                <p class="mt-2 text-sm leading-7 text-muted">
-                  Diseñados para reducir la fricción y permitir registrar acciones en pocos pasos.
-                </p>
-              </div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <h3 class="text-[1rem] font-semibold text-white">Snackbar</h3>
-                <p class="mt-2 text-sm leading-7 text-muted">
-                  Proporciona feedback visual de confirmación sin interrumpir la experiencia del usuario.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- UI -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-              <div>
-                <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">11 · Interfaz</p>
-                <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-                  Diseño de interfaz
-                </h2>
-                <p class="mt-5 text-[1rem] leading-8 text-muted">
-                  El diseño de la interfaz se centró en simplificar la gestión del dinero y del
-                  tiempo mediante una estructura clara y fácil de entender. Las tarjetas de
-                  información permiten visualizar rápidamente datos importantes como el dinero
-                  disponible o el estado de las tareas del día.
-                </p>
-                <p class="mt-4 text-[1rem] leading-8 text-muted">
-                  Los formularios simples facilitan el registro de gastos, reduciendo pasos
-                  innecesarios en la interacción y manteniendo un lenguaje visual consistente en
-                  todas las secciones de la app.
-                </p>
-              </div>
-
-              <div class="grid grid-cols-2 gap-4 xl:grid-cols-4">
-                <div class="overflow-hidden rounded-[24px] border border-white/10 bg-[#0f1013] p-3">
-                  <img src="images/inicio.png" alt="Pantalla de inicio de CLARO" class="mx-auto w-[200px]" />
-                </div>
-                <div class="overflow-hidden rounded-[24px] border border-white/10 bg-[#0f1013] p-3">
-                  <img src="images/mi_dinero.png" alt="Pantalla de dinero de CLARO" class="mx-auto w-[200px]" />
-                </div>
-                <div class="overflow-hidden rounded-[24px] border border-white/10 bg-[#0f1013] p-3">
-                  <img src="images/tareas.png" alt="Pantalla de tareas de CLARO" class="mx-auto w-[200px]" />
-                </div>
-                <div class="overflow-hidden rounded-[24px] border border-white/10 bg-[#0f1013] p-3">
-                  <img src="images/añadir_gasto.png" alt="Pantalla de añadir gasto en CLARO" class="mx-auto w-[200px]" />
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- INTERACCIONES -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">12 · Interacciones</p>
-            <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-              Prototipo navegable
-            </h2>
-            <p class="mt-5 max-w-[900px] text-[1rem] leading-8 text-muted">
-              Se desarrolló un prototipo funcional en Figma que permite simular el flujo principal
-              de la aplicación, incluyendo navegación entre secciones, registro de gastos, edición
-              y eliminación de movimientos y mensajes de confirmación mediante Snackbar.
-            </p>
-          </section>
-
-          <!-- HEURÍSTICA -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">13 · Evaluación</p>
-            <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-              Evaluación heurística
-            </h2>
-            <p class="mt-5 max-w-[980px] text-[1rem] leading-8 text-muted">
-              El diseño fue evaluado utilizando los principios heurísticos de Nielsen, analizando
-              aspectos como la visibilidad del estado del sistema, la consistencia de la interfaz,
-              la prevención de errores y la ayuda al usuario. Este análisis permitió comprobar que
-              la interfaz mantiene una estructura clara, utiliza patrones reconocibles y proporciona
-              feedback visual adecuado para las acciones principales.
-            </p>
-          </section>
-
-          <!-- FUTURAS MEJORAS -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">14 · Futuras mejoras</p>
-            <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-              Próximos pasos
-            </h2>
-
-            <div class="mt-8 grid gap-4 md:grid-cols-2">
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <h3 class="text-[1rem] font-semibold text-white">Pruebas con usuarios</h3>
-                <p class="mt-2 text-sm leading-7 text-muted">
-                  Realizar test de usabilidad con usuarios reales para detectar posibles mejoras
-                  en la navegación y comprensión de la interfaz.
-                </p>
-              </div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <h3 class="text-[1rem] font-semibold text-white">Relación tiempo-dinero</h3>
-                <p class="mt-2 text-sm leading-7 text-muted">
-                  Explorar nuevas formas de visualizar la relación entre el tiempo disponible y
-                  los gastos del usuario.
-                </p>
-              </div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <h3 class="text-[1rem] font-semibold text-white">Recordatorios inteligentes</h3>
-                <p class="mt-2 text-sm leading-7 text-muted">
-                  Incorporar un sistema de notificaciones para tareas importantes y control del gasto diario.
-                </p>
-              </div>
-              <div class="rounded-[24px] border border-white/10 bg-white/[0.03] p-5">
-                <h3 class="text-[1rem] font-semibold text-white">Estadísticas</h3>
-                <p class="mt-2 text-sm leading-7 text-muted">
-                  Añadir gráficos que permitan analizar hábitos de tiempo y dinero a lo largo del tiempo.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- CONCLUSIÓN -->
-          <section class="rounded-[30px] border border-white/10 bg-panel p-6 sm:p-8">
-            <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">15 · Conclusión</p>
-            <h2 class="text-[2.2rem] font-semibold tracking-[-0.04em] text-white sm:text-[3rem]">
-              Cierre del proyecto
-            </h2>
-            <p class="mt-5 max-w-[980px] text-[1rem] leading-8 text-muted">
-              CLARO demuestra cómo una interfaz clara y simplificada puede ayudar a los usuarios a
-              comprender mejor la relación entre su tiempo y su dinero. A través de un sistema de
-              tarjetas informativas y una navegación sencilla, la aplicación facilita el registro
-              de gastos y la organización de tareas en un mismo entorno.
-            </p>
-          </section>
-
-          <!-- FIGMA CTA -->
-          <section class="overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(135deg,#141519_0%,#0d0e10_100%)] p-8 sm:p-10 lg:p-12">
-            <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div>
-                <p class="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-dim">
-                  Prototipo interactivo
-                </p>
-                <h2 class="max-w-[760px] text-[2.4rem] font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-[4rem]">
-                  Ver prototipo completo en Figma
-                </h2>
-                <p class="mt-5 max-w-[760px] text-[1rem] leading-8 text-muted">
-                  El prototipo permite recorrer las pantallas principales, navegar entre secciones
-                  y visualizar el flujo de registro de gastos dentro de la app.
-                </p>
-              </div>
-
-              <div>
-                <a
-                  href="https://www.figma.com/proto/dQrP956PnxR0erdeM4OIwh/CLAR%C3%93?page-id=0%3A1&node-id=1786-954&viewport=4905%2C985%2C0.46&t=V2tJDfkeXtXcYqGg-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1786%3A954&show-proto-sidebar=1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-[0.92rem] font-semibold text-black transition hover:bg-white"
-                >
-                  Abrir prototipo
-                </a>
-              </div>
-            </div>
-          </section>
-
-          <div class="pt-3">
-            <a href="projects.html" class="inline-flex items-center gap-2 text-[0.95rem] font-semibold text-white transition hover:text-accent">
-              ← Volver a proyectos
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="pb-8 pt-4">
-      <div class="mx-auto flex w-[min(1280px,calc(100%-2rem))] flex-col gap-4 border-t border-white/8 pt-5 text-[0.92rem] text-dim md:flex-row md:items-center md:justify-between">
-        <p>© 2026 Sara Alcaraz</p>
-        <div class="flex items-center gap-5">
-          <a href="projects.html" class="transition hover:text-white">Proyectos</a>
-          <a href="about.html" class="transition hover:text-white">Sobre mí</a>
-          <a href="contact.html" class="transition hover:text-white">Contacto</a>
-        </div>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div class="rounded-[24px] bg-white/80 p-5 shadow-soft">
+        <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Rol</p>
+        <p class="mt-2 font-extrabold">UX/UI Designer</p>
       </div>
-    </footer>
+
+      <div class="rounded-[24px] bg-white/80 p-5 shadow-soft">
+        <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Tipo</p>
+        <p class="mt-2 font-extrabold">App mobile conceptual</p>
+      </div>
+
+      <div class="rounded-[24px] bg-white/80 p-5 shadow-soft">
+        <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Año</p>
+        <p class="mt-2 font-extrabold">2026</p>
+      </div>
+
+      <div class="rounded-[24px] bg-white/80 p-5 shadow-soft">
+        <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Herramientas</p>
+        <p class="mt-2 font-extrabold">Figma, Canva</p>
+      </div>
+
+      <div class="rounded-[24px] bg-white/80 p-5 shadow-soft">
+        <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Proceso</p>
+        <p class="mt-2 font-extrabold">Design Thinking</p>
+      </div>
+    </div>
+
   </div>
+</section>
+
+    <!-- CONTENT WRAPPER -->
+    <section class="mx-auto w-[min(1180px,calc(100%-2rem))] space-y-10 py-16 sm:py-20">
+
+      <!-- PROBLEMA -->
+      <section class="overflow-hidden rounded-[36px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
+        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">01 · Problema</p>
+
+        <div class="mt-6 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <h2 class="max-w-xl text-3xl font-extrabold leading-[1.02] tracking-[-0.06em] sm:text-5xl">
+            Gestionar el día a día se vuelve pesado cuando todo está separado.
+          </h2>
+
+          <div>
+            <p class="text-base leading-8 text-muted">
+              Muchas personas gestionan gastos, tareas y organización diaria con herramientas diferentes. Esto genera pérdida de control, dificultad para saber cuánto dinero queda realmente y más carga mental.
+            </p>
+
+            <div class="mt-7 grid gap-3">
+              <div class="rounded-2xl border border-line bg-soft p-4 font-bold">
+                Uso de varias apps para tareas, banco, notas o calendario.
+              </div>
+              <div class="rounded-2xl border border-line bg-soft p-4 font-bold">
+                Dificultad para visualizar el dinero disponible real.
+              </div>
+              <div class="rounded-2xl border border-line bg-soft p-4 font-bold">
+                Sensación de saturación por interfaces complejas.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OBJETIVO -->
+      <section class="relative overflow-hidden rounded-[36px] bg-ink p-7 text-white shadow-luxe sm:p-10 lg:p-12">
+        <div class="pointer-events-none absolute right-[-120px] top-[-120px] h-[360px] w-[360px] rounded-full bg-accent opacity-25 blur-[100px]"></div>
+
+        <div class="relative">
+          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">02 · Objetivo</p>
+
+          <h2 class="mt-6 max-w-4xl text-3xl font-extrabold leading-[1.02] tracking-[-0.06em] sm:text-5xl">
+            Diseñar una experiencia que ayude a decidir mejor, con menos ruido mental.
+          </h2>
+
+          <p class="mt-6 max-w-3xl text-base leading-8 text-white/70">
+            El objetivo fue crear una app mobile que centralizara dinero y tareas en una interfaz sencilla, visual y calmada, priorizando la comprensión rápida por encima de añadir demasiadas funcionalidades.
+          </p>
+        </div>
+      </section>
+
+      <!-- INVESTIGACIÓN -->
+      <section class="rounded-[36px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
+        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">03 · Investigación</p>
+
+        <div class="mt-6 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <h2 class="text-3xl font-extrabold leading-[1.02] tracking-[-0.06em] sm:text-5xl">
+            Entender cómo las personas organizan dinero y tiempo.
+          </h2>
+
+          <p class="text-base leading-8 text-muted">
+            La investigación ayudó a identificar un patrón claro: las personas no necesitan una herramienta más compleja, sino una forma más simple de ver lo esencial.
+          </p>
+        </div>
+
+        <div class="mt-9 grid gap-4 md:grid-cols-3">
+          <div class="rounded-[28px] border border-line bg-soft p-6">
+            <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-lg">⌕</span>
+            <h3 class="font-extrabold">Desk research</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">
+              Análisis del problema, hábitos digitales y necesidades relacionadas con organización personal.
+            </p>
+          </div>
+
+          <div class="rounded-[28px] border border-line bg-soft p-6">
+            <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-lg">◫</span>
+            <h3 class="font-extrabold">Benchmarking</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">
+              Revisión de apps de finanzas, tareas y productividad para detectar patrones y oportunidades.
+            </p>
+          </div>
+
+          <div class="rounded-[28px] border border-line bg-soft p-6">
+            <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-lg">☉</span>
+            <h3 class="font-extrabold">Entrevistas</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">
+              Conversaciones con usuarios para comprender frustraciones, comportamientos y expectativas.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-[32px] bg-accentSoft p-6 sm:p-8">
+          <h3 class="text-xl font-extrabold tracking-[-0.04em]">Insights clave</h3>
+
+          <div class="mt-5 grid gap-3 md:grid-cols-2">
+            <p class="rounded-2xl bg-white p-4 text-sm font-bold shadow-sm">Los usuarios rechazan herramientas complejas.</p>
+            <p class="rounded-2xl bg-white p-4 text-sm font-bold shadow-sm">Muchas personas usan varias apps a la vez.</p>
+            <p class="rounded-2xl bg-white p-4 text-sm font-bold shadow-sm">Existe una desconexión entre tareas y dinero.</p>
+            <p class="rounded-2xl bg-white p-4 text-sm font-bold shadow-sm">La claridad pesa más que añadir muchas funciones.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- USER PERSONA -->
+      <section class="rounded-[36px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
+        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">04 · User persona</p>
+
+        <div class="mt-7 grid gap-8 lg:grid-cols-[0.65fr_1.35fr]">
+          <div class="rounded-[32px] bg-[linear-gradient(145deg,#EAF6F5,#FFFFFF)] p-7 shadow-soft">
+            <p class="font-serif text-6xl italic leading-none text-accent">Laura</p>
+            <p class="mt-4 text-lg font-extrabold">32 años</p>
+            <p class="mt-5 text-sm leading-7 text-muted">
+              Persona que busca organizar mejor su día a día sin depender de herramientas complejas o dispersas.
+            </p>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-3">
+            <div class="rounded-[28px] border border-line p-6">
+              <h3 class="font-extrabold">Necesidades</h3>
+              <p class="mt-3 text-sm leading-7 text-muted">
+                Ver de forma rápida cuánto dinero tiene disponible y qué tareas son prioritarias.
+              </p>
+            </div>
+
+            <div class="rounded-[28px] border border-line p-6">
+              <h3 class="font-extrabold">Frustraciones</h3>
+              <p class="mt-3 text-sm leading-7 text-muted">
+                Usar varias apps, perder información y sentir que organizarse requiere demasiado esfuerzo.
+              </p>
+            </div>
+
+            <div class="rounded-[28px] border border-line p-6">
+              <h3 class="font-extrabold">Motivaciones</h3>
+              <p class="mt-3 text-sm leading-7 text-muted">
+                Sentir más claridad, calma y control consciente sobre su rutina diaria.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DEFINICIÓN Y MVP -->
+      <section class="rounded-[36px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
+        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">05 · Definición y MVP</p>
+
+        <div class="mt-7 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <h2 class="text-3xl font-extrabold leading-[1.02] tracking-[-0.06em] sm:text-5xl">
+              De la investigación a una propuesta concreta.
+            </h2>
+
+            <p class="mt-6 text-base leading-8 text-muted">
+              A partir de los hallazgos, el producto se enfocó en una experiencia sencilla: ayudar al usuario a entender su dinero disponible y sus tareas principales sin sobrecargar la interfaz.
+            </p>
+
+            <div class="mt-7 rounded-[28px] border border-line bg-soft p-6">
+              <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">POV</p>
+              <p class="mt-4 text-lg font-bold leading-8">
+                Las personas necesitan una forma clara de visualizar dinero y tareas en un solo lugar para reducir carga mental y tomar mejores decisiones diarias.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div class="rounded-[24px] bg-accent p-6 font-extrabold text-white shadow-glow">Dinero disponible real</div>
+            <div class="rounded-[24px] bg-accentSoft p-6 font-extrabold">Registro manual de gastos</div>
+            <div class="rounded-[24px] bg-accentSoft p-6 font-extrabold">Resumen visual mensual</div>
+            <div class="rounded-[24px] bg-accentSoft p-6 font-extrabold">Recomendación de gasto diario</div>
+            <div class="rounded-[24px] bg-ink p-6 font-extrabold text-white sm:col-span-2">Centralización de tiempo y dinero</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARQUITECTURA Y FLUJOS -->
+      <section class="rounded-[36px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
+        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">06 · Arquitectura y flujos</p>
+
+        <h2 class="mt-6 max-w-4xl text-3xl font-extrabold leading-[1.02] tracking-[-0.06em] sm:text-5xl">
+          Una navegación sencilla para reducir fricción.
+        </h2>
+
+        <div class="mt-9 grid gap-3 md:grid-cols-5">
+          <div class="rounded-[22px] border border-line bg-soft p-5 text-center font-extrabold">Inicio</div>
+          <div class="rounded-[22px] border border-line bg-soft p-5 text-center font-extrabold">Mi dinero</div>
+          <div class="rounded-[22px] border border-line bg-soft p-5 text-center font-extrabold">Tareas</div>
+          <div class="rounded-[22px] border border-line bg-soft p-5 text-center font-extrabold">Perfil</div>
+          <div class="rounded-[22px] border border-line bg-soft p-5 text-center font-extrabold">Ajustes</div>
+        </div>
+
+        <div class="mt-8 grid gap-5 lg:grid-cols-3">
+          <div class="rounded-[30px] border border-dashed border-accent/45 bg-soft p-6">
+            <h3 class="font-extrabold">Card sorting</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">
+              Aquí insertar imagen del card sorting o agrupación de contenidos.
+            </p>
+          </div>
+
+          <div class="rounded-[30px] border border-line bg-ink p-6 text-white shadow-luxe">
+            <h3 class="font-extrabold">Task flow · Añadir gasto</h3>
+            <p class="mt-4 text-sm leading-7 text-white/70">
+              Inicio → Mi dinero → FAB → Añadir gasto → Confirmación.
+            </p>
+          </div>
+
+          <div class="rounded-[30px] border border-dashed border-accent/45 bg-soft p-6">
+            <h3 class="font-extrabold">User flow · Añadir gasto</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">
+              Aquí insertar imagen del flujo completo con decisiones y feedback.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- WIREFRAMES -->
+      <section class="rounded-[36px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
+        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">07 · Wireframes y evolución</p>
+
+        <div class="mt-6 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <h2 class="text-3xl font-extrabold leading-[1.02] tracking-[-0.06em] sm:text-5xl">
+            Del boceto inicial a una estructura más clara.
+          </h2>
+
+          <p class="text-base leading-8 text-muted">
+            El proceso comenzó con bocetos a mano para explorar la estructura de las pantallas principales. Después se trasladó a wireframes digitales y media fidelidad para refinar jerarquía, navegación y componentes.
+          </p>
+        </div>
+
+        <div class="mt-9 grid gap-5 md:grid-cols-3">
+          <figure class="rounded-[30px] bg-soft p-5">
+            <div class="flex min-h-[320px] items-center justify-center rounded-[24px] bg-white shadow-sm">
+              <img src="images/boceto_inicio.png" alt="Boceto a mano de CLARO" class="max-h-[290px] w-auto" />
+            </div>
+            <figcaption class="mt-4 text-sm font-extrabold">Boceto a mano</figcaption>
+          </figure>
+
+          <figure class="rounded-[30px] bg-soft p-5">
+            <div class="flex min-h-[320px] items-center justify-center rounded-[24px] bg-white shadow-sm">
+              <img src="images/wireframe_inicio.png" alt="Wireframe digital de CLARO" class="max-h-[290px] w-auto" />
+            </div>
+            <figcaption class="mt-4 text-sm font-extrabold">Wireframe digital</figcaption>
+          </figure>
+
+          <figure class="rounded-[30px] bg-soft p-5">
+            <div class="flex min-h-[320px] items-center justify-center rounded-[24px] bg-white shadow-sm">
+              <img src="images/inicio.png" alt="Pantalla en media fidelidad de CLARO" class="max-h-[290px] w-auto" />
+            </div>
+            <figcaption class="mt-4 text-sm font-extrabold">Media / alta fidelidad</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- UI KIT -->
+      <section class="rounded-[36px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
+        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">08 · Sistema visual / UI Kit</p>
+
+        <div class="mt-7 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <h2 class="text-3xl font-extrabold leading-[1.02] tracking-[-0.06em] sm:text-5xl">
+              Una interfaz calmada, clara y consistente.
+            </h2>
+
+            <p class="mt-6 text-base leading-8 text-muted">
+              La identidad visual de CLARO se apoya en una estética limpia y mobile-first, basada en Material Design 3 para mantener patrones reconocibles en Android.
+            </p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-[28px] border border-line p-5">
+              <div class="mb-4 h-16 rounded-2xl bg-[#21A99B] shadow-glow"></div>
+              <p class="font-extrabold">#21A99B</p>
+              <p class="text-sm text-muted">Color principal</p>
+            </div>
+
+            <div class="rounded-[28px] border border-line p-5">
+              <div class="mb-4 h-16 rounded-2xl border border-line bg-[#F7FCFB]"></div>
+              <p class="font-extrabold">#F7FCFB</p>
+              <p class="text-sm text-muted">Fondo suave</p>
+            </div>
+
+            <div class="rounded-[28px] border border-line p-5">
+              <h3 class="font-extrabold">Tipografía</h3>
+              <p class="mt-3 text-sm leading-7 text-muted">
+                Jerarquía clara entre títulos, datos principales y texto secundario.
+              </p>
+            </div>
+
+            <div class="rounded-[28px] border border-line p-5">
+              <h3 class="font-extrabold">Material Design</h3>
+              <p class="mt-3 text-sm leading-7 text-muted">
+                Cards, tabs, bottom navigation, bottom sheet y snackbar.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-9 grid gap-4 md:grid-cols-3">
+          <div class="rounded-[28px] bg-soft p-6">
+            <h3 class="font-extrabold">Cards</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">
+              Para mostrar dinero disponible, tareas y próximos movimientos.
+            </p>
+          </div>
+
+          <div class="rounded-[28px] bg-soft p-6">
+            <h3 class="font-extrabold">Tabs</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">
+              Para organizar gastos fijos, imprevistos, ahorros y vistas por día.
+            </p>
+          </div>
+
+          <div class="rounded-[28px] bg-soft p-6">
+            <h3 class="font-extrabold">Bottom sheet</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">
+              Para añadir gastos o ingresos sin salir del contexto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROTOTIPO FINAL -->
+      <section class="relative overflow-hidden rounded-[36px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
+        <div class="pointer-events-none absolute bottom-[-160px] right-[-160px] h-[380px] w-[380px] rounded-full bg-accent opacity-10 blur-[90px]"></div>
+
+        <div class="relative">
+          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">09 · Prototipo final</p>
+
+          <div class="mt-7 grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+            <div>
+              <h2 class="text-3xl font-extrabold leading-[1.02] tracking-[-0.06em] sm:text-5xl">
+                Pantallas finales principales.
+              </h2>
+
+              <p class="mt-6 text-base leading-8 text-muted">
+                El prototipo final permite recorrer la experiencia principal de CLARO: iniciar sesión, consultar el estado del dinero, añadir un gasto y recibir feedback inmediato.
+              </p>
+
+              <a
+                href="https://www.figma.com/proto/dQrP956PnxR0erdeM4OIwh/CLAR%C3%93?page-id=0%3A1&node-id=1786-954&viewport=4905%2C985%2C0.46&t=V2tJDfkeXtXcYqGg-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1786%3A954&show-proto-sidebar=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-extrabold text-white shadow-glow transition hover:bg-accentDark"
+              >
+                Abrir prototipo en Figma
+              </a>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 xl:grid-cols-4">
+              <div class="rounded-[28px] bg-soft p-3 shadow-soft">
+                <img src="images/inicio.png" alt="Pantalla de inicio de CLARO" class="mx-auto max-h-[360px] w-auto" />
+              </div>
+
+              <div class="rounded-[28px] bg-soft p-3 shadow-soft">
+                <img src="images/mi_dinero.png" alt="Pantalla Mi dinero de CLARO" class="mx-auto max-h-[360px] w-auto" />
+              </div>
+
+              <div class="rounded-[28px] bg-soft p-3 shadow-soft">
+                <img src="images/añadir_gasto.png" alt="Pantalla Añadir gasto de CLARO" class="mx-auto max-h-[360px] w-auto" />
+              </div>
+
+              <div class="rounded-[28px] bg-soft p-3 shadow-soft">
+                <img src="images/tareas.png" alt="Pantalla Tareas de CLARO" class="mx-auto max-h-[360px] w-auto" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTING -->
+      <section class="rounded-[36px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
+        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">10 · Testing e iteración</p>
+
+        <h2 class="mt-6 max-w-4xl text-3xl font-extrabold leading-[1.02] tracking-[-0.06em] sm:text-5xl">
+          Validar si la acción principal era fácil de encontrar.
+        </h2>
+
+        <div class="mt-9 grid gap-4 md:grid-cols-4">
+          <div class="rounded-[28px] bg-soft p-6">
+            <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Participantes</p>
+            <p class="mt-2 text-3xl font-extrabold text-accent">5</p>
+          </div>
+
+          <div class="rounded-[28px] bg-soft p-6">
+            <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Tareas</p>
+            <p class="mt-2 font-extrabold">Login, añadir gasto, revisar dinero.</p>
+          </div>
+
+          <div class="rounded-[28px] bg-soft p-6">
+            <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Resultado</p>
+            <p class="mt-2 font-extrabold">Todos completaron las tareas principales.</p>
+          </div>
+
+          <div class="rounded-[28px] bg-soft p-6">
+            <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Fricción</p>
+            <p class="mt-2 font-extrabold">Baja visibilidad de “Añadir gasto”.</p>
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-5 lg:grid-cols-2">
+          <div class="rounded-[30px] border border-line p-6">
+            <h3 class="font-extrabold">Problema detectado</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">
+              Algunos usuarios tuvieron dudas al localizar la acción principal para añadir un gasto.
+            </p>
+            <div class="mt-5 rounded-[24px] border border-dashed border-accent/40 bg-soft p-6 text-sm font-bold text-muted">
+              Aquí insertar imagen del antes
+            </div>
+          </div>
+
+          <div class="rounded-[30px] border border-line p-6">
+            <h3 class="font-extrabold">Solución aplicada</h3>
+            <p class="mt-3 text-sm leading-7 text-muted">
+              Se hizo más visible el FAB en “Mi dinero”, se añadió acceso alternativo desde menú y se incorporó feedback mediante confirmaciones.
+            </p>
+            <div class="mt-5 rounded-[24px] border border-dashed border-accent/40 bg-soft p-6 text-sm font-bold text-muted">
+              Aquí insertar imagen del después
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTADO -->
+      <section class="relative overflow-hidden rounded-[36px] bg-ink p-7 text-white shadow-luxe sm:p-10 lg:p-12">
+        <div class="pointer-events-none absolute right-[-120px] top-[-120px] h-[360px] w-[360px] rounded-full bg-accent opacity-25 blur-[100px]"></div>
+
+        <div class="relative">
+          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">11 · Resultado y aprendizajes</p>
+
+          <h2 class="mt-6 max-w-4xl text-3xl font-extrabold leading-[1.02] tracking-[-0.06em] sm:text-5xl">
+            Una app clara para tomar mejores decisiones diarias.
+          </h2>
+
+          <p class="mt-6 max-w-3xl text-base leading-8 text-white/70">
+            CLARO demuestra cómo una interfaz sencilla puede ayudar a reducir carga mental al conectar dos áreas que suelen gestionarse por separado: dinero y tiempo.
+          </p>
+
+          <div class="mt-9 grid gap-4 md:grid-cols-3">
+            <div class="rounded-[28px] bg-white/8 p-6">
+              <h3 class="text-2xl font-extrabold text-accent">01</h3>
+              <p class="mt-3 text-sm leading-7 text-white/70">
+                La claridad visual puede ser más valiosa que añadir muchas funciones.
+              </p>
+            </div>
+
+            <div class="rounded-[28px] bg-white/8 p-6">
+              <h3 class="text-2xl font-extrabold text-accent">02</h3>
+              <p class="mt-3 text-sm leading-7 text-white/70">
+                Un CTA importante necesita visibilidad, contexto y rutas alternativas.
+              </p>
+            </div>
+
+            <div class="rounded-[28px] bg-white/8 p-6">
+              <h3 class="text-2xl font-extrabold text-accent">03</h3>
+              <p class="mt-3 text-sm leading-7 text-white/70">
+                El testing ayuda a transformar una interfaz correcta en una experiencia más usable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="flex flex-col justify-between gap-4 pt-4 sm:flex-row">
+        <a href="projects.html" class="font-extrabold text-ink transition hover:text-accent">
+          ← Volver a proyectos
+        </a>
+
+        <a href="#top" class="font-extrabold text-ink transition hover:text-accent">
+          Subir ↑
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="border-t border-line py-8">
+    <div class="mx-auto flex w-[min(1180px,calc(100%-2rem))] flex-col gap-4 text-sm text-muted md:flex-row md:items-center md:justify-between">
+      <p>© 2026 Sara Alcaraz</p>
+
+      <div class="flex gap-5">
+        <a href="projects.html" class="transition hover:text-ink">Proyectos</a>
+        <a href="about.html" class="transition hover:text-ink">Sobre mí</a>
+        <a href="contact.html" class="transition hover:text-ink">Contacto</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const menuToggle = document.getElementById("menuToggle");
