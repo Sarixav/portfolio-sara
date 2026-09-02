@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,10 +12,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -23,311 +20,282 @@
       theme: {
         extend: {
           colors: {
-            ink: "#101828",
-            muted: "#667085",
-            soft: "#F7FCFB",
-            cream: "#FAFAF8",
-            line: "#E2EFEC",
-            accent: "#2F8F83",
-            accentDark: "#25766C",
-            accentSoft: "#E8F3F2",
-            blush: "#F4E7E4",
-            card: "#FFFFFF"
+            blackCustom: '#17120f',
+            cream: '#f3e8d8',
+            creamLight: '#fff6e9',
+            muted: '#6f6257',
+            greenCustom: '#cfe8a4',
+            pinkCustom: '#f3a9df',
+            turquoise: '#b9ece8',
+            lilac: '#c7a5f2',
+            orangeCustom: '#ffa43d'
           },
           fontFamily: {
-            sans: ["Manrope", "sans-serif"],
-            serif: ["Instrument Serif", "serif"]
+            inter: ['Inter', 'sans-serif'],
+            serifDisplay: ['Instrument Serif', 'serif'],
+            impact: ['Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif']
           },
-          boxShadow: {
-            soft: "0 24px 70px rgba(17, 24, 39, 0.08)",
-            luxe: "0 40px 120px rgba(17, 24, 39, 0.12)",
-            glow: "0 36px 100px rgba(47,143,131,0.22)"
+          keyframes: {
+            scroll: {
+              from: { transform: 'translateX(0)' },
+              to: { transform: 'translateX(-50%)' }
+            }
+          },
+          animation: {
+            scroll: 'scroll 30s linear infinite'
           }
         }
       }
-    };
+    }
   </script>
 </head>
 
-<body id="top" class="bg-soft font-sans text-ink antialiased selection:bg-accent selection:text-white">
-  <header class="sticky top-0 z-50 border-b border-line/80 bg-soft/85 backdrop-blur-xl">
-    <div class="mx-auto flex min-h-[78px] w-[min(1440px,calc(100%-2rem))] items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 font-extrabold tracking-[-0.04em]">
-        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-accentSoft text-sm font-extrabold text-accent">
-          SA
-        </span>
-        <span>Sara Alcaraz</span>
-      </a>
+<body id="top" class="overflow-x-hidden bg-cream font-inter text-blackCustom">
 
-      <button
-        id="menuToggle"
-        class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white md:hidden"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="navLinks"
-      >
-        <div class="flex flex-col gap-[5px]">
-          <span class="block h-[1.5px] w-5 bg-ink"></span>
-          <span class="block h-[1.5px] w-5 bg-ink"></span>
-        </div>
-      </button>
+  <header class="fixed left-0 top-0 z-[100] w-full border-b border-[rgba(15,13,11,.16)] bg-[rgba(243,232,216,.9)] backdrop-blur-[18px]">
+    <div class="mx-auto flex min-h-[72px] w-[calc(100%-18px)] max-w-full items-center justify-between">
+      <a href="index.html" class="text-[13px] font-extrabold uppercase tracking-[.02em]">Sara Alcaraz</a>
 
-      <nav
-        id="navLinks"
-        class="absolute left-0 right-0 top-[78px] hidden flex-col gap-5 border-b border-line bg-soft px-6 py-6 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
-      >
-        <a href="index.html" class="text-sm font-bold text-muted transition hover:text-ink">Inicio</a>
-        <a href="projects.html" class="text-sm font-bold text-muted transition hover:text-ink">Proyectos</a>
-        <a href="about.html" class="text-sm font-bold text-ink">Sobre mí</a>
-        <a href="contact.html" class="text-sm font-bold text-muted transition hover:text-ink">Contacto</a>
+      <button class="hidden h-[42px] w-[42px] items-center justify-center rounded-[10px] border border-blackCustom bg-transparent text-[20px] max-[900px]:inline-flex" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+      <nav class="flex items-center gap-[34px] max-[900px]:absolute max-[900px]:left-4 max-[900px]:right-4 max-[900px]:top-[74px] max-[900px]:hidden max-[900px]:flex-col max-[900px]:items-start max-[900px]:rounded-[14px] max-[900px]:border max-[900px]:border-[rgba(15,13,11,.16)] max-[900px]:bg-cream max-[900px]:p-6 max-[900px]:shadow-[0_20px_60px_rgba(15,13,11,.12)]" id="navLinks">
+        <a href="index.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Inicio</a>
+        <a href="projects.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Proyectos</a>
+        <a href="about.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Sobre mí</a>
+        <a href="contact.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Contacto</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <!-- HERO ABOUT -->
-<section class="relative overflow-hidden border-b border-line/70">
-  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(33,169,155,0.12),transparent_30%)]"></div>
 
-  <div class="relative mx-auto w-[min(1200px,calc(100%-2rem))] py-16 sm:py-20">
-    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+    <section class="grid min-h-screen place-items-center overflow-hidden bg-cream pt-[72px]">
+      <img class="block h-[calc(100vh-72px)] w-full object-cover object-center" src="images/sobre_mi.svg" alt="Portada editorial de la página Sobre mí de Sara Alcaraz" />
+    </section>
 
-      <!-- TEXTO -->
-      <div>
-        <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-          Sobre mí
-        </p>
-
-        <h1 class="mt-4 text-4xl font-extrabold leading-tight tracking-[-0.05em] sm:text-5xl">
-          Diseño productos digitales con foco en claridad y experiencia.
-        </h1>
-
-        <p class="mt-6 text-base leading-8 text-muted">
-          Soy Sara Alcaraz, diseñadora UX/UI en formación con enfoque en producto digital. 
-          Me interesa crear experiencias claras, visuales y fáciles de entender, 
-          reduciendo la carga mental en la toma de decisiones.
-        </p>
-
-        <p class="mt-4 text-base leading-8 text-muted">
-          Vengo de un proceso de cambio profesional, lo que me ha permitido desarrollar 
-          una mirada muy empática hacia las personas y sus necesidades reales.
-        </p>
+    <div class="overflow-hidden border-y border-[rgba(15,13,11,.16)] bg-cream py-[18px]">
+      <div class="flex w-max animate-scroll gap-7 font-impact font-normal tracking-[-.035em]">
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Claridad</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Producto</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Visual Design</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">UX/UI</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Claridad</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Producto</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Visual Design</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">UX/UI</span>
       </div>
-
-      <!-- FOTO -->
-      <div class="relative">
-        <div class="pointer-events-none absolute inset-0 rounded-[40px] bg-accent opacity-15 blur-[80px]"></div>
-
-<div class="relative mx-auto max-w-[420px]">
-            <img
-  src="images/yo_trabajando.png"
-  class="w-full h-[480px] object-cover"
-/>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
-    <!-- APPROACH -->
-    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] py-16 sm:py-20">
-      <div class="grid gap-6 lg:grid-cols-12">
-        <article class="rounded-[40px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:col-span-7 lg:p-12">
-          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-            Mi enfoque
+
+    <section class="border-y border-[rgba(15,13,11,.16)] bg-cream py-[clamp(42px,5vw,78px)]">
+      <div class="mx-auto grid w-[calc(100%-18px)] max-w-full grid-cols-[1fr_.9fr] items-end gap-16 max-[1000px]:grid-cols-1">
+        <div>
+          <p class="mb-4 text-[12px] font-extrabold uppercase tracking-[.18em] text-muted">Sobre mí · Product & UX/UI Designer</p>
+          <h1 class="max-w-[960px] font-impact text-[clamp(2.8rem,5.4vw,6.2rem)] font-normal uppercase leading-[.9] tracking-[-.035em]">
+            Diseño productos digitales con foco en claridad y experiencia.
+          </h1>
+        </div>
+
+        <div>
+          <p class="max-w-[650px] text-[clamp(16px,1.25vw,20px)] leading-[1.75] text-muted">
+            Soy Sara Alcaraz, diseñadora UX/UI en formación con enfoque en producto digital. Me interesa crear experiencias claras, visuales y fáciles de entender, reduciendo la carga mental en la toma de decisiones.
           </p>
 
-          <h2 class="mt-5 text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-6xl">
-            Diseño para hacer la información más comprensible.
-          </h2>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="projects.html" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-blackCustom bg-blackCustom px-[18px] text-[11px] font-bold uppercase tracking-[.08em] text-cream">Ver proyectos</a>
+            <a href="contact.html" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-blackCustom bg-[rgba(255,255,255,.34)] px-[18px] text-[11px] font-bold uppercase tracking-[.08em]">Contacto</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <p class="mt-6 max-w-3xl text-base leading-8 text-muted">
+    <section class="mx-auto w-[calc(100%-18px)] max-w-full py-[clamp(64px,8vw,118px)]">
+      <div class="mb-[54px] grid grid-cols-[1fr_.9fr] items-end gap-14 max-[1000px]:grid-cols-1">
+        <h2 class="font-impact text-[clamp(3.8rem,8.8vw,10rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">
+          My <em class="font-serifDisplay font-normal normal-case italic tracking-[-.04em]">approach</em>
+        </h2>
+
+        <p class="max-w-[680px] text-[17px] leading-[1.75] text-muted">
+          Vengo de un proceso de cambio profesional, lo que me ha permitido desarrollar una mirada muy empática hacia las personas y sus necesidades reales.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-[.9fr_1.1fr] gap-[22px] max-[1000px]:grid-cols-1">
+        <article class="relative overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-greenCustom p-[clamp(32px,5vw,70px)] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_12%_18%,rgba(255,255,255,.42)_0_18%,transparent_19%),radial-gradient(ellipse_at_88%_76%,rgba(255,255,255,.35)_0_16%,transparent_17%),radial-gradient(ellipse_at_58%_12%,rgba(255,255,255,.18)_0_10%,transparent_11%)] before:opacity-[.62]">
+          <h2 class="relative z-[2] mb-[26px] font-impact text-[clamp(3.3rem,7vw,7.4rem)] font-normal uppercase leading-[.84] tracking-[-.035em]">Claridad antes que ruido.</h2>
+
+          <p class="relative z-[2] mb-[18px] max-w-[760px] text-[16px] leading-[1.85] text-[rgba(15,13,11,.68)]">
             Me gusta trabajar desde una base estructural clara: entender el problema, ordenar la información, construir una interfaz coherente y dar forma a una experiencia visualmente sólida.
           </p>
 
-          <p class="mt-5 max-w-3xl text-base leading-8 text-muted">
+          <p class="relative z-[2] mb-[18px] max-w-[760px] text-[16px] leading-[1.85] text-[rgba(15,13,11,.68)]">
             Para mí, la estética no es solo apariencia. Es una herramienta para guiar, jerarquizar y hacer que una experiencia resulte más fácil de usar.
           </p>
         </article>
 
-        <article class="rounded-[40px] bg-ink p-7 text-white shadow-luxe sm:p-10 lg:col-span-5 lg:p-12">
-          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-            Principios
-          </p>
+        <article class="relative overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-pinkCustom p-[clamp(32px,5vw,70px)] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_12%_18%,rgba(255,255,255,.42)_0_18%,transparent_19%),radial-gradient(ellipse_at_88%_76%,rgba(255,255,255,.35)_0_16%,transparent_17%),radial-gradient(ellipse_at_58%_12%,rgba(255,255,255,.18)_0_10%,transparent_11%)] before:opacity-[.62]">
+          <h2 class="relative z-[2] mb-[26px] font-impact text-[clamp(3.3rem,7vw,7.4rem)] font-normal uppercase leading-[.84] tracking-[-.035em]">Principios</h2>
 
-          <h2 class="mt-5 text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-5xl">
-            Claridad antes que ruido.
-          </h2>
-
-          <div class="mt-8 space-y-3">
-            <div class="rounded-[24px] bg-white/8 p-5">
-              <p class="font-extrabold">Claridad antes que complejidad</p>
+          <div class="relative z-[2] grid gap-[14px]">
+            <div class="rounded-[12px] border border-[rgba(15,13,11,.15)] bg-[rgba(255,255,255,.34)] p-5">
+              <span class="mb-2 block font-serifDisplay text-[42px] italic leading-[.8] text-[rgba(15,13,11,.42)]">01</span>
+              <h3 class="mb-2 text-[15px] uppercase tracking-[.08em]">Claridad antes que complejidad</h3>
+              <p class="mb-0 text-[14px] leading-[1.65] text-[rgba(15,13,11,.68)]">Diseñar para que la información se entienda rápido y sin fricción.</p>
             </div>
 
-            <div class="rounded-[24px] bg-white/8 p-5">
-              <p class="font-extrabold">La estética al servicio de la comprensión</p>
+            <div class="rounded-[12px] border border-[rgba(15,13,11,.15)] bg-[rgba(255,255,255,.34)] p-5">
+              <span class="mb-2 block font-serifDisplay text-[42px] italic leading-[.8] text-[rgba(15,13,11,.42)]">02</span>
+              <h3 class="mb-2 text-[15px] uppercase tracking-[.08em]">La estética al servicio de la comprensión</h3>
+              <p class="mb-0 text-[14px] leading-[1.65] text-[rgba(15,13,11,.68)]">Lo visual tiene que ayudar, no decorar sin intención.</p>
             </div>
 
-            <div class="rounded-[24px] bg-white/8 p-5">
-              <p class="font-extrabold">Jerarquía visual bien resuelta</p>
+            <div class="rounded-[12px] border border-[rgba(15,13,11,.15)] bg-[rgba(255,255,255,.34)] p-5">
+              <span class="mb-2 block font-serifDisplay text-[42px] italic leading-[.8] text-[rgba(15,13,11,.42)]">03</span>
+              <h3 class="mb-2 text-[15px] uppercase tracking-[.08em]">Jerarquía visual bien resuelta</h3>
+              <p class="mb-0 text-[14px] leading-[1.65] text-[rgba(15,13,11,.68)]">Orden, ritmo y contraste para guiar la mirada.</p>
             </div>
 
-            <div class="rounded-[24px] bg-white/8 p-5">
-              <p class="font-extrabold">Experiencias simples, actuales y útiles</p>
+            <div class="rounded-[12px] border border-[rgba(15,13,11,.15)] bg-[rgba(255,255,255,.34)] p-5">
+              <span class="mb-2 block font-serifDisplay text-[42px] italic leading-[.8] text-[rgba(15,13,11,.42)]">04</span>
+              <h3 class="mb-2 text-[15px] uppercase tracking-[.08em]">Experiencias simples, actuales y útiles</h3>
+              <p class="mb-0 text-[14px] leading-[1.65] text-[rgba(15,13,11,.68)]">Productos con intención, sensibilidad y uso real.</p>
             </div>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] pb-16 sm:pb-20">
-      <div class="rounded-[40px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:p-12">
-        <div class="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
-          <div>
-            <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-              Skills & tools
-            </p>
+    <section class="mx-auto w-[calc(100%-18px)] max-w-full py-[clamp(64px,8vw,118px)]">
+      <div class="grid grid-cols-[.75fr_1.25fr] gap-[22px] max-[1000px]:grid-cols-1">
+        <article class="relative overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-turquoise p-[clamp(32px,5vw,70px)] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_12%_18%,rgba(255,255,255,.42)_0_18%,transparent_19%),radial-gradient(ellipse_at_88%_76%,rgba(255,255,255,.35)_0_16%,transparent_17%),radial-gradient(ellipse_at_58%_12%,rgba(255,255,255,.18)_0_10%,transparent_11%)] before:opacity-[.62]">
+          <p class="relative z-[2] mb-4 text-[12px] font-extrabold uppercase tracking-[.18em] text-muted">Skills & tools</p>
+          <h2 class="relative z-[2] mb-[26px] font-impact text-[clamp(3.3rem,7vw,7.4rem)] font-normal uppercase leading-[.84] tracking-[-.035em]">Qué aporto al proceso de diseño.</h2>
 
-            <h2 class="mt-5 text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-6xl">
-              Qué aporto al proceso de diseño.
-            </h2>
+          <p class="relative z-[2] mb-[18px] max-w-[760px] text-[16px] leading-[1.85] text-[rgba(15,13,11,.68)]">
+            Combino investigación, estructura UX, diseño visual y prototipado para construir experiencias digitales claras y coherentes.
+          </p>
 
-            <p class="mt-6 text-base leading-8 text-muted">
-              Combino investigación, estructura UX, diseño visual y prototipado para construir experiencias digitales claras y coherentes.
-            </p>
+          <div class="relative z-[2] mt-7 flex flex-wrap gap-[9px]">
+            <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">UX Research</span>
+            <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">UI Design</span>
+            <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Wireframing</span>
+            <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Prototyping</span>
+            <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Design Systems</span>
+            <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Product Thinking</span>
+            <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Figma</span>
+            <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Canva</span>
+            <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">HTML/CSS</span>
+            <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Tailwind</span>
+          </div>
+        </article>
+
+        <div class="grid grid-cols-2 gap-[14px] max-[1000px]:grid-cols-1">
+          <div class="min-h-[220px] rounded-[14px] border border-[rgba(15,13,11,.15)] bg-[rgba(255,255,255,.38)] p-[26px]">
+            <h3 class="mb-[18px] font-impact text-[clamp(2rem,4vw,4rem)] font-normal uppercase leading-[.86] tracking-[-.035em]">UX</h3>
+            <p class="text-[14px] leading-[1.7] text-[rgba(15,13,11,.68)]">Investigación, entrevistas, user persona, arquitectura de información, flujos y testing.</p>
           </div>
 
-          <div>
-            <div class="flex flex-wrap gap-3">
-              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">UX Research</span>
-              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">UI Design</span>
-              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Wireframing</span>
-              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Prototyping</span>
-              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Design Systems</span>
-              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Product Thinking</span>
-              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Figma</span>
-              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Canva</span>
-              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">HTML/CSS</span>
-              <span class="rounded-full bg-accentSoft px-4 py-2 text-sm font-extrabold text-accent">Tailwind</span>
-            </div>
+          <div class="min-h-[220px] rounded-[14px] border border-[rgba(15,13,11,.15)] bg-[rgba(255,255,255,.38)] p-[26px]">
+            <h3 class="mb-[18px] font-impact text-[clamp(2rem,4vw,4rem)] font-normal uppercase leading-[.86] tracking-[-.035em]">UI</h3>
+            <p class="text-[14px] leading-[1.7] text-[rgba(15,13,11,.68)]">Jerarquía visual, sistemas de componentes, prototipos, estilos y consistencia.</p>
+          </div>
 
-            <div class="mt-8 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-[28px] bg-soft p-6">
-                <h3 class="font-extrabold">UX</h3>
-                <p class="mt-3 text-sm leading-7 text-muted">
-                  Investigación, entrevistas, user persona, arquitectura de información, flujos y testing.
-                </p>
-              </div>
+          <div class="min-h-[220px] rounded-[14px] border border-[rgba(15,13,11,.15)] bg-[rgba(255,255,255,.38)] p-[26px]">
+            <h3 class="mb-[18px] font-impact text-[clamp(2rem,4vw,4rem)] font-normal uppercase leading-[.86] tracking-[-.035em]">Producto</h3>
+            <p class="text-[14px] leading-[1.7] text-[rgba(15,13,11,.68)]">Definir problemas, priorizar funcionalidades y diseñar soluciones simples.</p>
+          </div>
 
-              <div class="rounded-[28px] bg-soft p-6">
-                <h3 class="font-extrabold">UI</h3>
-                <p class="mt-3 text-sm leading-7 text-muted">
-                  Jerarquía visual, sistemas de componentes, prototipos, estilos y consistencia.
-                </p>
-              </div>
-
-              <div class="rounded-[28px] bg-soft p-6">
-                <h3 class="font-extrabold">Producto</h3>
-                <p class="mt-3 text-sm leading-7 text-muted">
-                  Definir problemas, priorizar funcionalidades y diseñar soluciones simples.
-                </p>
-              </div>
-
-              <div class="rounded-[28px] bg-soft p-6">
-                <h3 class="font-extrabold">Frontend</h3>
-                <p class="mt-3 text-sm leading-7 text-muted">
-                  Base en HTML, CSS, Tailwind y comprensión de cómo se construye una interfaz.
-                </p>
-              </div>
-            </div>
+          <div class="min-h-[220px] rounded-[14px] border border-[rgba(15,13,11,.15)] bg-[rgba(255,255,255,.38)] p-[26px]">
+            <h3 class="mb-[18px] font-impact text-[clamp(2rem,4vw,4rem)] font-normal uppercase leading-[.86] tracking-[-.035em]">Frontend</h3>
+            <p class="text-[14px] leading-[1.7] text-[rgba(15,13,11,.68)]">Base en HTML, CSS, Tailwind y comprensión de cómo se construye una interfaz.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- STORY -->
-    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] pb-16 sm:pb-20">
-      <div class="grid gap-6 lg:grid-cols-12">
-        <article class="rounded-[40px] border border-line bg-white p-7 shadow-soft sm:p-10 lg:col-span-8 lg:p-12">
-          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-            Trayectoria
-          </p>
+    <section class="mx-auto w-[calc(100%-18px)] max-w-full py-[clamp(64px,8vw,118px)]">
+      <div class="mb-[54px] grid grid-cols-[1fr_.9fr] items-end gap-14 max-[1000px]:grid-cols-1">
+        <h2 class="font-impact text-[clamp(3.8rem,8.8vw,10rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">
+          Path <em class="font-serifDisplay font-normal normal-case italic tracking-[-.04em]">& focus</em>
+        </h2>
 
-          <h2 class="mt-5 max-w-4xl text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-6xl">
-            Estoy construyendo mi camino en UX/UI con una mirada orientada a producto.
-          </h2>
+        <p class="max-w-[680px] text-[17px] leading-[1.75] text-muted">
+          Mi interés por el diseño digital parte de una motivación concreta: crear productos que hagan la vida más clara, más ligera y más fácil de entender.
+        </p>
+      </div>
 
-          <p class="mt-6 max-w-4xl text-base leading-8 text-muted">
-            Mi interés por el diseño digital parte de una motivación concreta: crear productos que hagan la vida más clara, más ligera y más fácil de entender. Me atraen especialmente los proyectos relacionados con organización personal, finanzas, bienestar y herramientas que conviertan información compleja en experiencias más accesibles.
-          </p>
+      <div class="grid overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-creamLight">
+        <div class="grid grid-cols-[.38fr_1fr_.85fr] items-start gap-7 border-b border-[rgba(15,13,11,.14)] p-[clamp(24px,4vw,46px)] max-[1000px]:grid-cols-1">
+          <span class="font-serifDisplay text-[clamp(4.5rem,8vw,9rem)] italic leading-[.75] text-[rgba(15,13,11,.35)]">01</span>
+          <h3 class="font-impact text-[clamp(2.6rem,5vw,5.8rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">Cambio profesional</h3>
+          <p class="text-[15px] leading-[1.8] text-muted">Estoy construyendo mi camino en UX/UI con una mirada orientada a producto y una sensibilidad especial por las necesidades reales de las personas.</p>
+        </div>
 
-          <p class="mt-5 max-w-4xl text-base leading-8 text-muted">
-            Actualmente sigo reforzando mi perfil como diseñadora UX/UI, combinando criterio visual, pensamiento de producto y una sensibilidad especial por las interfaces limpias, serenas y bien estructuradas.
-          </p>
-        </article>
+        <div class="grid grid-cols-[.38fr_1fr_.85fr] items-start gap-7 border-b border-[rgba(15,13,11,.14)] p-[clamp(24px,4vw,46px)] max-[1000px]:grid-cols-1">
+          <span class="font-serifDisplay text-[clamp(4.5rem,8vw,9rem)] italic leading-[.75] text-[rgba(15,13,11,.35)]">02</span>
+          <h3 class="font-impact text-[clamp(2.6rem,5vw,5.8rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">Interés real</h3>
+          <p class="text-[15px] leading-[1.8] text-muted">Me atraen especialmente los proyectos relacionados con organización personal, finanzas, bienestar y herramientas que conviertan información compleja en experiencias más accesibles.</p>
+        </div>
 
-        <article class="rounded-[40px] bg-[linear-gradient(145deg,#E8F3F2,#F4E7E4)] p-7 shadow-soft sm:p-10 lg:col-span-4 lg:p-12">
-          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-            Busco
-          </p>
+        <div class="grid grid-cols-[.38fr_1fr_.85fr] items-start gap-7 p-[clamp(24px,4vw,46px)] max-[1000px]:grid-cols-1">
+          <span class="font-serifDisplay text-[clamp(4.5rem,8vw,9rem)] italic leading-[.75] text-[rgba(15,13,11,.35)]">03</span>
+          <h3 class="font-impact text-[clamp(2.6rem,5vw,5.8rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">Perfil actual</h3>
+          <p class="text-[15px] leading-[1.8] text-muted">Actualmente sigo reforzando mi perfil como diseñadora UX/UI, combinando criterio visual, pensamiento de producto e interfaces limpias, serenas y bien estructuradas.</p>
+        </div>
+      </div>
+    </section>
 
-          <h2 class="mt-5 text-4xl font-extrabold leading-[0.96] tracking-[-0.06em]">
-            Mi siguiente paso.
-          </h2>
+    <section class="mx-auto w-[calc(100%-18px)] max-w-full py-[clamp(64px,8vw,118px)]">
+      <div class="grid grid-cols-[1fr_.9fr] items-stretch gap-[22px] max-[1000px]:grid-cols-1">
+        <article class="relative overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-lilac p-[clamp(32px,5vw,70px)] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_15%_20%,rgba(255,255,255,.38)_0_18%,transparent_19%),radial-gradient(ellipse_at_88%_76%,rgba(255,255,255,.32)_0_16%,transparent_17%)] before:opacity-[.58]">
+          <p class="relative z-[2] mb-4 text-[12px] font-extrabold uppercase tracking-[.18em] text-muted">Busco</p>
+          <h2 class="relative z-[2] mb-[26px] font-impact text-[clamp(3.4rem,7vw,7.8rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">Mi siguiente paso.</h2>
 
-          <p class="mt-6 text-base leading-8 text-muted">
+          <p class="relative z-[2] max-w-[740px] text-[16px] leading-[1.85] text-[rgba(15,13,11,.68)]">
             Busco mi primera oportunidad profesional en producto digital y UX/UI, en un entorno donde pueda seguir creciendo, aprender de un equipo y aportar sensibilidad visual, estructura y atención al detalle.
           </p>
+        </article>
 
-          <a
-            href="contact.html"
-            class="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-extrabold text-white shadow-glow transition hover:bg-accentDark"
-          >
-            Contactar
-          </a>
+        <article class="flex flex-col justify-between gap-10 rounded-[14px] bg-blackCustom p-[clamp(32px,5vw,70px)] text-cream">
+          <div>
+            <p class="mb-4 text-[12px] font-extrabold uppercase tracking-[.18em] text-[rgba(243,232,216,.58)]">Let’s connect</p>
+            <h3 class="font-impact text-[clamp(3rem,6vw,6.4rem)] font-normal uppercase leading-[.84] tracking-[-.035em]">Podemos hablar.</h3>
+          </div>
+
+          <p class="leading-[1.75] text-[rgba(243,232,216,.7)]">
+            Estoy abierta a oportunidades junior, colaboraciones y conversaciones relacionadas con producto digital, UX/UI y diseño de interfaces.
+          </p>
+
+          <a href="contact.html" class="inline-flex min-h-[38px] w-fit items-center justify-center whitespace-nowrap rounded-[10px] border border-cream bg-[rgba(255,255,255,.34)] px-[18px] text-[11px] font-bold uppercase tracking-[.08em] text-cream">Ir a contacto</a>
         </article>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] pb-20">
-      <div class="overflow-hidden rounded-[40px] bg-ink p-7 text-white shadow-luxe sm:p-10 lg:p-12">
-        <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div>
-            <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-              Let’s connect
-            </p>
+    <section class="rounded-t-[18px] bg-blackCustom py-[clamp(64px,8vw,110px)] text-cream">
+      <div class="mx-auto grid w-[calc(100%-18px)] max-w-full grid-cols-[1fr_auto] items-end gap-10 max-[1000px]:grid-cols-1">
+        <div>
+          <p class="mb-6 text-[12px] font-extrabold uppercase tracking-[.16em] text-[rgba(243,232,216,.55)]">
+            Disponible para oportunidades junior
+          </p>
 
-            <h2 class="mt-5 max-w-4xl text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-6xl">
-              Si quieres conocer mejor mi trabajo, podemos hablar.
-            </h2>
-
-            <p class="mt-6 max-w-3xl text-base leading-8 text-white/70">
-              Estoy abierta a oportunidades junior, colaboraciones y conversaciones relacionadas con producto digital, UX/UI y diseño de interfaces.
-            </p>
-          </div>
-
-          <a
-            href="contact.html"
-            class="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-extrabold text-ink transition hover:bg-accent hover:text-white"
-          >
-            Ir a contacto
-          </a>
+          <h2 class="max-w-[980px] font-impact text-[clamp(3.4rem,8vw,7.6rem)] font-normal uppercase leading-[.84] tracking-[-.035em]">
+            Busco mi primera oportunidad en producto digital y UX/UI.
+          </h2>
         </div>
+
+        <a href="contact.html" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-cream bg-cream px-[18px] text-[11px] font-bold uppercase tracking-[.08em] text-blackCustom">Hablemos</a>
       </div>
     </section>
+
   </main>
 
-  <footer class="border-t border-line py-8">
-    <div class="mx-auto flex w-[min(1440px,calc(100%-2rem))] flex-col gap-4 text-sm text-muted md:flex-row md:items-center md:justify-between">
+  <footer class="bg-blackCustom py-[34px] text-[13px] text-[rgba(243,232,216,.62)]">
+    <div class="mx-auto flex w-[calc(100%-18px)] max-w-full flex-wrap justify-between gap-5">
       <p>© 2026 Sara Alcaraz</p>
 
-      <div class="flex gap-5">
-        <a href="projects.html" class="transition hover:text-ink">Proyectos</a>
-        <a href="about.html" class="transition hover:text-ink">Sobre mí</a>
-        <a href="contact.html" class="transition hover:text-ink">Contacto</a>
+      <div class="flex flex-wrap gap-5">
+        <a href="index.html">Inicio</a>
+        <a href="projects.html">Proyectos</a>
+        <a href="contact.html">Contacto</a>
       </div>
     </div>
   </footer>
@@ -340,9 +308,6 @@
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("hidden");
         navLinks.classList.toggle("flex");
-
-        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-        menuToggle.setAttribute("aria-expanded", String(!expanded));
       });
     }
   </script>

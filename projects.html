@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Proyectos | Sara Alcaraz</title>
-  <meta name="description" content="Selección de proyectos de UX/UI y diseño de producto de Sara Alcaraz." />
+  <meta name="description" content="Selección de proyectos de UX/UI, branding y diseño visual de Sara Alcaraz." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -17,25 +17,29 @@
       theme: {
         extend: {
           colors: {
-            ink: "#101828",
-            muted: "#667085",
-            soft: "#F7FCFB",
-            cream: "#FAFAF8",
-            line: "#E2EFEC",
-            accent: "#2F8F83",
-            accentDark: "#25766C",
-            accentSoft: "#E8F3F2",
-            blush: "#F4E7E4",
-            card: "#FFFFFF"
+            blackPortfolio: "#17120f",
+            cream: "#f3e8d8",
+            creamLight: "#fff6e9",
+            muted: "#6f6257",
+            turquoise: "#b9ece8",
+            pinkPortfolio: "#f3a9df",
+            matcha: "#cfe8a4",
+            lilac: "#c7a5f2",
+            orangePortfolio: "#ffa43d"
           },
           fontFamily: {
-            sans: ["Manrope", "sans-serif"],
-            serif: ["Instrument Serif", "serif"]
+            inter: ["Inter", "sans-serif"],
+            display: ["Impact", "Haettenschweiler", "\"Arial Narrow Bold\"", "sans-serif"],
+            serifDisplay: ["Instrument Serif", "serif"]
           },
-          boxShadow: {
-            soft: "0 24px 70px rgba(17, 24, 39, 0.08)",
-            luxe: "0 40px 120px rgba(17, 24, 39, 0.12)",
-            glow: "0 36px 100px rgba(47,143,131,0.22)"
+          keyframes: {
+            scroll: {
+              "0%": { transform: "translateX(0)" },
+              "100%": { transform: "translateX(-50%)" }
+            }
+          },
+          animation: {
+            scroll: "scroll 28s linear infinite"
           }
         }
       }
@@ -43,336 +47,267 @@
   </script>
 </head>
 
-<body id="top" class="bg-soft font-sans text-ink antialiased selection:bg-accent selection:text-white">
-  <header class="sticky top-0 z-50 border-b border-line/80 bg-soft/85 backdrop-blur-xl">
-    <div class="mx-auto flex min-h-[78px] w-[min(1440px,calc(100%-2rem))] items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 font-extrabold tracking-[-0.04em]">
-        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-accentSoft text-sm font-extrabold text-accent">
-          SA
-        </span>
-        <span>Sara Alcaraz</span>
-      </a>
+<body id="top" class="overflow-x-hidden bg-cream font-inter text-blackPortfolio">
 
-      <button
-        id="menuToggle"
-        class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white md:hidden"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="navLinks"
-      >
-        <div class="flex flex-col gap-[5px]">
-          <span class="block h-[1.5px] w-5 bg-ink"></span>
-          <span class="block h-[1.5px] w-5 bg-ink"></span>
-        </div>
-      </button>
+  <header class="fixed left-0 top-0 z-[100] w-full border-b border-[rgba(15,13,11,.16)] bg-[rgba(243,232,216,.9)] backdrop-blur-[18px]">
+    <div class="mx-auto flex min-h-[72px] w-[calc(100%-18px)] max-w-full items-center justify-between max-[900px]:w-[min(100%-32px,1680px)]">
+      <a href="index.html" class="text-[13px] font-extrabold uppercase tracking-[.02em]">Sara Alcaraz</a>
 
-      <nav
-        id="navLinks"
-        class="absolute left-0 right-0 top-[78px] hidden flex-col gap-5 border-b border-line bg-soft px-6 py-6 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
-      >
-        <a href="index.html" class="text-sm font-bold text-muted transition hover:text-ink">Inicio</a>
-        <a href="projects.html" class="text-sm font-bold text-ink">Proyectos</a>
-        <a href="about.html" class="text-sm font-bold text-muted transition hover:text-ink">Sobre mí</a>
-        <a href="contact.html" class="text-sm font-bold text-muted transition hover:text-ink">Contacto</a>
+      <button class="hidden h-[42px] w-[42px] items-center justify-center rounded-[10px] border border-blackPortfolio bg-transparent text-[20px] max-[900px]:inline-flex" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+      <nav class="flex items-center gap-[34px] max-[900px]:absolute max-[900px]:left-4 max-[900px]:right-4 max-[900px]:top-[74px] max-[900px]:hidden max-[900px]:flex-col max-[900px]:items-start max-[900px]:rounded-[14px] max-[900px]:border max-[900px]:border-[rgba(15,13,11,.16)] max-[900px]:bg-cream max-[900px]:p-6 max-[900px]:shadow-[0_20px_60px_rgba(15,13,11,.12)]" id="navLinks">
+        <a href="index.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Inicio</a>
+        <a href="projects.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Proyectos</a>
+        <a href="about.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Sobre mí</a>
+        <a href="contact.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Contacto</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="relative overflow-hidden border-b border-line/70">
-      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(47,143,131,0.20),transparent_34%),radial-gradient(circle_at_12%_72%,rgba(244,231,228,0.75),transparent_28%)]"></div>
 
-      <div class="relative mx-auto w-[min(1440px,calc(100%-2rem))] py-14 sm:py-20 lg:py-24">
-        <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div class="lg:col-span-8">
-            <div class="mb-8 flex flex-wrap gap-3">
-              <span class="rounded-full border border-line bg-white/90 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-accent shadow-sm">
-                Selected work
-              </span>
-              <span class="rounded-full border border-line bg-white/80 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-muted shadow-sm">
-                UX/UI · Producto digital
-              </span>
-            </div>
+    <section class="grid min-h-screen place-items-center overflow-hidden bg-cream pt-[72px]">
+      <img class="block h-[calc(100vh-72px)] w-full object-cover object-center" src="images/Proyectos.svg" alt="Portada editorial de la página de proyectos de Sara Alcaraz" />
+    </section>
 
-            <h1 class="max-w-6xl text-[4rem] font-extrabold leading-[0.88] tracking-[-0.08em] sm:text-[5.8rem] lg:text-[7rem]">
-              Proyectos seleccionados con foco en
-              <span class="font-serif italic font-normal text-accent"> claridad</span>
-              y producto.
-            </h1>
-          </div>
+    <div class="overflow-hidden border-y border-[rgba(15,13,11,.16)] bg-cream py-[18px]">
+      <div class="flex w-max animate-scroll gap-7 font-display font-normal tracking-[-.035em]">
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">UX/UI</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Branding</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Visual Identity</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Product Design</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">UX/UI</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Branding</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Visual Identity</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Product Design</span>
+      </div>
+    </div>
 
-          <div class="lg:col-span-4">
-            <p class="text-base leading-8 text-muted">
-              Una selección honesta y enfocada: un case study principal completo, mi marca personal como parte del portfolio y próximos proyectos en preparación.
-            </p>
-
-            <div class="mt-6 grid gap-3">
-              <div class="rounded-[24px] bg-white/80 p-5 shadow-soft">
-                <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Proyecto principal</p>
-                <p class="mt-2 font-extrabold">CLARO · App móvil</p>
-              </div>
-
-              <div class="rounded-[24px] bg-white/80 p-5 shadow-soft">
-                <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Estado</p>
-                <p class="mt-2 font-extrabold">Portfolio en evolución</p>
-              </div>
-            </div>
-          </div>
+    <section class="border-y border-[rgba(15,13,11,.16)] bg-cream py-[clamp(42px,5vw,78px)]">
+      <div class="mx-auto grid w-[calc(100%-18px)] max-w-full grid-cols-[1fr_.9fr] items-end gap-16 max-[900px]:w-[min(100%-32px,1680px)] max-[1000px]:grid-cols-1">
+        <div>
+          <p class="mb-4 text-xs font-extrabold uppercase tracking-[.18em] text-muted">Selected work · UX/UI · Branding</p>
+          <h1 class="max-w-[960px] font-display text-[clamp(2.8rem,5.4vw,6.2rem)] font-normal uppercase leading-[.9] tracking-[-.035em]">
+            Proyectos con intención visual, orden y pensamiento de producto.
+          </h1>
         </div>
 
-        <!-- FEATURED -->
-        <div class="mt-20 rounded-[40px] border border-line bg-white p-5 shadow-luxe sm:p-7 lg:p-8">
-          <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
-            <div>
-              <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-                Proyecto destacado
-              </p>
+        <div>
+          <p class="max-w-[650px] text-[clamp(16px,1.25vw,20px)] leading-[1.75] text-muted">
+            Esta selección reúne mis proyectos principales: producto digital, branding emocional, marca con web y exploraciones visuales. Prefiero enseñar pocos proyectos bien contados antes que llenar el portfolio con piezas sin contexto.
+          </p>
 
-              <h2 class="mt-4 text-4xl font-extrabold leading-none tracking-[-0.06em] sm:text-6xl">
-                CLARO
-              </h2>
-
-              <p class="mt-5 max-w-xl text-base leading-8 text-muted">
-                App móvil conceptual para organizar dinero y tiempo en un solo lugar. Un case study completo con investigación, arquitectura, UI Kit, prototipo y testing.
-              </p>
-
-              <div class="mt-6 flex flex-wrap gap-2">
-                <span class="rounded-full bg-accentSoft px-3 py-1.5 text-xs font-extrabold text-accent">UX/UI Design</span>
-                <span class="rounded-full bg-accentSoft px-3 py-1.5 text-xs font-extrabold text-accent">App móvil</span>
-                <span class="rounded-full bg-accentSoft px-3 py-1.5 text-xs font-extrabold text-accent">Case Study</span>
-              </div>
-
-              <a
-                href="project-claro.html"
-                class="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-extrabold text-white shadow-glow transition hover:bg-accentDark"
-              >
-                Explorar case study
-              </a>
-            </div>
-
-            <a href="project-claro.html" class="group block overflow-hidden rounded-[32px] bg-accentSoft p-3 shadow-soft">
-              <img
-                src="images/hero_portfolio.png"
-                alt="Vista previa del proyecto CLARO"
-                class="w-full rounded-[26px] transition duration-500 group-hover:scale-[1.02]"
-              />
-            </a>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="project-claro.html" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-blackPortfolio bg-blackPortfolio px-[18px] text-[11px] font-bold uppercase tracking-[.08em] text-cream">Ver CLARO</a>
+            <a href="index.html" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-blackPortfolio bg-[rgba(255,255,255,.34)] px-[18px] text-[11px] font-bold uppercase tracking-[.08em]">Volver al inicio</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS GRID -->
-    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] py-16 sm:py-20">
-      <div class="mb-10 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-        <div>
-          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-            Work archive
-          </p>
+    <section class="mx-auto w-[calc(100%-18px)] max-w-full py-[clamp(64px,8vw,118px)] max-[900px]:w-[min(100%-32px,1680px)] max-[1000px]:w-[calc(100%-24px)] max-[1000px]:max-w-none">
+      <div class="mb-[clamp(42px,6vw,80px)] grid grid-cols-[1fr_.9fr] items-end gap-14 max-[1000px]:grid-cols-1">
+        <h2 class="font-display text-[clamp(3.8rem,8.8vw,10rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">
+          Work <em class="font-serifDisplay font-normal normal-case italic tracking-[-.04em]">archive</em>
+        </h2>
 
-          <h2 class="mt-4 max-w-3xl text-4xl font-extrabold leading-[0.95] tracking-[-0.06em] sm:text-6xl">
-            Una colección breve, fuerte y coherente.
-          </h2>
-        </div>
-
-        <p class="max-w-3xl text-base leading-8 text-muted">
-          Prefiero mostrar pocos proyectos bien explicados antes que llenar el portfolio con piezas sin contexto. Ahora mismo CLARO es el case study principal.
+        <p class="max-w-[680px] text-[17px] leading-[1.75] text-muted">
+          Aquí los proyectos no funcionan como tarjetas repetidas, sino como piezas de archivo: cada uno tiene su propio color, ritmo y forma de enseñar el trabajo.
         </p>
       </div>
 
-      <div class="grid gap-6 lg:grid-cols-12">
-        <!-- CLARO -->
-        <article class="group overflow-hidden rounded-[36px] border border-line bg-white p-5 shadow-soft transition hover:-translate-y-1 hover:shadow-luxe lg:col-span-8">
-          <a href="project-claro.html" class="block">
-            <div class="overflow-hidden rounded-[30px] bg-accentSoft p-3">
-              <img
-                src="images/hero_portfolio.png"
-                alt="Pantallas del proyecto CLARO"
-                class="w-full rounded-[24px] transition duration-500 group-hover:scale-[1.02]"
-              />
-            </div>
+      <div class="grid gap-[18px]">
 
-            <div class="mt-6 grid gap-6 lg:grid-cols-[0.75fr_1.25fr]">
-              <div>
-                <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-accent">
-                  01 · UX/UI Case Study
-                </p>
-                <h3 class="mt-3 text-4xl font-extrabold tracking-[-0.06em]">
-                  CLARO
-                </h3>
-              </div>
-
-              <div>
-                <p class="text-base leading-8 text-muted">
-                  App conceptual que unifica organización personal, dinero y tareas desde una experiencia clara, visual y accesible.
-                </p>
-
-                <p class="mt-5 font-extrabold text-accent">
-                  Ver case study ↗
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-
-        <!-- NEXT CASE STUDY -->
-        <article class="rounded-[36px] border border-line bg-white p-7 shadow-soft lg:col-span-4">
-          <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">
-            02 · Próximo case study
-          </p>
-
-          <div class="mt-6 rounded-[30px] bg-[linear-gradient(145deg,#E8F3F2,#F4E7E4)] p-7">
-            <p class="font-serif text-6xl italic text-accent">02</p>
-
-            <h3 class="mt-5 text-3xl font-extrabold tracking-[-0.06em]">
-              Segundo proyecto en preparación
-            </h3>
-
-            <p class="mt-4 text-sm leading-7 text-muted">
-              El siguiente case study estará enfocado en analizar una app existente, detectar problemas de usabilidad y proponer mejoras visuales y funcionales.
-            </p>
+        <article class="relative grid min-h-[520px] grid-cols-[.42fr_1fr_.9fr] items-stretch gap-[clamp(24px,4vw,64px)] overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-turquoise before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_8%_20%,rgba(255,255,255,.38)_0_15%,transparent_16%),radial-gradient(ellipse_at_94%_78%,rgba(255,255,255,.28)_0_14%,transparent_15%)] before:opacity-80 max-[1000px]:grid-cols-1">
+          <div class="relative z-[2] flex flex-col justify-between border-r border-[rgba(15,13,11,.16)] p-[clamp(24px,4vw,48px)] max-[1000px]:flex-row max-[1000px]:items-end max-[1000px]:border-b max-[1000px]:border-r-0">
+            <span class="font-serifDisplay text-[clamp(5rem,10vw,12rem)] italic leading-[.75] text-[rgba(15,13,11,.36)]">01</span>
+            <p class="max-w-[190px] text-[11px] font-extrabold uppercase tracking-[.14em] text-[rgba(15,13,11,.62)]">UX/UI · App móvil · Case study principal</p>
           </div>
 
-          <div class="mt-6 grid gap-3">
-            <div class="rounded-[22px] bg-soft p-4">
-              <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-accent">Foco</p>
-              <p class="mt-2 text-sm font-bold">Análisis UX/UI</p>
-            </div>
-
-            <div class="rounded-[22px] bg-soft p-4">
-              <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-accent">Objetivo</p>
-              <p class="mt-2 text-sm font-bold">Mejorar una experiencia real</p>
-            </div>
-          </div>
-
-          <p class="mt-6 text-sm font-extrabold text-muted">
-            En preparación
-          </p>
-        </article>
-
-        <!-- PORTFOLIO BRAND -->
-        <article class="relative overflow-hidden rounded-[36px] bg-ink p-7 text-white shadow-luxe lg:col-span-7">
-          <div class="pointer-events-none absolute right-[-120px] top-[-120px] h-[300px] w-[300px] rounded-full bg-accent opacity-25 blur-[90px]"></div>
-
-          <div class="relative">
-            <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-accent">
-              03 · Marca personal
+          <div class="relative z-[2] flex flex-col justify-center py-[clamp(28px,5vw,64px)] max-[1000px]:px-[clamp(24px,5vw,48px)] max-[1000px]:py-0">
+            <h2 class="mb-7 font-display text-[clamp(4rem,9vw,11rem)] font-normal uppercase leading-[.78] tracking-[-.035em]">CLARO</h2>
+            <p class="mb-7 max-w-[520px] text-base leading-[1.85] text-[rgba(15,13,11,.68)]">
+              App conceptual que unifica organización personal, dinero y tareas desde una experiencia clara, visual y accesible. Es mi case study principal y el proyecto más completo de producto digital.
             </p>
 
-            <h3 class="mt-5 max-w-3xl text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-5xl">
-              Una identidad digital más clara, editorial y profesional.
-            </h3>
+            <div class="mb-[34px] flex flex-wrap gap-2">
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">UX/UI Design</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">App móvil</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Figma</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Testing</span>
+            </div>
 
-            <p class="mt-6 max-w-3xl text-base leading-8 text-white/70">
-              Este portfolio también forma parte de mi proceso: construir una identidad visual coherente, presentar proyectos con narrativa profesional y comunicar mi perfil como Product Designer Junior · UX/UI.
+            <a href="project-claro.html" class="inline-flex w-fit border-b border-blackPortfolio pb-[7px] text-xs font-extrabold uppercase tracking-[.12em]">Ver case study ↗</a>
+          </div>
+
+          <div class="relative z-[2] grid min-h-full place-items-center p-[clamp(12px,2vw,24px)]">
+            <div class="relative min-h-[360px] w-[min(100%,560px)] max-[1000px]:min-h-[430px]">
+              <div class="absolute right-0 top-0 w-[78%] rotate-[-2deg] overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.46)] p-[14px] shadow-[0_22px_64px_rgba(15,13,11,.14)]">
+                <img class="block w-full" src="images/hero_portfolio.png" alt="Pantallas del proyecto CLARO" />
+              </div>
+
+              <div class="absolute bottom-[8%] left-0 w-[48%] rotate-[4deg] overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.46)] p-[14px] shadow-[0_22px_64px_rgba(15,13,11,.14)]">
+                <div class="min-h-[210px] rounded-[10px] bg-gradient-to-b from-[rgba(255,255,255,.94)] to-[rgba(255,255,255,.38)] p-[22px]">
+                  <div class="mb-3 h-[14px] rounded-md bg-[rgba(15,13,11,.12)]"></div>
+                  <div class="mb-3 h-[14px] w-[72%] rounded-md bg-[rgba(15,13,11,.12)]"></div>
+                  <div class="mb-3 h-[14px] w-[88%] rounded-md bg-[rgba(15,13,11,.12)]"></div>
+                  <div class="mb-3 h-[14px] w-[60%] rounded-md bg-[rgba(15,13,11,.12)]"></div>
+                </div>
+              </div>
+
+              <div class="absolute bottom-0 right-[7%] grid min-h-[150px] w-[42%] rotate-[-1deg] place-items-center overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.46)] p-5 text-center shadow-[0_22px_64px_rgba(15,13,11,.14)]">
+                <strong class="font-display text-[clamp(2rem,4vw,4rem)] font-normal uppercase leading-[.84] tracking-[-.035em]">CLARO</strong>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="relative grid min-h-[520px] grid-cols-[.42fr_1fr_.9fr] items-stretch gap-[clamp(24px,4vw,64px)] overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-matcha before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_8%_20%,rgba(255,255,255,.38)_0_15%,transparent_16%),radial-gradient(ellipse_at_94%_78%,rgba(255,255,255,.28)_0_14%,transparent_15%)] before:opacity-80 max-[1000px]:grid-cols-1">
+          <div class="relative z-[2] flex flex-col justify-between border-r border-[rgba(15,13,11,.16)] p-[clamp(24px,4vw,48px)] max-[1000px]:flex-row max-[1000px]:items-end max-[1000px]:border-b max-[1000px]:border-r-0">
+            <span class="font-serifDisplay text-[clamp(5rem,10vw,12rem)] italic leading-[.75] text-[rgba(15,13,11,.36)]">02</span>
+            <p class="max-w-[190px] text-[11px] font-extrabold uppercase tracking-[.14em] text-[rgba(15,13,11,.62)]">Branding · Packaging · Landing web</p>
+          </div>
+
+          <div class="relative z-[2] flex flex-col justify-center py-[clamp(28px,5vw,64px)] max-[1000px]:px-[clamp(24px,5vw,48px)] max-[1000px]:py-0">
+            <h2 class="mb-7 font-display text-[clamp(4rem,9vw,11rem)] font-normal uppercase leading-[.78] tracking-[-.035em]">MatCa</h2>
+            <p class="mb-7 max-w-[520px] text-base leading-[1.85] text-[rgba(15,13,11,.68)]">
+              Marca conceptual de matcha y café con identidad visual, packaging, dirección de arte y landing web. Un proyecto para enseñar branding con sabor, energía y coherencia digital.
             </p>
 
-            <div class="mt-8 grid gap-4 sm:grid-cols-3">
-              <div class="rounded-[24px] bg-white/8 p-5">
-                <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-accent">01</p>
-                <p class="mt-3 font-extrabold">Claridad</p>
-                <p class="mt-2 text-sm leading-6 text-white/60">
-                  Comunicar de forma simple y directa.
-                </p>
+            <div class="mb-[34px] flex flex-wrap gap-2">
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Naming</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Branding</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Packaging</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Landing web</span>
+            </div>
+
+            <a href="project-matca.html" class="inline-flex w-fit border-b border-blackPortfolio pb-[7px] text-xs font-extrabold uppercase tracking-[.12em]">Ver proyecto ↗</a>
+          </div>
+
+          <div class="relative z-[2] grid min-h-full place-items-center p-[clamp(12px,2vw,24px)]">
+            <div class="grid w-full grid-cols-2 gap-4">
+              <div class="col-span-2 grid min-h-60 place-items-center rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.42)] p-6 text-center shadow-[0_18px_52px_rgba(15,13,11,.1)]">
+                <p class="font-serifDisplay text-[clamp(4rem,7vw,8rem)] italic leading-[.85]">MatCa</p>
               </div>
 
-              <div class="rounded-[24px] bg-white/8 p-5">
-                <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-accent">02</p>
-                <p class="mt-3 font-extrabold">Criterio visual</p>
-                <p class="mt-2 text-sm leading-6 text-white/60">
-                  Mantener una estética limpia y consistente.
-                </p>
+              <div class="grid min-h-[170px] place-items-center rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.42)] p-6 text-center shadow-[0_18px_52px_rgba(15,13,11,.1)]">
+                <p class="font-serifDisplay text-[clamp(4rem,7vw,8rem)] italic leading-[.85]">M</p>
               </div>
 
-              <div class="rounded-[24px] bg-white/8 p-5">
-                <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-accent">03</p>
-                <p class="mt-3 font-extrabold">Producto</p>
-                <p class="mt-2 text-sm leading-6 text-white/60">
-                  Presentar decisiones, no solo pantallas.
-                </p>
+              <div class="grid min-h-[170px] place-items-center rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.42)] p-6 text-center shadow-[0_18px_52px_rgba(15,13,11,.1)]">
+                <p class="font-display text-[clamp(3rem,6vw,6.5rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">WEB</p>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- PROCESS VALUE -->
-        <article class="rounded-[36px] border border-line bg-white p-7 shadow-soft lg:col-span-5">
-          <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">
-            04 · Enfoque de trabajo
-          </p>
+        <article class="relative grid min-h-[520px] grid-cols-[.42fr_1fr_.9fr] items-stretch gap-[clamp(24px,4vw,64px)] overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-pinkPortfolio before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_8%_20%,rgba(255,255,255,.38)_0_15%,transparent_16%),radial-gradient(ellipse_at_94%_78%,rgba(255,255,255,.28)_0_14%,transparent_15%)] before:opacity-80 max-[1000px]:grid-cols-1">
+          <div class="relative z-[2] flex flex-col justify-between border-r border-[rgba(15,13,11,.16)] p-[clamp(24px,4vw,48px)] max-[1000px]:flex-row max-[1000px]:items-end max-[1000px]:border-b max-[1000px]:border-r-0">
+            <span class="font-serifDisplay text-[clamp(5rem,10vw,12rem)] italic leading-[.75] text-[rgba(15,13,11,.36)]">03</span>
+            <p class="max-w-[190px] text-[11px] font-extrabold uppercase tracking-[.14em] text-[rgba(15,13,11,.62)]">Branding emocional · Identidad visual</p>
+          </div>
 
-          <h3 class="mt-5 text-3xl font-extrabold tracking-[-0.06em]">
-            Lo que quiero demostrar con este portfolio.
-          </h3>
+          <div class="relative z-[2] flex flex-col justify-center py-[clamp(28px,5vw,64px)] max-[1000px]:px-[clamp(24px,5vw,48px)] max-[1000px]:py-0">
+            <h2 class="mb-7 font-display text-[clamp(4rem,9vw,11rem)] font-normal uppercase leading-[.78] tracking-[-.035em]">Cata & Kafir</h2>
+            <p class="mb-7 max-w-[520px] text-base leading-[1.85] text-[rgba(15,13,11,.68)]">
+              Identidad visual para protectora de animales con logo CK, personajes, patrón, sistema gráfico y plantillas sociales. Un proyecto cercano, emocional y con mucho cuidado visual.
+            </p>
 
-          <p class="mt-4 text-sm leading-7 text-muted">
-            Mi objetivo no es enseñar muchas pantallas, sino mostrar cómo pienso: cómo entiendo un problema, cómo ordeno información, cómo diseño una solución y cómo justifico decisiones.
-          </p>
-
-          <div class="mt-6 grid gap-3">
-            <div class="rounded-[22px] bg-soft p-4">
-              <p class="text-sm font-bold">Research y definición del problema</p>
+            <div class="mb-[34px] flex flex-wrap gap-2">
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Logo CK</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Identidad visual</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Instagram</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Storytelling</span>
             </div>
 
-            <div class="rounded-[22px] bg-soft p-4">
-              <p class="text-sm font-bold">Arquitectura, flujos y wireframes</p>
-            </div>
+            <a href="project-cata-kafir.html" class="inline-flex w-fit border-b border-blackPortfolio pb-[7px] text-xs font-extrabold uppercase tracking-[.12em]">Ver proyecto ↗</a>
+          </div>
 
-            <div class="rounded-[22px] bg-soft p-4">
-              <p class="text-sm font-bold">UI visual, prototipo y testing</p>
+          <div class="relative z-[2] grid min-h-full place-items-center p-[clamp(12px,2vw,24px)]">
+            <div class="grid w-full grid-cols-2 gap-4">
+              <div class="col-span-2 grid min-h-60 place-items-center rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.42)] p-6 text-center shadow-[0_18px_52px_rgba(15,13,11,.1)]">
+                <p class="font-display text-[clamp(3rem,6vw,6.5rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">Cata<br />& Kafir</p>
+              </div>
+
+              <div class="grid min-h-[170px] place-items-center rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.42)] p-6 text-center shadow-[0_18px_52px_rgba(15,13,11,.1)]">
+                <p class="font-serifDisplay text-[clamp(4rem,7vw,8rem)] italic leading-[.85]">CK</p>
+              </div>
+
+              <div class="grid min-h-[170px] place-items-center rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.42)] p-6 text-center shadow-[0_18px_52px_rgba(15,13,11,.1)]">
+                <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Social templates</span>
+              </div>
             </div>
           </div>
         </article>
+
+        <article class="relative grid min-h-[520px] grid-cols-[.42fr_1fr_.9fr] items-stretch gap-[clamp(24px,4vw,64px)] overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-lilac before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_8%_20%,rgba(255,255,255,.38)_0_15%,transparent_16%),radial-gradient(ellipse_at_94%_78%,rgba(255,255,255,.28)_0_14%,transparent_15%)] before:opacity-80 max-[1000px]:grid-cols-1">
+          <div class="relative z-[2] flex flex-col justify-between border-r border-[rgba(15,13,11,.16)] p-[clamp(24px,4vw,48px)] max-[1000px]:flex-row max-[1000px]:items-end max-[1000px]:border-b max-[1000px]:border-r-0">
+            <span class="font-serifDisplay text-[clamp(5rem,10vw,12rem)] italic leading-[.75] text-[rgba(15,13,11,.36)]">04</span>
+            <p class="max-w-[190px] text-[11px] font-extrabold uppercase tracking-[.14em] text-[rgba(15,13,11,.62)]">Visual Identity · Posters · Dirección de arte</p>
+          </div>
+
+          <div class="relative z-[2] flex flex-col justify-center py-[clamp(28px,5vw,64px)] max-[1000px]:px-[clamp(24px,5vw,48px)] max-[1000px]:py-0">
+            <h2 class="mb-7 font-display text-[clamp(4rem,9vw,11rem)] font-normal uppercase leading-[.78] tracking-[-.035em]">Branding</h2>
+            <p class="mb-7 max-w-[520px] text-base leading-[1.85] text-[rgba(15,13,11,.68)]">
+              Espacio para piezas visuales, posters, sistemas gráficos y exploraciones de identidad. Una parte del portfolio pensada para mostrar composición, criterio visual y dirección de arte.
+            </p>
+
+            <div class="mb-[34px] flex flex-wrap gap-2">
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Visual Design</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Posters</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Identidad visual</span>
+              <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Dirección de arte</span>
+            </div>
+
+            <a href="projects.html" class="inline-flex w-fit border-b border-blackPortfolio pb-[7px] text-xs font-extrabold uppercase tracking-[.12em]">Ver archivo visual ↗</a>
+          </div>
+
+          <div class="relative z-[2] grid min-h-full place-items-center p-[clamp(12px,2vw,24px)]">
+            <div class="grid w-full grid-cols-2 gap-4">
+              <div class="col-span-2 grid min-h-60 place-items-center rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.42)] p-6 text-center shadow-[0_18px_52px_rgba(15,13,11,.1)]">
+                <p class="font-display text-[clamp(3rem,6vw,6.5rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">Visual<br />Archive</p>
+              </div>
+
+              <div class="grid min-h-[170px] place-items-center rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.42)] p-6 text-center shadow-[0_18px_52px_rgba(15,13,11,.1)]">
+                <p class="font-serifDisplay text-[clamp(4rem,7vw,8rem)] italic leading-[.85]">Aa</p>
+              </div>
+
+              <div class="grid min-h-[170px] place-items-center rounded-[14px] border border-[rgba(15,13,11,.12)] bg-[rgba(255,255,255,.42)] p-6 text-center shadow-[0_18px_52px_rgba(15,13,11,.1)]">
+                <span class="inline-flex items-center justify-center whitespace-nowrap rounded-[9px] border border-[rgba(15,13,11,.24)] bg-[rgba(255,255,255,.34)] px-[13px] py-[9px] text-[11px] font-bold uppercase tracking-[.08em]">Posters & Visuals</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] pb-20">
-      <div class="overflow-hidden rounded-[40px] border border-line bg-white p-7 shadow-luxe sm:p-10 lg:p-12">
-        <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div class="lg:col-span-8">
-            <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-              Disponible para oportunidades junior
-            </p>
+    <section class="rounded-t-[18px] bg-blackPortfolio py-[clamp(64px,8vw,110px)] text-cream">
+      <div class="mx-auto grid w-[calc(100%-18px)] max-w-full grid-cols-[1fr_auto] items-end gap-10 max-[900px]:w-[min(100%-32px,1680px)] max-[1000px]:grid-cols-1">
+        <div>
+          <p class="mb-6 text-xs font-extrabold uppercase tracking-[.16em] text-[rgba(243,232,216,.55)]">
+            Disponible para oportunidades junior
+          </p>
 
-            <h2 class="mt-5 max-w-4xl text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-5xl lg:text-6xl">
-              Busco mi primera oportunidad en producto digital y UX/UI.
-            </h2>
-
-            <p class="mt-6 max-w-3xl text-base leading-8 text-muted">
-              Estoy interesada en formar parte de un equipo donde pueda seguir creciendo, aportar sensibilidad visual y participar en la construcción de productos claros, útiles y bien diseñados.
-            </p>
-          </div>
-
-          <div class="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
-            <a
-              href="contact.html"
-              class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-extrabold text-white shadow-glow transition hover:bg-accentDark"
-            >
-              Hablemos
-            </a>
-
-            <a
-              href="project-claro.html"
-              class="inline-flex min-h-12 items-center justify-center rounded-full border border-line bg-white px-6 py-3 text-sm font-extrabold text-ink transition hover:border-accent hover:text-accent"
-            >
-              Ver CLARO
-            </a>
-          </div>
+          <h2 class="max-w-[980px] font-display text-[clamp(3.4rem,8vw,7.6rem)] font-normal uppercase leading-[.84] tracking-[-.035em]">
+            Busco mi primera oportunidad en producto digital y UX/UI.
+          </h2>
         </div>
+
+        <a href="contact.html" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-cream bg-cream px-[18px] text-[11px] font-bold uppercase tracking-[.08em] text-blackPortfolio">Hablemos</a>
       </div>
     </section>
+
   </main>
 
-  <footer class="border-t border-line py-8">
-    <div class="mx-auto flex w-[min(1440px,calc(100%-2rem))] flex-col gap-4 text-sm text-muted md:flex-row md:items-center md:justify-between">
+  <footer class="bg-blackPortfolio py-[34px] text-[13px] text-[rgba(243,232,216,.62)]">
+    <div class="mx-auto flex w-[calc(100%-18px)] max-w-full flex-wrap justify-between gap-5 max-[900px]:w-[min(100%-32px,1680px)]">
       <p>© 2026 Sara Alcaraz</p>
 
-      <div class="flex gap-5">
-        <a href="projects.html" class="transition hover:text-ink">Proyectos</a>
-        <a href="about.html" class="transition hover:text-ink">Sobre mí</a>
-        <a href="contact.html" class="transition hover:text-ink">Contacto</a>
+      <div class="flex flex-wrap gap-5">
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Sobre mí</a>
+        <a href="contact.html">Contacto</a>
       </div>
     </div>
   </footer>
@@ -385,9 +320,6 @@
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("hidden");
         navLinks.classList.toggle("flex");
-
-        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-        menuToggle.setAttribute("aria-expanded", String(!expanded));
       });
     }
   </script>

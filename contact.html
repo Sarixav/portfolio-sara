@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,384 +9,242 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            ink: "#101828",
-            muted: "#667085",
-            soft: "#F7FCFB",
-            cream: "#FAFAF8",
-            line: "#E2EFEC",
-            accent: "#2F8F83",
-            accentDark: "#25766C",
-            accentSoft: "#E8F3F2",
-            blush: "#F4E7E4",
-            card: "#FFFFFF"
+            blackCustom: '#17120f',
+            cream: '#f3e8d8',
+            creamLight: '#fff6e9',
+            muted: '#6f6257',
+            blueCustom: '#b9c7ff',
+            pinkCustom: '#f3a9df',
+            turquoise: '#b9ece8',
+            lilac: '#c7a5f2',
+            matcha: '#cfe8a4'
           },
           fontFamily: {
-            sans: ["Manrope", "sans-serif"],
-            serif: ["Instrument Serif", "serif"]
+            inter: ['Inter', 'sans-serif'],
+            serifDisplay: ['Instrument Serif', 'serif'],
+            impact: ['Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif']
           },
-          boxShadow: {
-            soft: "0 24px 70px rgba(17, 24, 39, 0.08)",
-            luxe: "0 40px 120px rgba(17, 24, 39, 0.12)",
-            glow: "0 36px 100px rgba(47,143,131,0.22)"
+          keyframes: {
+            scroll: {
+              from: { transform: 'translateX(0)' },
+              to: { transform: 'translateX(-50%)' }
+            }
+          },
+          animation: {
+            scroll: 'scroll 28s linear infinite'
           }
         }
       }
-    };
+    }
   </script>
 </head>
 
-<body id="top" class="bg-soft font-sans text-ink antialiased selection:bg-accent selection:text-white">
-  <header class="sticky top-0 z-50 border-b border-line/80 bg-soft/85 backdrop-blur-xl">
-    <div class="mx-auto flex min-h-[78px] w-[min(1440px,calc(100%-2rem))] items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 font-extrabold tracking-[-0.04em]">
-        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-accentSoft text-sm font-extrabold text-accent">
-          SA
-        </span>
-        <span>Sara Alcaraz</span>
-      </a>
+<body id="top" class="overflow-x-hidden bg-cream font-inter text-blackCustom">
 
-      <button
-        id="menuToggle"
-        class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white md:hidden"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="navLinks"
-      >
-        <div class="flex flex-col gap-[5px]">
-          <span class="block h-[1.5px] w-5 bg-ink"></span>
-          <span class="block h-[1.5px] w-5 bg-ink"></span>
-        </div>
-      </button>
+  <header class="fixed left-0 top-0 z-[100] w-full border-b border-[rgba(15,13,11,.16)] bg-[rgba(243,232,216,.9)] backdrop-blur-[18px]">
+    <div class="mx-auto flex min-h-[72px] w-[calc(100%-18px)] max-w-full items-center justify-between">
+      <a href="index.html" class="text-[13px] font-extrabold uppercase tracking-[.02em]">Sara Alcaraz</a>
 
-      <nav
-        id="navLinks"
-        class="absolute left-0 right-0 top-[78px] hidden flex-col gap-5 border-b border-line bg-soft px-6 py-6 md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0"
-      >
-        <a href="index.html" class="text-sm font-bold text-muted transition hover:text-ink">Inicio</a>
-        <a href="projects.html" class="text-sm font-bold text-muted transition hover:text-ink">Proyectos</a>
-        <a href="about.html" class="text-sm font-bold text-muted transition hover:text-ink">Sobre mí</a>
-        <a href="contact.html" class="text-sm font-bold text-ink">Contacto</a>
+      <button class="hidden h-[42px] w-[42px] items-center justify-center rounded-[10px] border border-blackCustom bg-transparent text-[20px] max-[900px]:inline-flex" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+      <nav class="flex items-center gap-[34px] max-[900px]:absolute max-[900px]:left-4 max-[900px]:right-4 max-[900px]:top-[74px] max-[900px]:hidden max-[900px]:flex-col max-[900px]:items-start max-[900px]:rounded-[14px] max-[900px]:border max-[900px]:border-[rgba(15,13,11,.16)] max-[900px]:bg-cream max-[900px]:p-6 max-[900px]:shadow-[0_20px_60px_rgba(15,13,11,.12)]" id="navLinks">
+        <a href="index.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Inicio</a>
+        <a href="projects.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Proyectos</a>
+        <a href="about.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Sobre mí</a>
+        <a href="contact.html" class="text-[11px] font-bold uppercase tracking-[.14em] text-[#3f3a33]">Contacto</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="relative overflow-hidden border-b border-line/70">
-      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(47,143,131,0.20),transparent_34%),radial-gradient(circle_at_12%_72%,rgba(244,231,228,0.75),transparent_28%)]"></div>
 
-      <div class="relative mx-auto w-[min(1440px,calc(100%-2rem))] py-14 sm:py-20 lg:py-24">
-        <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
-          <div class="lg:col-span-8">
-            <div class="mb-8 flex flex-wrap gap-3">
-              <span class="rounded-full border border-line bg-white/90 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-accent shadow-sm">
-                Contacto
-              </span>
-              <span class="rounded-full border border-line bg-white/80 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-muted shadow-sm">
-                UX/UI · Product Design · Junior opportunities
-              </span>
-            </div>
+    <section class="grid min-h-screen place-items-center overflow-hidden bg-cream pt-[72px]">
+      <img class="block h-[calc(100vh-72px)] w-full object-cover object-center" src="images/Contacto.svg" alt="Portada editorial de la página de contacto de Sara Alcaraz" />
+    </section>
 
-            <h1 class="max-w-6xl text-[4rem] font-extrabold leading-[0.88] tracking-[-0.08em] sm:text-[5.8rem] lg:text-[7rem]">
-              ¿Hablamos sobre una
-              <span class="font-serif italic font-normal text-accent"> oportunidad</span>?
-            </h1>
+    <div class="overflow-hidden border-y border-[rgba(15,13,11,.16)] bg-cream py-[18px]">
+      <div class="flex w-max animate-scroll gap-7 font-impact font-normal tracking-[-.035em]">
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Email</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">LinkedIn</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Portfolio</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Let’s connect</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Email</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">LinkedIn</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Portfolio</span>
+        <span class="text-[clamp(2.2rem,5vw,5.5rem)] uppercase leading-[.9] text-[rgba(15,13,11,.18)]">Let’s connect</span>
+      </div>
+    </div>
 
-            <p class="mt-8 max-w-3xl text-lg leading-8 text-muted">
-              Estoy abierta a oportunidades junior en UX/UI, diseño de producto y proyectos digitales donde pueda seguir creciendo, aportar sensibilidad visual y formar parte de equipos que construyan productos claros, útiles y bien pensados.
-            </p>
+    <section class="border-y border-[rgba(15,13,11,.16)] bg-cream py-[clamp(42px,5vw,78px)]">
+      <div class="mx-auto grid w-[calc(100%-18px)] max-w-full grid-cols-[1fr_.9fr] items-end gap-16 max-[1000px]:grid-cols-1">
+        <div>
+          <p class="mb-4 text-[12px] font-extrabold uppercase tracking-[.18em] text-muted">Contacto · UX/UI · Product Design</p>
+          <h1 class="max-w-[980px] font-impact text-[clamp(2.8rem,5.4vw,6.2rem)] font-normal uppercase leading-[.9] tracking-[-.035em]">
+            ¿Hablamos sobre una oportunidad?
+          </h1>
+        </div>
 
-            <div class="mt-9 flex flex-wrap gap-3">
-              <a
-                href="mailto:alcarazvalverdesara@gmail.com"
-                class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-extrabold text-white shadow-glow transition hover:bg-accentDark"
-              >
-                Enviar email
-              </a>
+        <div>
+          <p class="max-w-[680px] text-[clamp(16px,1.25vw,20px)] leading-[1.75] text-muted">
+            Estoy abierta a oportunidades junior en UX/UI, diseño de producto y proyectos digitales donde pueda seguir creciendo, aportar sensibilidad visual y formar parte de equipos que construyan productos claros, útiles y bien pensados.
+          </p>
 
-              <a
-                href="https://www.linkedin.com/in/saraalcarazvalverde/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex min-h-12 items-center justify-center rounded-full border border-line bg-white px-6 py-3 text-sm font-extrabold text-ink transition hover:border-accent hover:text-accent"
-              >
-                Ver LinkedIn
-              </a>
-
-              <a
-                href="projects.html"
-                class="inline-flex min-h-12 items-center justify-center rounded-full border border-line bg-white/70 px-6 py-3 text-sm font-extrabold text-ink transition hover:border-accent hover:text-accent"
-              >
-                Ver proyectos
-              </a>
-            </div>
-          </div>
-
-          <div class="lg:col-span-4">
-            <div class="rounded-[40px] border border-line bg-white p-7 shadow-luxe sm:p-8">
-              <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-                Disponibilidad
-              </p>
-
-              <h2 class="mt-4 text-3xl font-extrabold leading-[0.96] tracking-[-0.06em]">
-                Abierta a nuevas oportunidades.
-              </h2>
-
-              <p class="mt-5 text-base leading-8 text-muted">
-                Puedes escribirme para oportunidades junior, colaboraciones, portfolio reviews o conversaciones relacionadas con UX/UI y producto digital.
-              </p>
-
-              <div class="mt-8 grid gap-4">
-                <div class="rounded-[26px] bg-soft p-5">
-                  <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Email</p>
-                  <a
-                    href="mailto:alcarazvalverdesara@gmail.com"
-                    class="mt-2 block break-all font-extrabold text-ink transition hover:text-accent"
-                  >
-                    alcarazvalverdesara@gmail.com
-                  </a>
-                </div>
-
-                <div class="rounded-[26px] bg-soft p-5">
-                  <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">LinkedIn</p>
-                  <a
-                    href="https://www.linkedin.com/in/saraalcarazvalverde/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="mt-2 block break-all font-extrabold text-ink transition hover:text-accent"
-                  >
-                    /in/saraalcarazvalverde
-                  </a>
-                </div>
-
-                <div class="rounded-[26px] bg-accentSoft p-5">
-                  <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-accent">Perfil</p>
-                  <p class="mt-2 font-extrabold">Product & UX/UI Designer junior</p>
-                </div>
-
-                <div class="rounded-[26px] bg-soft p-5">
-                  <p class="text-xs font-extrabold uppercase tracking-[0.16em] text-muted">Ubicación</p>
-                  <p class="mt-2 font-extrabold">Madrid, España</p>
-                </div>
-              </div>
-            </div>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="mailto:alcarazvalverdesara@gmail.com" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-blackCustom bg-blackCustom px-[18px] text-[11px] font-bold uppercase tracking-[.08em] text-cream">Enviar email</a>
+            <a href="https://www.linkedin.com/in/saraalcarazvalverde/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-blackCustom bg-[rgba(255,255,255,.34)] px-[18px] text-[11px] font-bold uppercase tracking-[.08em]">LinkedIn</a>
+            <a href="projects.html" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-blackCustom bg-[rgba(255,255,255,.34)] px-[18px] text-[11px] font-bold uppercase tracking-[.08em]">Ver proyectos</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT LINKS -->
-    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] py-16 sm:py-20">
-      <div class="mb-10 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-        <div>
-          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-            Contact links
-          </p>
+    <section class="mx-auto w-[calc(100%-18px)] max-w-full py-[clamp(64px,8vw,118px)]">
+      <div class="mb-[54px] grid grid-cols-[1fr_.9fr] items-end gap-14 max-[1000px]:grid-cols-1">
+        <h2 class="font-impact text-[clamp(3.8rem,8.8vw,10rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">
+          Contact <em class="font-serifDisplay font-normal normal-case italic tracking-[-.04em]">links</em>
+        </h2>
 
-          <h2 class="mt-4 max-w-3xl text-4xl font-extrabold leading-[0.95] tracking-[-0.06em] sm:text-6xl">
-            Canales para conectar.
-          </h2>
-        </div>
-
-        <p class="max-w-3xl text-base leading-8 text-muted">
-          Puedes contactarme directamente por email, revisar mi perfil profesional en LinkedIn o explorar mi trabajo desde el portfolio.
+        <p class="max-w-[680px] text-[17px] leading-[1.75] text-muted">
+          Puedes contactarme directamente por email, revisar mi perfil profesional en LinkedIn, explorar mis proyectos o descargar mi CV.
         </p>
       </div>
 
-      <div class="grid gap-6 lg:grid-cols-12">
-        <!-- EMAIL -->
-        <a
-          href="mailto:alcarazvalverdesara@gmail.com"
-          class="group rounded-[36px] border border-line bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-luxe lg:col-span-5"
-        >
-          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-            01 · Email
-          </p>
+      <div class="grid grid-cols-2 gap-[22px] max-[1000px]:grid-cols-1">
+        <article class="relative flex min-h-[420px] flex-col justify-between gap-10 overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-blueCustom p-[clamp(30px,5vw,64px)] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_12%_18%,rgba(255,255,255,.42)_0_18%,transparent_19%),radial-gradient(ellipse_at_88%_76%,rgba(255,255,255,.35)_0_16%,transparent_17%),radial-gradient(ellipse_at_58%_12%,rgba(255,255,255,.18)_0_10%,transparent_11%)] before:opacity-[.62] before:pointer-events-none">
+          <div class="relative z-[2]">
+            <span class="font-serifDisplay text-[clamp(4rem,7vw,8rem)] italic leading-[.75] text-[rgba(15,13,11,.36)]">01</span>
+            <h2 class="mb-[22px] max-w-[620px] font-impact text-[clamp(3rem,6vw,7rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">Email</h2>
+            <p class="max-w-[620px] text-[16px] leading-[1.78] text-[rgba(15,13,11,.68)]">
+              Para oportunidades, mensajes profesionales o cualquier conversación relacionada con diseño digital.
+            </p>
+          </div>
 
-          <h3 class="mt-5 text-4xl font-extrabold tracking-[-0.06em]">
-            Escríbeme directamente.
-          </h3>
-
-          <p class="mt-4 text-base leading-8 text-muted">
-            Para oportunidades, mensajes profesionales o cualquier conversación relacionada con diseño digital.
-          </p>
-
-          <span class="mt-8 inline-flex break-all font-extrabold text-accent">
+          <a href="mailto:alcarazvalverdesara@gmail.com" class="relative z-[2] inline-flex w-fit border-b border-blackCustom pb-[7px] text-[12px] font-extrabold uppercase tracking-[.12em]">
             alcarazvalverdesara@gmail.com ↗
-          </span>
-        </a>
+          </a>
+        </article>
 
-        <!-- LINKEDIN -->
-        <a
-          href="https://www.linkedin.com/in/saraalcarazvalverde/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group rounded-[36px] bg-ink p-7 text-white shadow-luxe transition hover:-translate-y-1 hover:shadow-luxe lg:col-span-4"
-        >
-          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-            02 · LinkedIn
-          </p>
+        <article class="relative flex min-h-[420px] flex-col justify-between gap-10 overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-lilac p-[clamp(30px,5vw,64px)] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_12%_18%,rgba(255,255,255,.42)_0_18%,transparent_19%),radial-gradient(ellipse_at_88%_76%,rgba(255,255,255,.35)_0_16%,transparent_17%),radial-gradient(ellipse_at_58%_12%,rgba(255,255,255,.18)_0_10%,transparent_11%)] before:opacity-[.62] before:pointer-events-none">
+          <div class="relative z-[2]">
+            <span class="font-serifDisplay text-[clamp(4rem,7vw,8rem)] italic leading-[.75] text-[rgba(15,13,11,.36)]">02</span>
+            <h2 class="mb-[22px] max-w-[620px] font-impact text-[clamp(3rem,6vw,7rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">LinkedIn</h2>
+            <p class="max-w-[620px] text-[16px] leading-[1.78] text-[rgba(15,13,11,.68)]">
+              Mi recorrido, formación, proyecto CLARO y perfil actualizado como Product & UX/UI Designer junior.
+            </p>
+          </div>
 
-          <h3 class="mt-5 text-4xl font-extrabold tracking-[-0.06em]">
-            Perfil profesional.
-          </h3>
-
-          <p class="mt-4 text-base leading-8 text-white/70">
-            Mi recorrido, formación, proyecto CLARO y perfil actualizado como Product & UX/UI Designer junior.
-          </p>
-
-          <span class="mt-8 inline-flex font-extrabold text-accent">
+          <a href="https://www.linkedin.com/in/saraalcarazvalverde/" target="_blank" rel="noopener noreferrer" class="relative z-[2] inline-flex w-fit border-b border-blackCustom pb-[7px] text-[12px] font-extrabold uppercase tracking-[.12em]">
             Abrir LinkedIn ↗
-          </span>
-        </a>
+          </a>
+        </article>
 
-        <!-- PORTFOLIO -->
-        <a
-          href="projects.html"
-          class="group rounded-[36px] border border-line bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-luxe lg:col-span-3"
-        >
-          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-muted">
-            03 · Portfolio
-          </p>
+        <article class="relative flex min-h-[420px] flex-col justify-between gap-10 overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-turquoise p-[clamp(30px,5vw,64px)] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_12%_18%,rgba(255,255,255,.42)_0_18%,transparent_19%),radial-gradient(ellipse_at_88%_76%,rgba(255,255,255,.35)_0_16%,transparent_17%),radial-gradient(ellipse_at_58%_12%,rgba(255,255,255,.18)_0_10%,transparent_11%)] before:opacity-[.62] before:pointer-events-none">
+          <div class="relative z-[2]">
+            <span class="font-serifDisplay text-[clamp(4rem,7vw,8rem)] italic leading-[.75] text-[rgba(15,13,11,.36)]">03</span>
+            <h2 class="mb-[22px] max-w-[620px] font-impact text-[clamp(3rem,6vw,7rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">Portfolio</h2>
+            <p class="max-w-[620px] text-[16px] leading-[1.78] text-[rgba(15,13,11,.68)]">
+              Case studies, proceso UX/UI, branding y proyectos seleccionados con foco en claridad visual.
+            </p>
+          </div>
 
-          <h3 class="mt-5 text-3xl font-extrabold tracking-[-0.06em]">
-            Ver proyectos
-          </h3>
+          <a href="projects.html" class="relative z-[2] inline-flex w-fit border-b border-blackCustom pb-[7px] text-[12px] font-extrabold uppercase tracking-[.12em]">
+            Ver proyectos ↗
+          </a>
+        </article>
 
-          <p class="mt-4 text-sm leading-7 text-muted">
-            Case studies, proceso UX/UI y proyectos seleccionados.
-          </p>
+        <article class="relative flex min-h-[420px] flex-col justify-between gap-10 overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-pinkCustom p-[clamp(30px,5vw,64px)] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_12%_18%,rgba(255,255,255,.42)_0_18%,transparent_19%),radial-gradient(ellipse_at_88%_76%,rgba(255,255,255,.35)_0_16%,transparent_17%),radial-gradient(ellipse_at_58%_12%,rgba(255,255,255,.18)_0_10%,transparent_11%)] before:opacity-[.62] before:pointer-events-none">
+          <div class="relative z-[2]">
+            <span class="font-serifDisplay text-[clamp(4rem,7vw,8rem)] italic leading-[.75] text-[rgba(15,13,11,.36)]">04</span>
+            <h2 class="mb-[22px] max-w-[620px] font-impact text-[clamp(3rem,6vw,7rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">CV</h2>
+            <p class="max-w-[620px] text-[16px] leading-[1.78] text-[rgba(15,13,11,.68)]">
+              Curriculum profesional alineado con mi portfolio y mi perfil como Product Designer Junior · UX/UI.
+            </p>
+          </div>
 
-          <span class="mt-8 inline-flex font-extrabold text-accent">
-            Proyectos ↗
-          </span>
-        </a>
+          <div class="relative z-[2] flex flex-wrap gap-3">
+            <a href="cv/sara-alcaraz-cv.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-blackCustom bg-[rgba(255,255,255,.34)] px-[18px] text-[11px] font-bold uppercase tracking-[.08em]">
+              Ver CV
+            </a>
 
-        <!-- ABOUT -->
-        <a
-          href="about.html"
-          class="group rounded-[36px] border border-line bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-luxe lg:col-span-4"
-        >
-          <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-muted">
-            04 · Perfil
-          </p>
-
-          <h3 class="mt-5 text-3xl font-extrabold tracking-[-0.06em]">
-            Sobre mí
-          </h3>
-
-          <p class="mt-4 text-sm leading-7 text-muted">
-            Mi enfoque, habilidades y forma de entender el diseño.
-          </p>
-
-          <span class="mt-8 inline-flex font-extrabold text-accent">
-            Leer más ↗
-          </span>
-        </a>
-
-        <!-- CV -->
-        <article class="rounded-[36px] bg-[linear-gradient(145deg,#E8F3F2,#F4E7E4)] p-7 shadow-soft lg:col-span-8">
-          <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <div>
-              <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-                CV
-              </p>
-
-              <h3 class="mt-5 text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-5xl">
-                Curriculum profesional.
-              </h3>
-            </div>
-
-            <div>
-              <p class="text-base leading-8 text-muted">
-                Puedes descargar mi CV actualizado como Product Designer Junior · UX/UI, alineado con mi portfolio y mi proyecto principal CLARO.
-              </p>
-
-              <div class="mt-6 flex flex-wrap gap-3">
-                <a
-                  href="cv/sara-alcaraz-cv.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-extrabold text-white shadow-glow transition hover:bg-accentDark"
-                >
-                  Ver CV
-                </a>
-
-                <a
-                  href="cv/sara-alcaraz-cv.pdf"
-                  download
-                  class="inline-flex min-h-12 items-center justify-center rounded-full border border-line bg-white px-6 py-3 text-sm font-extrabold text-ink transition hover:border-accent hover:text-accent"
-                >
-                  Descargar CV
-                </a>
-              </div>
-            </div>
+            <a href="cv/sara-alcaraz-cv.pdf" download class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-blackCustom bg-[rgba(255,255,255,.34)] px-[18px] text-[11px] font-bold uppercase tracking-[.08em]">
+              Descargar
+            </a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="mx-auto w-[min(1440px,calc(100%-2rem))] pb-20">
-      <div class="overflow-hidden rounded-[40px] border border-line bg-white p-7 shadow-luxe sm:p-10 lg:p-12">
-        <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div class="lg:col-span-8">
-            <p class="text-xs font-extrabold uppercase tracking-[0.18em] text-accent">
-              Let’s work together
-            </p>
+    <section class="mx-auto w-[calc(100%-18px)] max-w-full py-[clamp(64px,8vw,118px)]">
+      <div class="grid grid-cols-[.9fr_1.1fr] items-stretch gap-[22px] max-[1000px]:grid-cols-1">
+        <article class="relative overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-matcha p-[clamp(32px,5vw,70px)] before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_12%_18%,rgba(255,255,255,.42)_0_18%,transparent_19%),radial-gradient(ellipse_at_88%_76%,rgba(255,255,255,.35)_0_16%,transparent_17%)] before:opacity-[.62]">
+          <p class="relative z-[2] mb-4 text-[12px] font-extrabold uppercase tracking-[.18em] text-muted">Disponibilidad</p>
+          <h2 class="relative z-[2] mb-[26px] font-impact text-[clamp(3.4rem,7vw,7.8rem)] font-normal uppercase leading-[.82] tracking-[-.035em]">
+            Abierta a nuevas oportunidades.
+          </h2>
 
-            <h2 class="mt-5 max-w-4xl text-4xl font-extrabold leading-[0.96] tracking-[-0.06em] sm:text-5xl lg:text-6xl">
-              Si crees que mi perfil puede encajar, estaré encantada de hablar contigo.
-            </h2>
+          <p class="relative z-[2] max-w-[740px] text-[16px] leading-[1.85] text-[rgba(15,13,11,.68)]">
+            Puedes escribirme para oportunidades junior, colaboraciones, portfolio reviews o conversaciones relacionadas con UX/UI y producto digital.
+          </p>
+        </article>
 
-            <p class="mt-6 max-w-3xl text-base leading-8 text-muted">
-              Estoy disponible para primeras oportunidades en UX/UI, diseño de producto y proyectos digitales donde pueda seguir creciendo.
-            </p>
+        <div class="overflow-hidden rounded-[14px] border border-[rgba(15,13,11,.16)] bg-creamLight">
+          <div class="grid grid-cols-[.45fr_1fr] items-center gap-6 border-b border-[rgba(15,13,11,.14)] p-[clamp(22px,4vw,38px)] max-[900px]:grid-cols-1">
+            <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-[rgba(15,13,11,.56)]">Perfil</p>
+            <p class="break-words font-impact text-[clamp(1.6rem,3vw,3.5rem)] font-normal uppercase leading-[.95] tracking-[-.035em]">Product & UX/UI Designer junior</p>
           </div>
 
-          <div class="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
-            <a
-              href="mailto:alcarazvalverdesara@gmail.com"
-              class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-extrabold text-white shadow-glow transition hover:bg-accentDark"
-            >
-              Escribirme
-            </a>
+          <div class="grid grid-cols-[.45fr_1fr] items-center gap-6 border-b border-[rgba(15,13,11,.14)] p-[clamp(22px,4vw,38px)] max-[900px]:grid-cols-1">
+            <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-[rgba(15,13,11,.56)]">Ubicación</p>
+            <p class="break-words font-impact text-[clamp(1.6rem,3vw,3.5rem)] font-normal uppercase leading-[.95] tracking-[-.035em]">Madrid, España</p>
+          </div>
 
-            <a
-              href="https://www.linkedin.com/in/saraalcarazvalverde/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex min-h-12 items-center justify-center rounded-full border border-line bg-white px-6 py-3 text-sm font-extrabold text-ink transition hover:border-accent hover:text-accent"
-            >
-              LinkedIn
-            </a>
+          <div class="grid grid-cols-[.45fr_1fr] items-center gap-6 border-b border-[rgba(15,13,11,.14)] p-[clamp(22px,4vw,38px)] max-[900px]:grid-cols-1">
+            <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-[rgba(15,13,11,.56)]">Email</p>
+            <p class="break-words font-serifDisplay text-[clamp(1.6rem,3vw,3.5rem)] italic normal-case leading-[.95] tracking-[-.04em]">alcarazvalverdesara@gmail.com</p>
+          </div>
+
+          <div class="grid grid-cols-[.45fr_1fr] items-center gap-6 p-[clamp(22px,4vw,38px)] max-[900px]:grid-cols-1">
+            <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-[rgba(15,13,11,.56)]">LinkedIn</p>
+            <p class="break-words font-serifDisplay text-[clamp(1.6rem,3vw,3.5rem)] italic normal-case leading-[.95] tracking-[-.04em]">/in/saraalcarazvalverde</p>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="rounded-t-[18px] bg-blackCustom py-[clamp(64px,8vw,110px)] text-cream">
+      <div class="mx-auto grid w-[calc(100%-18px)] max-w-full grid-cols-[1fr_auto] items-end gap-10 max-[1000px]:grid-cols-1">
+        <div>
+          <p class="mb-6 text-[12px] font-extrabold uppercase tracking-[.16em] text-[rgba(243,232,216,.55)]">
+            Let’s work together
+          </p>
+
+          <h2 class="max-w-[980px] font-impact text-[clamp(3.4rem,8vw,7.6rem)] font-normal uppercase leading-[.84] tracking-[-.035em]">
+            Si crees que mi perfil puede encajar, estaré encantada de hablar contigo.
+          </h2>
+        </div>
+
+        <a href="mailto:alcarazvalverdesara@gmail.com" class="inline-flex min-h-[38px] items-center justify-center whitespace-nowrap rounded-[10px] border border-cream bg-cream px-[18px] text-[11px] font-bold uppercase tracking-[.08em] text-blackCustom">Escribirme</a>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="border-t border-line py-8">
-    <div class="mx-auto flex w-[min(1440px,calc(100%-2rem))] flex-col gap-4 text-sm text-muted md:flex-row md:items-center md:justify-between">
+  <footer class="bg-blackCustom py-[34px] text-[13px] text-[rgba(243,232,216,.62)]">
+    <div class="mx-auto flex w-[calc(100%-18px)] max-w-full flex-wrap justify-between gap-5">
       <p>© 2026 Sara Alcaraz</p>
 
-      <div class="flex gap-5">
-        <a href="projects.html" class="transition hover:text-ink">Proyectos</a>
-        <a href="about.html" class="transition hover:text-ink">Sobre mí</a>
-        <a href="contact.html" class="transition hover:text-ink">Contacto</a>
+      <div class="flex flex-wrap gap-5">
+        <a href="index.html">Inicio</a>
+        <a href="projects.html">Proyectos</a>
+        <a href="about.html">Sobre mí</a>
       </div>
     </div>
   </footer>
@@ -399,9 +257,6 @@
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("hidden");
         navLinks.classList.toggle("flex");
-
-        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-        menuToggle.setAttribute("aria-expanded", String(!expanded));
       });
     }
   </script>
